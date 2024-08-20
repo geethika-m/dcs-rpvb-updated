@@ -235,6 +235,7 @@ const CreateBookingForm = () => {
                     dateCreated: formattedDate,
                     startDate: values.selectedDate,
                     endDate: values.endDate,
+                    museum: values.museum,
                     eventName: values.eventName,
                     programmes: values.programmes,
                     nofPax: values.nofPax,
@@ -354,6 +355,21 @@ Best Regards
                     <div><FaIcons.FaWpforms size={30} color="black" /></div>
                     Create Booking Form
                 </h3>
+                <Form.Group id="museum">
+                    <Form.Label className="CreateUser-label">Select Museum:</Form.Label><br/>
+                    <Form.Select className="createBooking-ddl-style2"
+                        title={"museum"}
+                        name={"museum"}
+                        onChange={handleChange}
+                        value={values.museum}
+                    >
+                        <option value={" "}>Please select your museum</option>
+                        <option value={"museum_1"}>Museum 1</option>
+                        <option value={"museum_2"}>Museum 2</option>
+                        <option value={"museum_3"}>Museum 3</option>
+                    </Form.Select>
+                    {errors.museum && ( <p className="validate-error">{errors.museum} </p> )} 
+                </Form.Group> 
                 <Form.Group id="eventName" >
                     <Form.Label className="CreateUser-label">Event Name:</Form.Label><br/>
                     <Form.Control className="CreateUser-input-style"
@@ -440,7 +456,7 @@ Best Regards
                 </div>
             </div>
             <div className="CreateBooking-form-content2 CreateBooking-child2"> 
-                <Form.Group id="first_location">
+                <Form.Group id="museum">
                     <Form.Label className="CreateUser-label">First Location:</Form.Label><br/>
                     <Form.Select className="createBooking-ddl-style2"
                         title={"first_location"}

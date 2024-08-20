@@ -230,6 +230,15 @@ Best Regards
                             <div><FaIcons.FaBook size={30} color="black" /></div>
                                 Booking Details 
                         </h3>
+                        <Form.Group id="museum" >
+                            <Form.Label className="ViewBooking-label">Museum:</Form.Label><br/>
+                            <Form.Control className="ViewBooking-input-style"
+                                 placeholder={recordData.museum}
+                                 type={"text"}
+                                 disabled
+                                 readOnly
+                            />
+                        </Form.Group> 
                         <Form.Group id="eventName" >
                             <Form.Label className="ViewBooking-label">Event Name:</Form.Label><br/>
                             <Form.Control className="ViewBooking-input-style"

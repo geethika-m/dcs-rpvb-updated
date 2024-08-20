@@ -6,6 +6,10 @@
 export function BookingValidation(values, selectedFile) {
     let errors = {};
 
+    if (!values.museum) {
+        errors.museum = "Please select museum.";
+    } 
+
     /* 
     * Checks if the eventName field is empty, 
     * and if it is, it returns an error message. 

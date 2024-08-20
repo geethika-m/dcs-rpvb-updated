@@ -5,17 +5,20 @@ import { database, auth } from "../../firebase";
 import TableContainer from '../../components/tables/tableContainer';
 import * as XLSX from 'xlsx';
 import { format } from 'date-fns';
+import { useParams } from 'react-router';
 
 /**
- * @function Homepage
+ * @function MuseumHomePage
  * 
  * It's a function that returns a component that renders a table of data from a firebase database. 
  * @returns The return is a table with the data from the database.
  */
 
-const Homepage = () => {
+const MuseumHomePage = () => {
   const [records, setRecords] = useState([]);
   const [userType, setUserType] = useState('');
+  const {name} = useParams();
+  console.log({name})
 
   const columns = useMemo(() => [
     { accessor: 'bkId', Header: 'BkId'},
@@ -116,23 +119,26 @@ const Homepage = () => {
           console.log('SelectedDate',SelectedDate)
           const formattedSelectedDate = SelectedDate  && typeof SelectedDate === "string" && !SelectedDate.includes(",") ? format(new Date(SelectedDate), 'dd-MMM-yyyy'): "";
 
-          tempItem.push({
-            bkId: doc.data().bkId,
-            requestorName: doc.data().requestorName,
-            dateCreated: doc.data().dateCreated,
-            museum: doc.data().museum,
-            eventName: doc.data().eventName,
-            programmes: doc.data().programmes,
-            nofPax: doc.data().nofPax,
-            organisation: doc.data().organisation,
-            first_location: doc.data().first_location,
-            second_location: doc.data().second_location,
-            selectedDate: formattedSelectedDate ,
-            endDate: doc.data().endDate,
-            timeSlot: doc.data().timeSlot,
-            approvalStatus: doc.data().approvalStatus,
-            fbId: doc.id,
-          });
+          if(doc.data().museum === name) {
+            tempItem.push({
+              bkId: doc.data().bkId,
+              requestorName: doc.data().requestorName,
+              dateCreated: doc.data().dateCreated,
+              museum: doc.data().museum,
+              eventName: doc.data().eventName,
+              programmes: doc.data().programmes,
+              nofPax: doc.data().nofPax,
+              organisation: doc.data().organisation,
+              first_location: doc.data().first_location,
+              second_location: doc.data().second_location,
+              selectedDate: formattedSelectedDate ,
+              endDate: doc.data().endDate,
+              timeSlot: doc.data().timeSlot,
+              approvalStatus: doc.data().approvalStatus,
+              fbId: doc.id,
+            });
+          }
+         
         });
 
         // Sort the records by bkId property in ascending order
@@ -185,4 +191,4 @@ const Homepage = () => {
       )
     }
 
-export default Homepage
+export default MuseumHomePage

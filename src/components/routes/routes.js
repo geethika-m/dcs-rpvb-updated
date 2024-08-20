@@ -25,6 +25,7 @@ import PrivateRoute from './privateRoute';
 import PublicRoute from './publicRoute';
 import AdminRoute from './adminRoute';
 import AuthAction from '../../pages/auth/authAction';
+import MuseumHomePage from '../../pages/bookings/museum_homepage';
 
 /**
  * @function routes
@@ -41,6 +42,7 @@ const Paths = () => {
         <Routes>
             <Route element={<PrivateRoute navigate={navigate} />}> 
                 <Route exact path="/homepage" element={<Homepage />} />
+                <Route exact path="/homepage/:name" element={<MuseumHomePage />} />
                 <Route exact path="/changePassword" element={<ChangePassword />} />
                 <Route exact path="/createBooking" element={<CreateBooking/>}/>
                 <Route exact path="/createBooking" element={<CreateBookingApproverForm/>}/>

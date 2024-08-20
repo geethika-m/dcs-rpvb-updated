@@ -96,6 +96,7 @@ console.log('data' , data)
     return(
       <div className='event-data'>
         <p><b>BkId</b>: {eventData.bkId}</p>
+        <p><b>Museum</b>: {eventData.museum}</p>
         <p><b>Requestor</b>: {eventData.requestorName}</p>
         <p><b>Date Created</b>: {eventData.dateCreated}</p>
         <p><b>Event Name</b>: {eventData.eventName}</p>

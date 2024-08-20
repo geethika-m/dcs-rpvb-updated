@@ -62,12 +62,22 @@
 
 header {
   background: #F5F5F5;
-  height: 100px;
+  min-height: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
+}
+
+header .museum_buttons {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;;
 }
 
 .headerLogo {
@@ -1283,7 +1293,7 @@ textarea {
 
 header {
   background: #F5F5F5;
-  height: 100px;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
