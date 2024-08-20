@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+h1,h2,h3{
+  font-family: 'PPSupplyMono';
+}
+
+.table-info {
+  display: flex;
+  justify-content: center;
+  gap: 5.5rem;
+}
+
+.table-info .event-card {
+  padding: 1.5rem 3rem;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.table-info .event-card.booking-card {
+  background-color: #7EA9EA;
+}
+
+
+.table-info .event-card.events-card {
+  background-color: #FFE2C7;
+}
+
+.table-info .event-card.pending-card {
+  background-color: #FBD4D4;
+}
+
+.table-info .event-card .booking-count {
+  font-size: 30px;
+  text-align: center;
+}
+
+.table-info .event-card .title {
+  font-size: 20px;
+}

@@ -1,0 +1,7068 @@
+/* MAIN STYLING CSS */
+.information{
+  display: flex;
+  margin-top: -70px;
+}
+.information p{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.View-input-style2{
+  width: 78%;
+  height: 102px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: grey;
+}
+.page-gridlayout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.055fr 1fr;
+  grid-template-rows: 0.3fr 3.49fr 0.26fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.sidebar-gridarea {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.header-gridarea {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.content-gridarea {
+  grid-area: 2 / 2 / 3 / 3;
+  position: relative;
+}
+
+.footer-gridarea {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background: #F5F5F5;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.headerLogo {
+  height: 100px;
+  width: 220px;
+}
+
+.footer-noscroll {
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A74F;
+  width: 100%;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.notification-layer {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 250px;
+  background: #FFFBC0;
+  z-index: 9999;
+}
+
+.archiveMsg {
+  font-size: 16px;
+  color: red;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+/* Login Form & Forget Password Form STYLING CSS */
+
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 98vh;
+  background-color: #C5E8AB;
+}
+
+.ForgetPassword-form-container, .Login-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 98vh;
+  background-image: url("../images/DCS background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Login-form, .ForgetPassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Login-form-content, .ForgetPassword-form-content {
+text-align: center;
+}
+
+.Login-icon, .ForgetPassword-icon, .Confirmation-icon {
+  padding-top: 5px;
+}
+
+.Login-form-title, .ForgetPassword-form-title {
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.Login-form-subtitle, .ForgetPassword-form-subtitle {
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Login-label, .forgetPassword-Link, .ForgetPassword-label  {
+  float: left;
+  padding-left: 35px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.forgetPassword-Link{
+  font-size: 16px;
+}
+.ForgetPassword-Link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  padding-top: 18px;
+}
+
+.login-input-style, .ForgetPassword-input-style {
+  width: 80%;
+  height: 30px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.login-button, .ForgetPassword-button, .changepwd-button {
+  width: 84%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+}
+/* CONFIRMATION FORM STYLING CSS */
+.confirmation-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.confirmation-form{
+  width: 30%;
+  height: 70%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+.Confirmation-form-title {
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  text-align: center;
+}
+
+.Confirmation-form-subtitle{
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn-flex{
+  display: flex;
+  justify-content: center;
+}
+.requestCancel-btn{
+  justify-content: center;
+  text-align: center;
+  width: 115%;
+  margin-left: -20px;
+  margin-top: -5px;
+}
+
+.confirmation-confirm-btn {
+  width: 30%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.confirmation-confirm-btn:hover {
+  background-color: #60513A; 
+}
+
+.confirmation-cancel-btn {
+  width: 30%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Cfm-message{
+  font-size: 14px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right:10px ;
+  text-align: center;
+}
+
+/* Side Bar STYLING CSS */
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+.side-menu {
+  position: fixed;
+  background: #C5E8AB;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px 5px;
+  transition: width .2s ease-in;
+  z-index: 999;
+}
+
+.side-menu.inactive {
+  width: 5.2%;
+  min-width: 50px;
+}
+
+.side-menu.active {
+  width: 300px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.side-menu.inactive .top-section .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #00A74F;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+  padding-right: 8px;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu.inactive .main-menu .menu-item{
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #60513A;
+  border-radius: 5px;
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.menu-icon2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #000;
+  margin-left: 20px !important;
+  border-left: 3px solid #00A74F;
+  box-sizing: border-box;
+  padding-left: 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #60513A;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.side-menu-footer {
+  width: 97%;
+  height: 12%;
+  background: #C5E8AB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.side-menu.inactive .side-menu-footer {
+  display: block;
+  margin: auto;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 14px;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+  margin-top: 45px;
+}
+
+.divider2 {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+}
+
+/* Manage User STYLING CSS */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.table {
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.table-icon:hover {
+  cursor: pointer;
+}
+
+.table-search-bar {
+  float: right;
+  margin-bottom: 18px;
+}
+
+.search-bar-input {
+  margin-left: 10px;
+  border: grey solid 2px;
+  color: grey;
+  border-radius: 8px;
+  height: 30px;
+  width: 180px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.search-bar-input:focus {
+  outline: none;
+  border: #60513A solid 2px;
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.table-pagination button {
+  background: grey;
+  border: grey solid 1px;
+  border-radius: 8px;
+  margin: 0px 5px;
+  width: 60px;
+  height: 20px;
+  color: white;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.table-pagination button:hover {
+  background: #60513A;
+  border-radius: 8px;
+  margin: 0px 5px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #C5E8AB; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: whitesmoke; 
+}
+
+th, td {
+  min-width: 100px; 
+  padding: 5px;
+}
+.table-container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+th.react-table__sort-header {
+  position: relative;
+  cursor: pointer;
+}
+
+th.react-table__sort-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px; 
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; 
+  transform: translateY(-50%) rotate(0deg); 
+}
+
+th.react-table__sort-header.-sort-asc::after {
+  transform: translateY(-50%) rotate(-180deg); 
+}
+
+/* Create User STYLING CSS */
+
+.CreateUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.CreateUser-form {
+  width: 50%;
+  height: 70%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateUser-form-content {
+  padding-left: 6%;
+}
+
+.CreateUser-form-content2 {
+  padding-right: 6%;
+  margin-top: 95px;
+}
+
+.CreateUser-child1 {
+  width: 55%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.input-ddl-style {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.CreateUser-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+}
+
+/* View User STYLING CSS */
+
+.ViewUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 75vh;
+  background-color: white;
+}
+
+.ViewUser-form {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 830px;
+}
+
+.ViewUser-form-content {
+  padding-left: 6svb;
+  display:inline-block;
+}
+
+.ViewUser-child1 {
+  width: 55%;
+  height: 75vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-child2 {
+  width: 45%;
+  height: 75vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-title {
+  margin-bottom: 1em;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-top: 10px;
+}
+
+.ViewUser_label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  padding-top: 4px;
+} 
+
+.ViewUser-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ViewUser-ddl-style {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ViewUser-Edit-button, .ViewUser-Update-button, .ViewUser-Cancel-button {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.archivedAlert {
+  float: left;
+  margin-left: 20px;
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
+  padding-top: 6px;
+}
+
+.ViewUser-form-content2 {
+  padding-right: 8%;
+}  
+
+.ViewUser-data-style {
+  font-size: 14px;
+  margin-top: 8px;
+  background-color: rgba(245, 243, 243, 0.856);
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-color: grey;
+  border-left: 2px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+/* Change Password STYLING CSS */
+
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 78vh;
+  background-color: white;
+}
+
+.ChangePassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* VIEW BOOKING STYLING CSS */
+.ViewBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.ViewBooking-form {
+  width: 70%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.ViewBooking-form-content {
+  padding-left: 4%;
+}
+
+.ViewBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.ViewBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.ViewBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.ViewBooking-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+/* Create Booking STYLING CSS */
+.CreateBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 130vh;
+  background-color: white;
+}
+
+.CreateBooking-form {
+  width: 60%;
+  height: 65%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateBooking-form-content {
+  padding-left: 4%;
+}
+
+.CreateBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content4 {
+  margin-top: 95px;
+}
+
+.CreateBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+.CreateUser-child4 {
+  width: 10%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.CreateUser-input-style2 {
+  width: 83%;
+  height: 99px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: #000;
+}
+
+.createBooking-ddl-style {
+  width: 85%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-style2 {
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style2 {
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-inventory {
+  width: 89%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.createBooking-ddl-inventory {
+  width: 85%;
+  height: 95px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-timeslot {
+  width: 90%;
+  height: 95px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style3 {
+  width: 86%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.CreateBooking-button {
+  width: 80%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-left: 12px;
+  text-align: center;
+  color: white;
+}
+
+.uploadFile {
+  padding-top: 10px;
+}
+.customisedSetup {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Export Btn STYLING CSS */
+.ExportUser-button {
+  width: 12%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 12%;
+  color: white;
+}
+
+.ExportVB-button {
+  width: 10%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: 12.5%;
+  text-align: center;
+  color: white;
+}
+
+/* View Booking CSS Style */
+.ViewBooking-Approve-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Edit-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Cancel-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+/* CSS for customised color */
+/* Red text for 'Pending' status */
+.status-pending {
+  color: red;
+}
+
+/* Green text for 'Approved' status */
+.status-approved {
+  color: green;
+}
+
+/* Default text color for other statuses */
+.status-default {
+  color: black;
+}
+
+/* CSS for word counter */
+.character-counter{
+  font-size: 12px;
+  margin-top: -10px;
+  margin-left:140px;
+  color: grey;
+}
+/* CSS for error message */
+.errorMsg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left:20px;
+  padding-right: 20px;
+}
+
+/* CSS for success message */
+.successMsg {
+  color: green;
+  font-size: 14px;
+  padding-left:20px;
+  padding-right: 20px;
+}
+.validate-error {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0px;
+}
+.approvalbtns{
+  display: flex;
+}
+.information{
+  font-size: 14px;
+}
+.message {
+  font-size: 14px;
+  padding-left:20px;
+  padding-right: 20px;
+}
+
+
+/* CSS STYLING (SCREEN SIZE > 1500px) */
+@media (min-width: 1501px){
+.page-gridlayout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.055fr 1fr;
+  grid-template-rows: 0.3fr 3.49fr 0.26fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.sidebar-gridarea {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.header-gridarea {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.content-gridarea {
+  grid-area: 2 / 2 / 3 / 3;
+  position: relative;
+}
+
+.footer-gridarea {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background: #F5F5F5;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.headerLogo {
+  height: 100px;
+  width: 220px;
+}
+
+.footer-noscroll {
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A74F;
+  width: 100%;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px;
+}
+
+.notification-layer {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 250px;
+  background: #FFFBC0;
+  z-index: 9999;
+}
+
+.archiveMsg {
+  font-size: 16px;
+  color: red;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+/* Login Form & Forget Password Form STYLING CSS */
+
+.Login-form-container, .ForgetPassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 98vh;
+  background-color: #C5E8AB;
+}
+
+.Login-form, .ForgetPassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Login-form-content, .ForgetPassword-form-content {
+text-align: center;
+}
+
+.Login-icon, .ForgetPassword-icon {
+  padding-top: 5px;
+}
+
+.Login-form-title, .ForgetPassword-form-title {
+  font-size: 26px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.Login-form-subtitle, .ForgetPassword-form-subtitle {
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Login-label, .forgetPassword-Link, .ForgetPassword-label  {
+  float: left;
+  padding-left: 35px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.forgetPassword-Link{
+  font-size: 16px;
+}
+.ForgetPassword-Link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  padding-top: 18px;
+}
+
+.login-input-style, .ForgetPassword-input-style {
+  width: 80%;
+  height: 30px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.login-button, .ForgetPassword-button, .changepwd-button {
+  width: 84%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+/* SideBar STYLING CSS */
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+.side-menu {
+  position: fixed;
+  background: #C5E8AB;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px 5px;
+  transition: width .2s ease-in;
+  z-index: 999;
+}
+
+.side-menu.inactive {
+  width: 5.2%;
+  min-width: 50px;
+}
+
+.side-menu.active {
+  width: 300px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.side-menu.inactive .top-section .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #00A74F;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+  padding-right: 8px;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu.inactive .main-menu .menu-item{
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #60513A;
+  border-radius: 5px;
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.menu-icon2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #000;
+  margin-left: 20px !important;
+  border-left: 3px solid #00A74F;
+  box-sizing: border-box;
+  padding-left: 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #60513A;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.side-menu-footer {
+  width: 97%;
+  height: 12%;
+  background: #C5E8AB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.side-menu.inactive .side-menu-footer {
+  display: block;
+  margin: auto;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 16px;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+  margin-top: 45px;
+}
+
+.divider2 {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+}
+
+/* Manage User STYLING CSS */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.table {
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.table-icon:hover {
+  cursor: pointer;
+}
+
+.table-search-bar {
+  float: right;
+  margin-bottom: 18px;
+}
+
+.search-bar-input {
+  margin-left: 10px;
+  border: grey solid 2px;
+  color: grey;
+  border-radius: 8px;
+  height: 30px;
+  width: 180px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.search-bar-input:focus {
+  outline: none;
+  border: #60513A solid 2px;
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.table-pagination button {
+  background: grey;
+  border: grey solid 1px;
+  border-radius: 8px;
+  margin: 0px 5px;
+  width: 60px;
+  height: 20px;
+  color: white;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.table-pagination button:hover {
+  background: #60513A;
+  border-radius: 8px;
+  margin: 0px 5px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #C5E8AB; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: whitesmoke; 
+}
+
+th, td {
+  min-width: 105px; 
+  padding: 5px;
+}
+.table-container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+th.react-table__sort-header {
+  position: relative;
+  cursor: pointer;
+}
+
+th.react-table__sort-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px; 
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; 
+  transform: translateY(-50%) rotate(0deg); 
+}
+
+th.react-table__sort-header.-sort-asc::after {
+  transform: translateY(-50%) rotate(-180deg); 
+}
+
+/* Create User STYLING CSS */
+
+.CreateUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 80vh;
+  background-color: white;
+}
+
+.CreateUser-form {
+  width: 50%;
+  height: 70%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateUser-form-content {
+  padding-left: 6%;
+}
+
+.CreateUser-form-content2 {
+  padding-right: 6%;
+  margin-top: 95px;
+}
+
+.CreateUser-child1 {
+  width: 55%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.input-ddl-style {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.CreateUser-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+}
+
+/* View User STYLING CSS */
+
+.ViewUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 75vh;
+  background-color: white;
+}
+
+.ViewUser-form {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 830px;
+}
+
+.ViewUser-form-content {
+  padding-left: 6svb;
+  display:inline-block;
+}
+
+.ViewUser-child1 {
+  width: 55%;
+  height: 75vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-child2 {
+  width: 45%;
+  height: 75vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-title {
+  margin-bottom: 1em;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-top: 10px;
+}
+
+.ViewUser_label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  padding-top: 4px;
+} 
+
+.ViewUser-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ViewUser-ddl-style {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ViewUser-Edit-button, .ViewUser-Update-button, .ViewUser-Cancel-button {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.archivedAlert {
+  float: left;
+  margin-left: 20px;
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
+  padding-top: 6px;
+}
+
+.ViewUser-form-content2 {
+  padding-right: 8%;
+}  
+
+.ViewUser-data-style {
+  font-size: 14px;
+  margin-top: 8px;
+  background-color: rgba(245, 243, 243, 0.856);
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-color: grey;
+  border-left: 2px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+/* Change Password STYLING CSS */
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.ChangePassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* VIEW BOOKING STYLING CSS */
+.ViewBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 85vh;
+  background-color: white;
+}
+
+.ViewBooking-form {
+  width: 70%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.ViewBooking-form-content {
+  padding-left: 4%;
+}
+
+.ViewBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.ViewBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.ViewBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.ViewBooking-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+
+/* Create Booking STYLING CSS */
+.CreateBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 90vh;
+  background-color: white;
+}
+
+.CreateBooking-form {
+  width: 60%;
+  height: 75%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateBooking-form-content {
+  padding-left: 4%;
+}
+
+.CreateBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content4 {
+  margin-top: 95px;
+}
+
+.CreateBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+.CreateUser-child4 {
+  width: 10%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+
+.CreateUser-input-style2 {
+  width: 83%;
+  height: 99px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: #000;
+}
+
+.createBooking-ddl-style {
+  width: 85%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-style2 {
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style2 {
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-inventory {
+  width: 89%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+.createBooking-ddl-inventory {
+  width: 85%;
+  height: 95px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-timeslot {
+  width: 90%;
+  height: 95px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style3 {
+  width: 86%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  padding-left: 12px;
+}
+
+.CreateBooking-button {
+  width: 80%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-left: 12px;
+  text-align: center;
+  color: white;
+}
+
+.uploadFile {
+  padding-top: 10px;
+}
+.customisedSetup {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Export Btn STYLING CSS */
+.ExportUser-button {
+  width: 12%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 17.5%;
+  color: white;
+}
+
+.ExportVB-button {
+  width: 10%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: 9%;
+  text-align: center;
+  color: white;
+}
+
+/* View Booking CSS Style */
+.ViewBooking-Approve-button {
+  width: 40%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Edit-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Cancel-button {
+  width: 40%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+/* CSS for error message */
+.errorMsg {
+  color: red;
+  font-size: 14px;
+}
+
+/* CSS for success message */
+.successMsg {
+  color: green;
+  font-size: 14px;
+}
+.validate-error {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0px;
+}
+.approvalbtns{
+  display: flex;
+}
+.message {
+  font-size: 14px;
+}
+.pending-approval-count{
+  font-size: 15px;
+}
+.information{
+  font-size: 15px;
+}
+}
+
+/* ##################### CUSTOM MEDIA BEYOND HERE ######################## */
+/* ############################################################################################ */
+/* CSS for when width is less than 1500px */
+@media (max-width: 1500px) {
+/* GRID STYLING CSS */
+.page-gridlayout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.055fr 1fr;
+  grid-template-rows: 0.3fr 3.49fr 0.26fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+} 
+
+.sidebar-gridarea {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.header-gridarea {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.content-gridarea {
+  grid-area: 2 / 2 / 3 / 3;
+  position: relative;
+}
+
+.footer-gridarea {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background: #F5F5F5;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.headerLogo {
+  height: 100px;
+  width: 220px;
+}
+
+.footer-noscroll {
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A74F;
+  width: 100%;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.notification-layer {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 250px;
+  background: #FFFBC0;
+  z-index: 9999;
+}
+
+.archiveMsg {
+  font-size: 16px;
+  color: red;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+/* LOGIN,FORGET PASSWORD FORM STYLING CSS */
+
+.Login-form-container, .ForgetPassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 98vh;
+  background-color: #C5E8AB;
+}
+
+.Login-form, .ForgetPassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Login-form-content, .ForgetPassword-form-content {
+text-align: center;
+}
+
+.Login-icon, .ForgetPassword-icon {
+  padding-top: 5px;
+}
+
+.Login-form-title, .ForgetPassword-form-title {
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.Login-form-subtitle, .ForgetPassword-form-subtitle {
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Login-label, .forgetPassword-Link, .ForgetPassword-label  {
+  float: left;
+  padding-left: 35px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.forgetPassword-Link{
+  font-size: 16px;
+}
+.ForgetPassword-Link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  padding-top: 18px;
+}
+
+.login-input-style, .ForgetPassword-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.login-button, .ForgetPassword-button, .changepwd-button {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+/* SIDEBAR STYLING CSS */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.side-menu {
+  position: fixed;
+  background: #C5E8AB;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px 5px;
+  transition: width .2s ease-in;
+  z-index: 999;
+}
+
+.side-menu.inactive {
+  width: 5.2%;
+  min-width: 50px;
+}
+
+.side-menu.active {
+  width: 300px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.side-menu.inactive .top-section .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #00A74F;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+  padding-right: 8px;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu.inactive .main-menu .menu-item{
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #60513A;
+  border-radius: 5px;
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.menu-icon2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #000;
+  margin-left: 20px;
+  border-left: 3px solid #00A74F;
+  box-sizing: border-box;
+  padding-left: 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #60513A;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.side-menu-footer {
+  width: 97%;
+  height: 12%;
+  background: #C5E8AB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.side-menu.inactive .side-menu-footer {
+  display: block;
+  margin: auto;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 15px;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+  margin-top: 45px;
+}
+
+.divider2 {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+}
+
+/* TABLE CSS STYLING CSS */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.table {
+  text-align: center;
+  font-size: 14px;
+}
+
+.table-container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.table-icon:hover {
+  cursor: pointer;
+}
+
+.table-search-bar {
+  float: right;
+  margin-bottom: 18px;
+}
+
+.search-bar-input {
+  margin-left: 10px;
+  border: grey solid 2px;
+  color: grey;
+  border-radius: 8px;
+  height: 25px;
+  width: 180px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.search-bar-input:focus {
+  outline: none;
+  border: #60513A solid 2px;
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.table-pagination button {
+  background: grey;
+  border: grey solid 1px;
+  border-radius: 8px;
+  margin: 0px 5px;
+  width: 60px;
+  height: 25px;
+  color: white;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.table-pagination button:hover {
+  background: #60513A;
+  border-radius: 8px;
+  margin: 0px 5px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #C5E8AB; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: whitesmoke; 
+}
+
+th, td {
+  min-width: 90px; 
+  padding: 1px;
+}
+.table-container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+th.react-table__sort-header {
+  position: relative;
+  cursor: pointer;
+}
+
+th.react-table__sort-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px; 
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; 
+  transform: translateY(-50%) rotate(0deg); 
+}
+
+th.react-table__sort-header.-sort-asc::after {
+  transform: translateY(-50%) rotate(-180deg); 
+}
+
+/* CREATE USER STYLING CSS */
+.CreateUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.CreateUser-form {
+  width: 50%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateUser-form-content {
+  padding-left: 6%;
+}
+
+.CreateUser-form-content2 {
+  padding-right: 6%;
+  margin-top: 95px;
+}
+
+.CreateUser-child1 {
+  width: 55%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.input-ddl-style {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.CreateUser-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+}
+
+/* VIEW USER STYLING CSS */
+.ViewUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 110vh;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.ViewUser-form {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 90%;
+}
+
+.ViewUser-form-content {
+  padding-left: 6svb;
+  display:inline-block;
+}
+
+.ViewUser-child1 {
+  width: 45%;
+  height: 70vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-child2 {
+  width: 40%;
+  height: 70vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-title {
+  margin-bottom: 1em;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-top: 10px;
+}
+
+.ViewUser_label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  padding-top: 4px;
+}
+
+.ViewUser-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ViewUser-ddl-style {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ViewUser-Edit-button, .ViewUser-Update-button, .ViewUser-Cancel-button {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.archivedAlert {
+  float: left;
+  margin-left: 20px;
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
+  padding-top: 6px;
+}
+
+.ViewUser-form-content2 {
+  padding-right: 8%;
+}  
+
+.ViewUser-data-style {
+  font-size: 14px;
+  margin-top: 8px;
+  background-color: rgba(245, 243, 243, 0.856);
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-color: grey;
+  border-left: 2px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+/* CHANGE PASSWORD FORM CSS STYLE */
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  margin-bottom: 20px;
+  }
+
+.ChangePassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* VIEW BOOKING STYLING CSS */
+.ViewBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.ViewBooking-form {
+  width: 90%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.ViewBooking-form-content {
+  padding-left: 4%;
+}
+
+.ViewBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.ViewBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.ViewBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.ViewBooking-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+/* CREATE BOOKING STYLING CSS */
+.CreateBooking-form {
+  width: 90%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+  margin-top:50px;
+}
+.CreateBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 120vh;
+  background-color: white;
+}
+
+
+.CreateBooking-form-content {
+  padding-left: 4%;
+}
+
+.CreateBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content4 {
+  margin-top: 95px;
+}
+
+.CreateBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+.CreateUser-child4 {
+  width: 10%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.CreateUser-input-style2 {
+  width: 80%;
+  height: 103px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: grey;
+  font-weight: 500;
+}
+
+/* CREATE BOOKING CSS STYLING */
+.createBooking-ddl-style {
+  width: 88%;
+  height: 32px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-style2 {
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style2 {
+  width: 88%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-inventory {
+  width: 89%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.createBooking-ddl-inventory {
+  width: 88%;
+  height: 85px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-timeslot {
+  width: 88%;
+  height: 93px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style3 {
+  width: 86%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.CreateBooking-button {
+  width: 80%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 12px;
+  text-align: center;
+  color: white;
+}
+
+.uploadFile {
+  padding-top: 10px;
+}
+.customisedSetup {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* EXPORT BTN STYLING CSS */
+.ExportUser-button {
+  width: 15%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 12%;
+  color: white;
+  
+}
+
+.ExportVB-button {
+  width: 15%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: 1%;
+  text-align: center;
+  color: white;
+  
+}
+
+/* VIEW BOOKING CSS STYLING */
+.ViewBooking-Approve-button {
+  width: 45%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Edit-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Cancel-button {
+  width: 45%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 40px;
+  text-align: center;
+  color: white;
+}
+
+.approvalbtns{
+  display: flex;
+}
+
+/* MESSAGE CSS STYLING */
+.errorMsg {
+  color: red;
+  font-size: 14px;
+}
+
+.successMsg {
+  color: green;
+  font-size: 14px;
+}
+
+.validate-error {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0px;
+}
+.message {
+  font-size: 14px;
+}
+.search-label{
+  font-size: 14px;
+}
+.pending-approval-count{
+  font-size: 14px;
+}
+.information{
+  font-size: 14px;
+}
+
+/* CONFIRMATION FORM STYLING CSS */
+.confirmation-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.confirmation-form{
+  width: 40%;
+  height: 65%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+.Confirmation-form-title {
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  text-align: center;
+}
+
+.Confirmation-form-subtitle{
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  text-align: center;
+}
+.confirmation-confirm-btn {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.confirmation-confirm-btn:hover {
+  background-color: #60513A; 
+}
+
+.confirmation-cancel-btn {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Cfm-message{
+  font-size: 16px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right:10px ;
+  text-align: center;
+}
+/* CSS for word counter */
+.character-counter{
+  font-size: 12px;
+  margin-top: -10px;
+  margin-left:15px;
+  color: grey;
+}
+
+}
+/* ############################################################################################ */
+/* CSS for when width is less than 1100px */
+@media (max-width: 1100px) {
+/* GRID STYLING CSS */
+.page-gridlayout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.055fr 1fr;
+  grid-template-rows: 0.3fr 3.49fr 0.26fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+} 
+
+.sidebar-gridarea {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.header-gridarea {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.content-gridarea {
+  grid-area: 2 / 2 / 3 / 3;
+  position: relative;
+}
+
+.footer-gridarea {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background: #F5F5F5;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.headerLogo {
+  height: 80px;
+  width: 200px;
+}
+
+.footer-noscroll {
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A74F;
+  width: 100%;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.notification-layer {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 250px;
+  background: #FFFBC0;
+  z-index: 9999;
+}
+
+.archiveMsg {
+  font-size: 16px;
+  color: red;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+/* LOGIN,FORGET PASSWORD FORM STYLING CSS */
+.Login-form-container, .ForgetPassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #C5E8AB;
+}
+
+.Login-form, .ForgetPassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Login-form-content, .ForgetPassword-form-content {
+text-align: center;
+}
+
+.Login-icon, .ForgetPassword-icon {
+  padding-top: 5px;
+}
+
+.Login-form-title, .ForgetPassword-form-title {
+  font-size: 22px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.Login-form-subtitle, .ForgetPassword-form-subtitle {
+  margin-bottom: 1em;
+  font-size: 14px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Login-label, .forgetPassword-Link, .ForgetPassword-label  {
+  float: left;
+  padding-left: 35px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.forgetPassword-Link{
+  font-size: 16px;
+}
+.ForgetPassword-Link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  padding-top: 18px;
+}
+
+.login-input-style, .ForgetPassword-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.login-button, .ForgetPassword-button, .changepwd-button {
+  width: 84%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+/* SIDEBAR STYLING CSS */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.side-menu {
+  position: fixed;
+  background: #C5E8AB;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px 5px;
+  transition: width .2s ease-in;
+  z-index: 999;
+}
+
+.side-menu.inactive {
+  width: 5.2%;
+  min-width: 50px;
+}
+
+.side-menu.active {
+  width: 300px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.side-menu.inactive .top-section .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #00A74F;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+  padding-right: 8px;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu.inactive .main-menu .menu-item{
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #60513A;
+  border-radius: 5px;
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.menu-icon2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+  font-size: 14px;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #000;
+  margin-left: 20px;
+  border-left: 3px solid #00A74F;
+  box-sizing: border-box;
+  padding-left: 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #60513A;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.side-menu-footer {
+  width: 97%;
+  height: 12%;
+  background: #C5E8AB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.side-menu.inactive .side-menu-footer {
+  display: block;
+  margin: auto;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 14px;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+  margin-top: 45px;
+}
+
+.divider2 {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+}
+
+/* TABLE CSS STYLING CSS */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.table {
+  text-align: center;
+  font-size: 13px;
+}
+
+.table-container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.table-icon:hover {
+  cursor: pointer;
+}
+
+.table-search-bar {
+  float: right;
+  margin-bottom: 18px;
+}
+
+.search-bar-input {
+  margin-left: 10px;
+  border: grey solid 2px;
+  color: grey;
+  border-radius: 8px;
+  height: 15px;
+  width: 160px;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.search-bar-input:focus {
+  outline: none;
+  border: #60513A solid 2px;
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.table-pagination button {
+  background: grey;
+  border: grey solid 1px;
+  border-radius: 8px;
+  margin: 0px 5px;
+  width: 55px;
+  height: 20px;
+  color: white;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.table-pagination button:hover {
+  background: #60513A;
+  border-radius: 8px;
+  margin: 0px 5px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #C5E8AB; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: whitesmoke; 
+}
+
+th, td {
+  min-width: 60px; 
+  padding: 1px; 
+}
+
+th.react-table__sort-header {
+  position: relative;
+  cursor: pointer;
+}
+
+th.react-table__sort-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px; 
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; 
+  transform: translateY(-50%) rotate(0deg); 
+}
+
+th.react-table__sort-header.-sort-asc::after {
+  transform: translateY(-50%) rotate(-180deg); 
+}
+
+/* CREATE USER STYLING CSS */
+.CreateUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.CreateUser-form {
+  width: 70%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateUser-form-content {
+  padding-left: 6%;
+}
+
+.CreateUser-form-content2 {
+  padding-right: 6%;
+  margin-top: 95px;
+}
+
+.CreateUser-child1 {
+  width: 55%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+.input-ddl-style {
+  width: 100%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+.CreateUser-button {
+  width: 35%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+}
+
+/* VIEW USER STYLING CSS */
+.ViewUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.ViewUser-form {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+}
+
+.ViewUser-form-content {
+  padding-left: 6svb;
+  display:inline-block;
+}
+
+.ViewUser-child1 {
+  width: 45%;
+  height: 80vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-child2 {
+  width: 40%;
+  height: 80vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-title {
+  margin-bottom: 1em;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-top: 10px;
+}
+
+.ViewUser_label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  padding-top: 4px;
+} 
+
+.ViewUser-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 8px;
+}
+.View-input-style2{
+  width: 78%;
+  height: 92px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: grey;
+}
+
+.ViewUser-ddl-style {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 8px;
+}
+
+.ViewUser-Edit-button, .ViewUser-Update-button, .ViewUser-Cancel-button {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.archivedAlert {
+  float: left;
+  margin-left: 20px;
+  font-size: 13px;
+  color: red;
+  font-weight: 500;
+  padding-top: 6px;
+}
+
+.ViewUser-form-content2 {
+  padding-right: 8%;
+}  
+
+.ViewUser-data-style {
+  font-size: 13px;
+  margin-top: 8px;
+  background-color: rgba(245, 243, 243, 0.856);
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-color: grey;
+  border-left: 2px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+/* CHANGE PASSWORD FORM CSS STYLE */
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 20px;
+  }
+
+.ChangePassword-form {
+  width: 400px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* VIEW BOOKING STYLING CSS */
+.ViewBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.ViewBooking-form {
+  width: 95%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.ViewBooking-form-content {
+  padding-left: 4%;
+}
+
+.ViewBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.ViewBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.ViewBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+.ViewBooking-child1 h3{
+  font-size: 15px;
+}
+
+.ViewBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-label {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.ViewBooking-input-style {
+  width: 81%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+/* CREATE BOOKING STYLING CSS */
+.CreateBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 115vh;
+  background-color: white;
+}
+
+.CreateBooking-form {
+  width: 90%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateBooking-form-content {
+  padding-left: 4%;
+}
+
+.CreateBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content4 {
+  margin-top: 95px;
+}
+
+.CreateBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.CreateUser-input-style {
+  width: 70%;
+  height: 20px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.CreateUser-input-style2 {
+  width: 83%;
+  height: 70px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: #000;
+  font-weight: 500;
+}
+
+/* CREATE BOOKING CSS STYLING */
+.createBooking-ddl-style {
+  width: 76%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-style2 {
+  width: 90%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style2 {
+  width: 76%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-inventory {
+  width: 89%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+.createBooking-ddl-inventory {
+  width: 76%;
+  height: 69px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-timeslot {
+  width: 76%;
+  height: 69px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+
+.createBooking-ddl-style3 {
+  width: 70%;
+  height: 20px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+.CreateBooking-button {
+  width: 76%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 0px;
+  text-align: center;
+  color: white;
+}
+
+.uploadFile {
+  padding-top: 10px;
+}
+.customisedSetup {
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* EXPORT BTN STYLING CSS */
+.ExportUser-button {
+  width: 18%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 3.5%;
+  color: white;
+}
+  
+.ExportVB-button {
+  width: 18%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: 1%;
+  text-align: center;
+  color: white;
+}
+
+/* VIEW BOOKING CSS STYLING */
+.ViewBooking-Approve-button {
+  width: 45%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Edit-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Cancel-button {
+  width: 45%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 40px;
+  text-align: center;
+  color: white;
+}
+
+.approvalbtns{
+  display: flex;
+}
+
+/* MESSAGE CSS STYLING */
+.errorMsg {
+  color: red;
+  font-size: 13px;
+}
+
+.successMsg {
+  color: green;
+  font-size: 13px;
+}
+
+.validate-error {
+  color: red;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 0px;
+}
+
+.message {
+  font-size: 13px;
+}
+.pagination{
+  font-size: 13px;
+}
+.search-label{
+  font-size: 13px;
+}
+.pending-approval-count{
+  font-size: 13px;
+}
+.information{
+  font-size: 13px;
+}
+
+/* CONFIRMATION FORM STYLING CSS */
+.confirmation-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.confirmation-form{
+  width: 50%;
+  height: 65%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+.Confirmation-form-title {
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  text-align: center;
+}
+
+.Confirmation-form-subtitle{
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  text-align: center;
+}
+.confirmation-confirm-btn {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.confirmation-confirm-btn:hover {
+  background-color: #60513A; 
+}
+
+.confirmation-cancel-btn {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Cfm-message{
+  font-size: 12px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right:10px ;
+  text-align: center;
+}
+/* CSS for word counter */
+.character-counter{
+  font-size: 12px;
+  margin-top: -10px;
+  margin-left:15px;
+  color: grey;
+}
+  
+}
+
+  
+/* ############################################################################################ */
+/* CSS for when width is less than 900px */
+@media (max-width: 900px) {
+/* GRID STYLING CSS */
+.page-gridlayout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.055fr 1fr;
+  grid-template-rows: 0.3fr 3.49fr 0.26fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+} 
+
+.sidebar-gridarea {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.header-gridarea {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.content-gridarea {
+  grid-area: 2 / 2 / 3 / 3;
+  position: relative;
+}
+
+.footer-gridarea {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background: #F5F5F5;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.headerLogo {
+  height: 70px;
+  width: 150px;
+}
+
+.footer-noscroll {
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A74F;
+  width: 100%;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+
+.notification-layer {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 250px;
+  background: #FFFBC0;
+  z-index: 9999;
+}
+
+.archiveMsg {
+  font-size: 16px;
+  color: red;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+/* LOGIN,FORGET PASSWORD FORM STYLING CSS */
+.Login-form-container, .ForgetPassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 98vh;
+  background-color: #C5E8AB;
+}
+
+.Login-form, .ForgetPassword-form {
+  width: 350px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Login-form-content, .ForgetPassword-form-content {
+text-align: center;
+}
+
+.Login-icon, .ForgetPassword-icon {
+  padding-top: 5px;
+}
+
+.Login-form-title, .ForgetPassword-form-title {
+  font-size: 20px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.Login-form-subtitle, .ForgetPassword-form-subtitle {
+  margin-bottom: 1em;
+  font-size: 14px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Login-label, .forgetPassword-Link, .ForgetPassword-label  {
+  float: left;
+  padding-left: 35px;
+  font-size: 12px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.forgetPassword-Link{
+  font-size: 16px;
+}
+.ForgetPassword-Link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  padding-top: 18px;
+}
+
+.login-input-style, .ForgetPassword-input-style {
+  width: 80%;
+  height: 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  padding-left: 8px;
+  }
+
+.login-button, .ForgetPassword-button, .changepwd-button {
+  width: 84%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+/* SIDEBAR STYLING CSS */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.side-menu {
+  position: fixed;
+  background: #C5E8AB;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px 5px;
+  transition: width .2s ease-in;
+  z-index: 999;
+}
+
+.side-menu.inactive {
+  width: 5.2%;
+  min-width: 50px;
+}
+
+.side-menu.active {
+  width: 300px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.side-menu.inactive .top-section .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #00A74F;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+  padding-right: 8px;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu.inactive .main-menu .menu-item{
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #60513A;
+  border-radius: 5px;
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 35px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.menu-icon2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+  font-family: 14px;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #000;
+  margin-left: 20px;
+  border-left: 3px solid #00A74F;
+  box-sizing: border-box;
+  padding-left: 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #60513A;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.side-menu-footer {
+  width: 97%;
+  height: 12%;
+  background: #C5E8AB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.side-menu.inactive .side-menu-footer {
+  display: block;
+  margin: auto;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 14px;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+  margin-top: 45px;
+}
+
+.divider2 {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+}
+
+/* TABLE CSS STYLING CSS */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.table {
+  text-align: center;
+  font-size: 12px;
+}
+
+.table-container {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.table-icon:hover {
+  cursor: pointer;
+}
+
+.table-search-bar {
+  float: right;
+  margin-bottom: 18px;
+}
+
+.search-bar-input {
+  margin-left: 10px;
+  border: grey solid 2px;
+  color: grey;
+  border-radius: 8px;
+  height: 15px;
+  width: 160px;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.search-bar-input:focus {
+  outline: none;
+  border: #60513A solid 2px;
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.table-pagination button {
+  background: grey;
+  border: grey solid 1px;
+  border-radius: 8px;
+  margin: 0px 5px;
+  width: 55px;
+  height: 20px;
+  color: white;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.table-pagination button:hover {
+  background: #60513A;
+  border-radius: 8px;
+  margin: 0px 5px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #C5E8AB; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: whitesmoke; 
+}
+
+th, td {
+  min-width: 40px; 
+  padding: 1px; 
+}
+
+th.react-table__sort-header {
+  position: relative;
+  cursor: pointer;
+}
+
+th.react-table__sort-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px; 
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; 
+  transform: translateY(-50%) rotate(0deg); 
+}
+
+th.react-table__sort-header.-sort-asc::after {
+  transform: translateY(-50%) rotate(-180deg); 
+}
+
+/* CREATE USER STYLING CSS */
+.CreateUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.CreateUser-form {
+  width: 60%;
+  height: 75%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateUser-form-content {
+  padding-left: 6%;
+}
+
+.CreateUser-form-content2 {
+  padding-right: 6%;
+  margin-top: 95px;
+}
+
+.CreateUser-child1 {
+  width: 55%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.input-ddl-style {
+  width: 100%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.CreateUser-button {
+  width: 35%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+}
+
+/* VIEW USER STYLING CSS */
+.ViewUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 110vh;
+  background-color: white;
+}
+
+.ViewUser-form {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 90%;
+}
+
+.ViewUser-form-content {
+  padding-left: 6svb;
+  display:inline-block;
+}
+
+.ViewUser-child1 {
+  width: 45%;
+  height: 80vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-child2 {
+  width: 40%;
+  height: 80vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-title {
+  margin-bottom: 1em;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-top: 10px;
+}
+
+.ViewUser_label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  padding-top: 4px;
+} 
+
+.ViewUser-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+.ViewUser-ddl-style {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+.ViewUser-Edit-button, .ViewUser-Update-button, .ViewUser-Cancel-button {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.archivedAlert {
+  float: left;
+  margin-left: 20px;
+  font-size: 12px;
+  color: red;
+  font-weight: 500;
+  padding-top: 6px;
+}
+
+.ViewUser-form-content2 {
+  padding-right: 8%;
+}  
+
+.ViewUser-data-style {
+  font-size: 12px;
+  margin-top: 8px;
+  background-color: rgba(245, 243, 243, 0.856);
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-color: grey;
+  border-left: 2px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+/* CHANGE PASSWORD FORM CSS STYLE */
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 20px;
+  }
+
+.ChangePassword-form {
+  width: 350px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* VIEW BOOKING STYLING CSS */
+.ViewBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.ViewBooking-form {
+  width: 90%;
+  height: 75%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.ViewBooking-form-content {
+  padding-left: 4%;
+}
+
+.ViewBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.ViewBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.ViewBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-label {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.ViewBooking-input-style {
+  width: 81%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+/* CREATE BOOKING STYLING CSS */
+.CreateBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 110vh;
+  background-color: white;
+}
+
+.CreateBooking-form {
+  width: 90%;
+  height: 80%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateBooking-form-content {
+  padding-left: 4%;
+}
+
+.CreateBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content4 {
+  margin-top: 95px;
+}
+
+.CreateBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 20px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.CreateUser-input-style2 {
+  width: 83%;
+  height: 70px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: #000;
+  font-weight: 500;
+}
+
+/* CREATE BOOKING CSS STYLING */
+.createBooking-ddl-style {
+  width: 90%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-style2 {
+  width: 90%;
+  height: 32px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style2 {
+  width: 90%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-inventory {
+  width: 89%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+.createBooking-ddl-inventory {
+  width: 89%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-timeslot {
+  width: 90%;
+  height: 65px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+
+.createBooking-ddl-style3 {
+  width: 83%;
+  height: 20px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.CreateBooking-button {
+  width: 75%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 12px;
+  text-align: center;
+  color: white;
+}
+
+.uploadFile {
+  padding-top: 10px;
+}
+.customisedSetup {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* EXPORT BTN STYLING CSS */
+.ExportUser-button {
+  width: 18%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 4%;
+  color: white;
+}
+  
+.ExportVB-button {
+  width: 18%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: 3%;
+  text-align: center;
+  color: white;
+}
+
+/* VIEW BOOKING CSS STYLING */
+.ViewBooking-Approve-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Edit-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+.ViewBooking-Cancel-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.approvalbtns{
+  display: flex;
+}
+
+/* MESSAGE CSS STYLING */
+.errorMsg {
+  color: red;
+  font-size: 12px;
+}
+
+.successMsg {
+  color: green;
+  font-size: 12px;
+}
+
+.validate-error {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0px;
+}
+
+.message {
+  font-size: 12px;
+}
+.pagination{
+  font-size: 13px;
+}
+.search-label{
+  font-size: 13px;
+}
+.pending-approval-count{
+  font-size: 13px;
+}
+.information{
+  font-size: 13px;
+}
+/* CONFIRMATION FORM STYLING CSS */
+.confirmation-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.confirmation-form{
+  width: 50%;
+  height: 60%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+.Confirmation-form-title {
+  font-size: 22px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  text-align: center;
+}
+
+.Confirmation-form-subtitle{
+  margin-bottom: 1em;
+  font-size: 15px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  text-align: center;
+}
+/* CSS for word counter */
+.character-counter{
+  font-size: 12px;
+  margin-top: -10px;
+  margin-left:5px;
+  color: grey;
+}
+
+}
+
+  
+/* ############################################################################################ */
+/* CSS for when width is less than 760px */
+@media (max-width: 760px) {
+/* GRID STYLING CSS */
+.page-gridlayout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.055fr 1fr;
+  grid-template-rows: 0.3fr 3.49fr 0.26fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+} 
+
+.sidebar-gridarea {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.header-gridarea {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.content-gridarea {
+  grid-area: 2 / 2 / 3 / 3;
+  position: relative;
+}
+
+.footer-gridarea {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background: #F5F5F5;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.headerLogo {
+  height: 60px;
+  width: 140px;
+}
+
+.footer-noscroll {
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A74F;
+  width: 100%;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 11px;
+}
+
+.notification-layer {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 250px;
+  background: #FFFBC0;
+  z-index: 9999;
+}
+
+.archiveMsg {
+  font-size: 11px;
+  color: red;
+  font-weight: 500;
+  padding-top: 4px;
+}
+
+/* LOGIN,FORGET PASSWORD FORM STYLING CSS */
+.Login-form-container, .ForgetPassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 98vh;
+  background-color: #C5E8AB;
+}
+
+.Login-form, .ForgetPassword-form {
+  width: 350px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Login-form-content, .ForgetPassword-form-content {
+text-align: center;
+}
+
+.Login-icon, .ForgetPassword-icon {
+  padding-top: 5px;
+}
+
+.Login-form-title, .ForgetPassword-form-title {
+  font-size: 20px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.Login-form-subtitle, .ForgetPassword-form-subtitle {
+  margin-bottom: 1em;
+  font-size: 14px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Login-label, .forgetPassword-Link, .ForgetPassword-label  {
+  float: left;
+  padding-left: 35px;
+  font-size: 11px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.forgetPassword-Link{
+  font-size: 16px;
+}
+.ForgetPassword-Link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  padding-top: 18px;
+}
+
+.login-input-style, .ForgetPassword-input-style {
+  width: 80%;
+  height: 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  padding-left: 8px;
+  }
+
+.login-button, .ForgetPassword-button, .changepwd-button {
+  width: 84%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 11px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+/* SIDEBAR STYLING CSS */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.side-menu {
+  position: fixed;
+  background: #C5E8AB;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px 5px;
+  transition: width .2s ease-in;
+  z-index: 999;
+}
+
+.side-menu.inactive {
+  width: 5.2%;
+  min-width: 50px;
+}
+
+.side-menu.active {
+  width: 300px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.side-menu.inactive .top-section .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #00A74F;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+  padding-right: 8px;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu.inactive .main-menu .menu-item{
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #60513A;
+  border-radius: 5px;
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 35px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.menu-icon2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #000;
+  margin-left: 20px;
+  border-left: 3px solid #00A74F;
+  box-sizing: border-box;
+  padding-left: 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #60513A;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.side-menu-footer {
+  width: 97%;
+  height: 12%;
+  background: #C5E8AB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.side-menu.inactive .side-menu-footer {
+  display: block;
+  margin: auto;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 14px;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+  margin-top: 45px;
+}
+
+.divider2 {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #00A74F;
+  margin-bottom: 8px;
+}
+
+/* TABLE CSS STYLING CSS */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.table {
+  text-align: center;
+  font-size: 11px;
+}
+
+.table-container {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.table-icon:hover {
+  cursor: pointer;
+}
+
+.table-search-bar {
+  float: right;
+  margin-bottom: 18px;
+}
+
+.search-bar-input {
+  margin-left: 10px;
+  border: grey solid 2px;
+  color: grey;
+  border-radius: 8px;
+  height: 15px;
+  width: 130px;
+  font-size: 11px;
+  padding-left: 10px;
+}
+
+.search-bar-input:focus {
+  outline: none;
+  border: #60513A solid 2px;
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.table-pagination button {
+  background: grey;
+  border: grey solid 1px;
+  border-radius: 8px;
+  margin: 0px 5px;
+  width: 55px;
+  height: 20px;
+  color: white;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.table-pagination button:hover {
+  background: #60513A;
+  border-radius: 8px;
+  margin: 0px 5px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #C5E8AB; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: whitesmoke; 
+}
+
+th, td {
+  min-width: 30px; 
+  padding: 1px; 
+}
+
+th.react-table__sort-header {
+  position: relative;
+  cursor: pointer;
+}
+
+th.react-table__sort-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px; 
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; 
+  transform: translateY(-50%) rotate(0deg); 
+}
+
+th.react-table__sort-header.-sort-asc::after {
+  transform: translateY(-50%) rotate(-180deg); 
+}
+
+/* CREATE USER STYLING CSS */
+.CreateUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.CreateUser-form {
+  width: 60%;
+  height: 75%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateUser-form-content {
+  padding-left: 6%;
+}
+
+.CreateUser-form-content2 {
+  padding-right: 6%;
+  margin-top: 95px;
+}
+
+.CreateUser-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  text-align: left;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+.input-ddl-style {
+  width: 100%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+.View-input-style2{
+  width: 78%;
+  height: 75px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: grey;
+}
+
+.CreateUser-button {
+  width: 35%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 11px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+}
+
+/* VIEW USER STYLING CSS */
+.ViewUser-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 105vh;
+  background-color: white;
+}
+
+.ViewUser-form {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+}
+
+.ViewUser-form-content {
+  padding-left: 6svb;
+  display:inline-block;
+}
+
+.ViewUser-child1 {
+  width: 45%;
+  height: 70vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-child2 {
+  width: 40%;
+  height: 70vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewUser-title {
+  margin-bottom: 1em;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-top: 10px;
+}
+
+.ViewUser_label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  padding-top: 4px;
+} 
+
+.ViewUser-input-style {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 8px;
+}
+
+.ViewUser-ddl-style {
+  width: 84%;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 8px;
+}
+
+.ViewUser-Edit-button, .ViewUser-Update-button, .ViewUser-Cancel-button {
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 11px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.archivedAlert {
+  float: left;
+  margin-left: 20px;
+  font-size: 11px;
+  color: red;
+  font-weight: 500;
+  padding-top: 6px;
+}
+
+.ViewUser-form-content2 {
+  padding-right: 8%;
+}  
+
+.ViewUser-data-style {
+  font-size: 11px;
+  margin-top: 8px;
+  background-color: rgba(245, 243, 243, 0.856);
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-color: grey;
+  border-left: 2px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+/* CHANGE PASSWORD FORM CSS STYLE */
+.ChangePassword-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  margin-bottom: 20px;
+  }
+
+.ChangePassword-form {
+  width: 350px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* VIEW BOOKING STYLING CSS */
+.ViewBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.ViewBooking-form {
+  width: 95%;
+  height: 70%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.ViewBooking-form-content {
+  padding-left: 5%;
+}
+
+.ViewBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.ViewBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.ViewBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.ViewBooking-label {
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.ViewBooking-input-style {
+  width: 81%;
+  height: 20px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+/* CREATE BOOKING STYLING CSS */
+.CreateBooking-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 120vh;
+  background-color: white;
+  margin-left: 50px;
+}
+
+.CreateBooking-form {
+  width: 99%;
+  height: 75%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.CreateBooking-form-content {
+  padding-left: 4%;
+}
+
+.CreateBooking-form-content2 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content3 {
+  margin-top: 95px;
+}
+
+.CreateBooking-form-content4 {
+  margin-top: 95px;
+}
+
+.CreateBooking-child1 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child2 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateBooking-child3 {
+  width: 45%;
+  height: 38vh;
+  background-color: white;
+  color: black;
+}
+
+.CreateUser-label {
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.CreateUser-input-style {
+  width: 81%;
+  height: 20px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.CreateUser-input-style2 {
+  width: 70%;
+  height: 65px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: #000;
+  font-weight: 500;
+}
+
+/* CREATE BOOKING CSS STYLING */
+.createBooking-ddl-style {
+  width: 90%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+.viewBooking-ddl-style2 {
+  width: 90%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style2 {
+  width: 80%;
+  height: 25px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-inventory {
+  width: 80%;
+  height: 45px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-timeslot {
+  width: 90%;
+  height: 150px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+.createBooking-ddl-style3 {
+  width: 83%;
+  height: 20px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: grey;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  padding-left: 12px;
+}
+
+.CreateBooking-button {
+  width: 75%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 12px;
+  text-align: center;
+  color: white;
+}
+
+.uploadFile {
+  padding-top: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.customisedSetup {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* EXPORT BTN STYLING CSS */
+.ExportUser-button {
+  width: 20%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 11px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-left: 3%;
+  color: white;
+}
+  
+.ExportVB-button {
+  width: 18%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 11px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: 3%;
+  text-align: center;
+  color: white;
+}
+
+
+
+/* VIEW BOOKING CSS STYLING */
+.ViewBooking-Edit-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.ViewBooking-Cancel-button {
+  width: 50%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 11px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-right: 24px;
+  text-align: center;
+  color: white;
+}
+
+.approvalbtns{
+  display: flex;
+}
+
+/* MESSAGE CSS STYLING */
+.errorMsg {
+  color: red;
+  font-size: 11px;
+}
+
+.successMsg {
+  color: green;
+  font-size: 11px;
+}
+
+.validate-error {
+  color: red;
+  font-weight: bold;
+  font-size: 11px;
+  margin: 0px;
+}
+
+.message {
+  font-size: 11px;
+}
+.search-label{
+  font-size: 12px;
+}
+.information{
+  font-size: 12px;
+}
+.pending-approval-count{
+  font-size: 12px;
+}
+/* CONFIRMATION FORM STYLING CSS */
+.confirmation-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 70vh;
+}
+
+.confirmation-form{
+  width: 60%;
+  height: 60%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+.Confirmation-form-title {
+  font-size: 20px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  text-align: center;
+}
+
+.Confirmation-form-subtitle{
+  margin-bottom: 1em;
+  font-size: 13px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+  text-align: center;
+}
+.confirmation-confirm-btn {
+  width: 30%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: #00A74F;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.confirmation-confirm-btn:hover {
+  background-color: #60513A; 
+}
+
+.confirmation-cancel-btn {
+  width: 30%;
+  height: 25px;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: red;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Cfm-message{
+  font-size: 12px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right:10px ;
+  text-align: center;
+}
+/* CSS for word counter */
+.character-counter{
+  font-size: 12px;
+  margin-top: -10px;
+  margin-left:15px;
+  color: grey;
+}
+  
+}
+/*calender css */
+.calender_wrapper {
+  width: 100%;
+  margin: 20px 0 ;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.filter-btn-group {
+  float: right;
+  margin-left: 10px;
+}
+
+.filter-btn-group button {
+  background: #7ea9ea;
+  border: none;
+  padding: 8px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn-group button.active {
+  background: #377ce4;
+}
+.fc-event-time {
+  display: none;
+}
+.event-data {
+  padding: 10px;
+}
+
+.event-data p {
+  margin: 0 0 5px;
+}
+.event-data button {
+  padding: 5px 10px;
+  background: #7ea9ea;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}

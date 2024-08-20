@@ -1,0 +1,69 @@
+{
+  "name": "resource-planning",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/moment": "^3.0.0",
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@react-email/render": "^0.0.7",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.5.0",
+    "bcryptjs": "^2.4.3",
+    "crypto-browserify": "^3.12.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.3.1",
+    "firebase": "^9.23.0",
+    "moment": "^2.30.1",
+    "path-browserify": "^1.0.1",
+    "postmark": "^3.0.19",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-csv": "^2.2.2",
+    "react-datepicker": "^6.6.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.10.1",
+    "react-multi-date-picker": "^4.4.1",
+    "react-router": "^6.14.0",
+    "react-router-dom": "^6.21.3",
+    "react-scripts": "5.0.1",
+    "react-table": "^7.8.0",
+    "rsuite": "^5.37.0",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "browser": {
+    "crypto": false
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}
