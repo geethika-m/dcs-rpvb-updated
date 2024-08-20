@@ -338,15 +338,23 @@ Best Regards
                         
 
                         <Form.Group id="location" >
-                                <Form.Label className="ViewBooking-label">Location:</Form.Label><br/>
+                                <Form.Label className="ViewBooking-label">First Location:</Form.Label><br/>
                                 <Form.Control className="ViewBooking-input-style"
-                                    placeholder={recordData.location}
+                                    placeholder={recordData.first_location}
                                     type={"text"}
                                     disabled
                                     readOnly
                                 />
                         </Form.Group>
-
+                        <Form.Group id="location" >
+                                <Form.Label className="ViewBooking-label">Second Location:</Form.Label><br/>
+                                <Form.Control className="ViewBooking-input-style"
+                                    placeholder={recordData.second_location}
+                                    type={"text"}
+                                    disabled
+                                    readOnly
+                                />
+                        </Form.Group>
                         <Form.Group id="selectedDate" >
                                 <Form.Label className="ViewBooking-label">Selected Date:</Form.Label><br/>
                                 <Form.Control className="ViewBooking-input-style"

@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "rpvb-web",
-    "rpvbweb": "rpvb-f39f8"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "rpvb-web"
+  }
 }
