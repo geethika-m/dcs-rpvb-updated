@@ -358,7 +358,6 @@ Best Regards
 }
             catch(error){
                 console.log('occured error', error);
-                debugger;
                 setShowMessage(true);
                 setMessage("ERROR: An error occurred while processing your booking request. Please try again.");
             }

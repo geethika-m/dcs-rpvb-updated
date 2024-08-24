@@ -14,6 +14,8 @@ import { database, auth } from "../../firebase";
 import CalenderView from "../calendarView/calendarView.js";
 import CalenderIcon from "../../images/calender.svg";
 import TableIcon from "../../images/table.svg";
+import { useRef } from "react";
+import { deleteDoc, doc } from "firebase/firestore";
 
 /**
  * @function TableContainer
@@ -29,10 +31,12 @@ const TableContainer = ({
   showViewColumn,
   enableCalender,
   showPendingApprovalCount,
+  updateUsersList
 }) => {
   const navigate = useNavigate();
   const [userType, setUserType] = useState(null);
   const [activeView, setActiveView] = useState("calender");
+  const filteredDataRef = useRef([]);
 
   /* Function to get approver information */
   const getCurrentUserInfo = async () => {
@@ -50,9 +54,18 @@ const TableContainer = ({
     }
   };
 
+  console.log('data', data);
+
   useEffect(() => {
     getCurrentUserInfo();
   }, []);
+
+  useEffect(() => {
+    if(data?.length > 0) {
+      filteredDataRef.current  = data;
+      console.log('inside', data, filteredDataRef.current);
+    }
+  }, [data])
 
   const tableHooks = (hooks) => {
     if (showViewColumn) {
@@ -74,6 +87,19 @@ const TableContainer = ({
             />
           ),
         },
+        {
+          id: 'delete',
+          Header: 'Delete',
+          Cell: ({row}) => <MdIcons.MdDelete  className="table-icon" onClick={(event) => {
+            event.preventDefault();
+            const shouldDelete = window.confirm(`Are you sure you want to delete the booking for name ${row.values.fullName}?`)
+            console.log('values', row.values ,filteredDataRef.current)
+            if(shouldDelete){
+              updateUsersList(filteredDataRef.current.filter(user => user.id !== +row.values.id))
+              database.usersRef.doc(row.values.fbId).delete();
+            }
+          }}/>
+        }
       ]);
     }
   };

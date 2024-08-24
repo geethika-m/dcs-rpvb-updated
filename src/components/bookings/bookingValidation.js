@@ -83,7 +83,6 @@ export function BookingValidation(values, selectedFile) {
     * Checks if the selectedDate field is empty, 
     * and if it is, it returns an error message. 
     */
-   debugger;
     if (!values.selectedDate) {
         errors.selectedDate = "Please select a start date.";
     } 

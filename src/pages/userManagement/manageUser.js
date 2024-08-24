@@ -6,6 +6,7 @@ import TableContainer from '../../components/tables/tableContainer';
 import { convertEpoch } from '../../global/epochTime';
 import {database } from "../../firebase";
 import * as XLSX from 'xlsx';
+import { deleteDoc, doc } from 'firebase/firestore';
 
 /**
  * @function ManageUser
@@ -30,6 +31,12 @@ const ManageUser = () => {
       { accessor: 'fbId', Header: 'Firebase ID' },
     ], []
   );
+
+  const updateUsersList = (updatedUsers) => {
+    setUsers(updatedUsers)
+  }
+
+  console.log('users outside', users);
 
   const handleExportExcel = () => {
     // Prepare data for Excel export
@@ -107,7 +114,7 @@ const ManageUser = () => {
         <title>RPVB | Manage User</title>
       </Helmet>
       <div className='form-container'>
-        <TableContainer type="user" columns={columns} data={users} onView={handleView} showViewColumn={true} />
+        <TableContainer type="user" columns={columns} data={users} updateUsersList={updateUsersList} onView={handleView} showViewColumn={true} />
       </div>
       <button onClick={handleExportExcel} className='ExportUser-button'>
         Download in Excel

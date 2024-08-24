@@ -62,7 +62,7 @@
 
 header {
   background: #F5F5F5;
-  min-height: 100px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1292,8 +1292,8 @@ textarea {
 }
 
 header {
-  background: #F5F5F5;
-  min-height: 100px;
+  background: hsl(0, 0%, 96%);
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2392,7 +2392,7 @@ textarea {
 
 header {
   background: #F5F5F5;
-  height: 100px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;

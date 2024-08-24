@@ -204,7 +204,6 @@ const CreateBookingForm = () => {
         const currentUser = auth.currentUser;
 
         const currentDate = new Date();
-        debugger;
         const formattedDate = format(currentDate, 'dd-MMM-yyyy');
        // const formattedStartDate = format(parseISO(values.selectedDate), "dd-MMM-yyyy");
         //const formattedEndDate = format(parseISO(values.endDate), "dd-MMM-yyyy");
