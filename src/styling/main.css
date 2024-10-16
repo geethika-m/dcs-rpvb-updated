@@ -1,4 +1,16 @@
 /* MAIN STYLING CSS */
+
+.calendar-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.calendar-card {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
 .information{
   display: flex;
   margin-top: -70px;
@@ -309,7 +321,7 @@ li {
 
 .side-menu {
   position: fixed;
-  background: #C5E8AB;
+  background: #104C40;
   width: 300px;
   height: 100%;
   box-sizing: border-box;
@@ -355,8 +367,7 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
   margin-top: 12px;
-  float: right;
-  padding-right: 8px;
+  text-align: center;
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
@@ -368,7 +379,7 @@ li {
 }
 
 .side-menu .main-menu .menu-item {
-  color: black;
+  color: #FFF;
   text-decoration: none;
   font-size: 15px;
   display: block;
@@ -377,9 +388,9 @@ li {
 }
 
 .side-menu .main-menu .menu-item.active {
-  background: #60513A;
+  background: #FFF;
   border-radius: 5px;
-  color: white;
+  color: #000;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -426,7 +437,7 @@ li {
 }
 
 .side-menu .main-menu .sub-menu {
-  color: #000;
+  color: #fff;
   margin-left: 20px !important;
   border-left: 3px solid #00A74F;
   box-sizing: border-box;
@@ -446,7 +457,7 @@ li {
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   box-sizing: border-box;
   padding: 5px;
 }
@@ -492,6 +503,8 @@ li {
   font-size: 14px;
   padding-left: 15px;
   font-weight: 500;
+  text-align: center;
+  color: #fff;
 }
 
 .divider {
@@ -500,7 +513,6 @@ li {
   border-radius: 1px;
   background: #00A74F;
   margin-bottom: 8px;
-  margin-top: 45px;
 }
 
 .divider2 {
@@ -574,21 +586,16 @@ li {
   margin: 0px 5px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #C5E8AB; 
-}
 
-tbody tr:nth-child(even) {
-  background-color: whitesmoke; 
-}
 
 th, td {
   min-width: 100px; 
   padding: 5px;
 }
 .table-container {
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 th.react-table__sort-header {
@@ -627,7 +634,6 @@ th.react-table__sort-header.-sort-asc::after {
 .CreateUser-form {
   width: 50%;
   height: 70%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -694,7 +700,7 @@ th.react-table__sort-header.-sort-asc::after {
   height: 35px;
   border-radius: 8px;
   font-size: 14px;
-  background-color: #00A74F;
+  background-color: #104C40;
   font-stretch: ultra-expanded;
   font-weight: 500;
   margin-bottom: 8px;
@@ -715,7 +721,6 @@ th.react-table__sort-header.-sort-asc::after {
 }
 
 .ViewUser-form {
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   border-radius: 8px;
   background-color: white;
   display: flex;
@@ -926,7 +931,6 @@ th.react-table__sort-header.-sort-asc::after {
 .CreateBooking-form {
   width: 60%;
   height: 65%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -1092,7 +1096,7 @@ th.react-table__sort-header.-sort-asc::after {
   height: 35px;
   border-radius: 8px;
   font-size: 14px;
-  background-color: #00A74F;
+  background-color: #104C40;
   font-stretch: ultra-expanded;
   font-weight: 500;
   margin-bottom: 8px;
@@ -1121,7 +1125,7 @@ textarea {
   height: 35px;
   border-radius: 8px;
   font-size: 14px;
-  background-color: #00A74F;
+  background-color: #104C40;
   font-stretch: ultra-expanded;
   font-weight: 500;
   margin-bottom: 8px;
@@ -1135,7 +1139,7 @@ textarea {
   height: 35px;
   border-radius: 8px;
   font-size: 14px;
-  background-color: #00A74F;
+  background-color: #104C40;
   font-stretch: ultra-expanded;
   font-weight: 500;
   margin-bottom: 50px;
@@ -1432,7 +1436,7 @@ li {
 
 .side-menu {
   position: fixed;
-  background: #C5E8AB;
+  background: #104C40;
   width: 300px;
   height: 100%;
   box-sizing: border-box;
@@ -1478,8 +1482,6 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
   margin-top: 12px;
-  float: right;
-  padding-right: 8px;
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
@@ -1491,7 +1493,7 @@ li {
 }
 
 .side-menu .main-menu .menu-item {
-  color: black;
+  color: #FFF;
   text-decoration: none;
   font-size: 15px;
   display: block;
@@ -1500,9 +1502,9 @@ li {
 }
 
 .side-menu .main-menu .menu-item.active {
-  background: #60513A;
+  background: #FFF;
   border-radius: 5px;
-  color: white;
+  color: #000;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -1587,7 +1589,7 @@ li {
 .side-menu-footer {
   width: 97%;
   height: 12%;
-  background: #C5E8AB;
+  background: #104C40;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1623,7 +1625,6 @@ li {
   border-radius: 1px;
   background: #00A74F;
   margin-bottom: 8px;
-  margin-top: 45px;
 }
 
 .divider2 {
@@ -1697,21 +1698,16 @@ li {
   margin: 0px 5px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #C5E8AB; 
-}
 
-tbody tr:nth-child(even) {
-  background-color: whitesmoke; 
-}
 
 th, td {
   min-width: 105px; 
   padding: 5px;
 }
 .table-container {
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 th.react-table__sort-header {
@@ -2531,7 +2527,7 @@ li {
 
 .side-menu {
   position: fixed;
-  background: #C5E8AB;
+  background: #104C40;
   width: 300px;
   height: 100%;
   box-sizing: border-box;
@@ -2577,8 +2573,6 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
   margin-top: 12px;
-  float: right;
-  padding-right: 8px;
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
@@ -2590,7 +2584,7 @@ li {
 }
 
 .side-menu .main-menu .menu-item {
-  color: black;
+  color: #FFF;
   text-decoration: none;
   font-size: 15px;
   display: block;
@@ -2599,9 +2593,9 @@ li {
 }
 
 .side-menu .main-menu .menu-item.active {
-  background: #60513A;
+  background: #FFF;
   border-radius: 5px;
-  color: white;
+  color: #000;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -2686,7 +2680,7 @@ li {
 .side-menu-footer {
   width: 97%;
   height: 12%;
-  background: #C5E8AB;
+  background: #104C40;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2722,7 +2716,6 @@ li {
   border-radius: 1px;
   background: #00A74F;
   margin-bottom: 8px;
-  margin-top: 45px;
 }
 
 .divider2 {
@@ -2747,8 +2740,9 @@ li {
 }
 
 .table-container {
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .table-icon:hover {
@@ -2799,21 +2793,16 @@ li {
   margin: 0px 5px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #C5E8AB; 
-}
 
-tbody tr:nth-child(even) {
-  background-color: whitesmoke; 
-}
 
 th, td {
   min-width: 90px; 
   padding: 1px;
 }
 .table-container {
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 th.react-table__sort-header {
@@ -3720,7 +3709,7 @@ li {
 
 .side-menu {
   position: fixed;
-  background: #C5E8AB;
+  background: #104C40;
   width: 300px;
   height: 100%;
   box-sizing: border-box;
@@ -3766,8 +3755,6 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
   margin-top: 12px;
-  float: right;
-  padding-right: 8px;
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
@@ -3779,7 +3766,7 @@ li {
 }
 
 .side-menu .main-menu .menu-item {
-  color: black;
+  color: #FFF;
   text-decoration: none;
   font-size: 15px;
   display: block;
@@ -3788,9 +3775,9 @@ li {
 }
 
 .side-menu .main-menu .menu-item.active {
-  background: #60513A;
+  background: #FFF;
   border-radius: 5px;
-  color: white;
+  color: #000;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -3874,7 +3861,7 @@ li {
 .side-menu-footer {
   width: 97%;
   height: 12%;
-  background: #C5E8AB;
+  background: #104C40;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3910,7 +3897,6 @@ li {
   border-radius: 1px;
   background: #00A74F;
   margin-bottom: 8px;
-  margin-top: 45px;
 }
 
 .divider2 {
@@ -3935,8 +3921,9 @@ li {
 }
 
 .table-container {
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .table-icon:hover {
@@ -3987,13 +3974,7 @@ li {
   margin: 0px 5px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #C5E8AB; 
-}
 
-tbody tr:nth-child(even) {
-  background-color: whitesmoke; 
-}
 
 th, td {
   min-width: 60px; 
@@ -4914,7 +4895,7 @@ li {
 
 .side-menu {
   position: fixed;
-  background: #C5E8AB;
+  background: #104C40;
   width: 300px;
   height: 100%;
   box-sizing: border-box;
@@ -4960,8 +4941,6 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
   margin-top: 12px;
-  float: right;
-  padding-right: 8px;
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
@@ -4973,7 +4952,7 @@ li {
 }
 
 .side-menu .main-menu .menu-item {
-  color: black;
+  color: #FFF;
   text-decoration: none;
   font-size: 15px;
   display: block;
@@ -4982,9 +4961,9 @@ li {
 }
 
 .side-menu .main-menu .menu-item.active {
-  background: #60513A;
+  background: #FFF;
   border-radius: 5px;
-  color: white;
+  color: #000;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -5068,7 +5047,7 @@ li {
 .side-menu-footer {
   width: 97%;
   height: 12%;
-  background: #C5E8AB;
+  background: #104C40;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -5104,7 +5083,6 @@ li {
   border-radius: 1px;
   background: #00A74F;
   margin-bottom: 8px;
-  margin-top: 45px;
 }
 
 .divider2 {
@@ -5129,8 +5107,9 @@ li {
 }
 
 .table-container {
-  margin-right: 10px;
-  margin-left: 20px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .table-icon:hover {
@@ -5181,13 +5160,7 @@ li {
   margin: 0px 5px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #C5E8AB; 
-}
 
-tbody tr:nth-child(even) {
-  background-color: whitesmoke; 
-}
 
 th, td {
   min-width: 40px; 
@@ -6099,8 +6072,6 @@ li {
   transform: translateY(-50%);
   cursor: pointer;
   margin-top: 12px;
-  float: right;
-  padding-right: 8px;
 }
 
 .side-menu.inactive .top-section .toggle-menu-btn {
@@ -6112,7 +6083,7 @@ li {
 }
 
 .side-menu .main-menu .menu-item {
-  color: black;
+  color: #FFF;
   text-decoration: none;
   font-size: 14px;
   display: block;
@@ -6121,9 +6092,9 @@ li {
 }
 
 .side-menu .main-menu .menu-item.active {
-  background: #60513A;
+  background: #FFF;
   border-radius: 5px;
-  color: white;
+  color: #000;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -6206,7 +6177,7 @@ li {
 .side-menu-footer {
   width: 97%;
   height: 12%;
-  background: #C5E8AB;
+  background: #104C40;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -6242,7 +6213,6 @@ li {
   border-radius: 1px;
   background: #00A74F;
   margin-bottom: 8px;
-  margin-top: 45px;
 }
 
 .divider2 {
@@ -6267,8 +6237,9 @@ li {
 }
 
 .table-container {
-  margin-right: 10px;
-  margin-left: 20px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .table-icon:hover {
@@ -6319,13 +6290,7 @@ li {
   margin: 0px 5px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #C5E8AB; 
-}
 
-tbody tr:nth-child(even) {
-  background-color: whitesmoke; 
-}
 
 th, td {
   min-width: 30px; 
@@ -7037,8 +7002,7 @@ textarea {
 /*calender css */
 .calender_wrapper {
   width: 100%;
-  margin: 20px 0 ;
-  max-height: 500px;
+  margin: 20px 0;
   overflow-y: auto;
 }
 .filter-btn-group {
@@ -7047,7 +7011,6 @@ textarea {
 }
 
 .filter-btn-group button {
-  background: #7ea9ea;
   border: none;
   padding: 8px 20px;
   margin-left: 10px;
@@ -7056,7 +7019,6 @@ textarea {
 }
 
 .filter-btn-group button.active {
-  background: #377ce4;
 }
 .fc-event-time {
   display: none;

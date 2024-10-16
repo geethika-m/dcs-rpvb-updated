@@ -143,6 +143,17 @@ const UserDetail = (props) => {
                             User Profile
                         </h3>
                         <Form onSubmit={handleSubmit}>
+                        <Form.Group as={Row} id="museum">
+                                <Form.Label className='ViewUser_label'>Museum:</Form.Label><br/>
+                                <Col>
+                                    <Form.Control className="ViewUser-input-style"
+                                        placeholder={userData.museum}
+                                        type={"text"}
+                                        disabled
+                                        readOnly
+                                    />
+                                </Col>
+                            </Form.Group>
                             <Form.Group as={Row} id="fullName">
                                 <Form.Label className='ViewUser_label'>Name:</Form.Label><br/>
                                 <Col>

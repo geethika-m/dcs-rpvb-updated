@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Helmet from "react-helmet";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ContentContainer from "../../components/pageLayout/contentContainer";
 import { database, auth } from "../../firebase";
 import TableContainer from '../../components/tables/tableContainer';
@@ -14,10 +14,11 @@ import * as XLSX from 'xlsx';
  * @returns The return is a table with the data from the database.
  */
 
-const PendingBookings = () => {
+const PendingBookingsPage = () => {
   const [records, setRecords] = useState([]);
   const [userType, setUserType] = useState('');
   const navigate = useNavigate();
+  const {name} = useParams();
 
   const columns = useMemo(() => [
     { accessor: 'bkId', Header: 'BkId' },
@@ -115,20 +116,23 @@ const PendingBookings = () => {
 
         snapshot.docs.forEach((doc) => {
           console.log('doc', doc.data());
-          tempItem.push({
-            bkId: doc.data().bkId,
-            requestorName: doc.data().requestorName,
-            dateCreated: doc.data().dateCreated,
-            eventName: doc.data().eventName,
-            programmes: doc.data().programmes,
-            nofPax: doc.data().nofPax,
-            organisation: doc.data().organisation,
-            location: doc.data().location,
-            timeSlot: doc.data().timeSlot,
-            approvalStatus: doc.data().approvalStatus,
-            bookStatus: doc.data().bookStatus,
-            fbId: doc.id,
-          });
+          if(doc.data().museum === name) {
+            tempItem.push({
+              bkId: doc.data().bkId,
+              museum: doc.data().museum,
+              requestorName: doc.data().requestorName,
+              dateCreated: doc.data().dateCreated,
+              eventName: doc.data().eventName,
+              programmes: doc.data().programmes,
+              nofPax: doc.data().nofPax,
+              organisation: doc.data().organisation,
+              location: doc.data().location,
+              timeSlot: doc.data().timeSlot,
+              approvalStatus: doc.data().approvalStatus,
+              bookStatus: doc.data().bookStatus,
+              fbId: doc.id,
+            });
+          }
         });
         // Sort the records by bkId property in ascending order
         tempItem.sort((a, b) => {
@@ -185,4 +189,4 @@ const PendingBookings = () => {
       )
     }
 
-export default PendingBookings
+export default PendingBookingsPage;

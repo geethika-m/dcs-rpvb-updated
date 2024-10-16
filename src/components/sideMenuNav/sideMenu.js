@@ -151,7 +151,7 @@ const SideMenu = (props) => {
 
                     <div className="side-menu-footer">
                         <div className="user-info">
-                            <p>User: {name !== '' && name}</p>
+                            <p>Welcome {name !== '' && name}</p>
                         </div>
                     </div>
                 </div>

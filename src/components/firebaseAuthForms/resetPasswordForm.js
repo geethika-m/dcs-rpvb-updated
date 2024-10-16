@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 import { validateNewPassword } from "./validation";
 import { verifyPasswordResetCode, confirmPasswordReset } from "firebase/auth";
 import {auth, database} from '../../firebase';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import { useNavigate } from "react-router";
 import * as BiIcons from 'react-icons/bi';
 

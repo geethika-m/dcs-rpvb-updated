@@ -110,6 +110,7 @@ const CompletedBookings = () => {
         const tempItem = [];
 
         snapshot.docs.forEach((doc) => {
+          console.log('doc', doc.data());
           tempItem.push({
             bkId: doc.data().bkId,
             requestorName: doc.data().requestorName,

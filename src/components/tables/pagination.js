@@ -9,8 +9,8 @@ import React from 'react'
 const Pagination = ({
     pageIndex,
     pageOptions,
-    pageCount,
-    gotoPage,
+    //pageCount,
+    //gotoPage,
     nextPage,
     previousPage,
     canNextPage,
@@ -18,9 +18,6 @@ const Pagination = ({
 
     return (
         <div className={"table-pagination"}>
-            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                {'First'}
-            </button>
             <button onClick={() => previousPage()} disabled={!canPreviousPage}>
                 {'Prev'}
             </button>
@@ -36,9 +33,6 @@ const Pagination = ({
             </span>
             <button onClick={() => nextPage()} disabled={!canNextPage}>
                 {'Next'}
-            </button>
-            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                {'Last'}
             </button>
         </div>
     )

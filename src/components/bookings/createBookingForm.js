@@ -13,6 +13,7 @@ import { format, parseISO } from 'date-fns';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { museumsList } from '../../utils/constant';
 
 
 /**
@@ -363,9 +364,12 @@ Best Regards
                         value={values.museum}
                     >
                         <option value={" "}>Please select your museum</option>
-                        <option value={"museum_1"}>Museum 1</option>
-                        <option value={"museum_2"}>Museum 2</option>
-                        <option value={"museum_3"}>Museum 3</option>
+                        {museumsList.map((museum) => {
+                            const {label, value} = museum;
+                            return (
+                                <option value={value}>{label}</option>
+                            )
+                        })}
                     </Form.Select>
                     {errors.museum && ( <p className="validate-error">{errors.museum} </p> )} 
                 </Form.Group> 

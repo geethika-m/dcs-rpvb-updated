@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import ContentContainer from '../../components/pageLayout/contentContainer';
 import TableContainer from '../../components/tables/tableContainer';
@@ -16,9 +16,10 @@ import { deleteDoc, doc } from 'firebase/firestore';
  * @returns The return is table with the following data.
  */
 
-const ManageUser = () => {
+const ManageUserPage = () => {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
+  const {name }  = useParams();
 
   const columns = useMemo(() => [
       { accessor: 'id', Header: 'Index' },
@@ -83,18 +84,20 @@ const ManageUser = () => {
         const tempItem = [];
 
         snapshot.docs.forEach((doc) => {
-          tempItem.push({
-            id: id,
-            museum: doc.data().museum,
-            fullName: doc.data().fullName,
-            email: doc.data().email,
-            mobileNumber: doc.data().mobileNumber,
-            userType: doc.data().userType,
-            status: doc.data().status,
-            lastActive: convertEpoch(doc.data().lastActive),
-            fbId: doc.id,
-          });
-          id++;
+          if(doc.data().museum === name) { 
+            tempItem.push({
+              id: id,
+              museum: doc.data().museum,
+              fullName: doc.data().fullName,
+              email: doc.data().email,
+              mobileNumber: doc.data().mobileNumber,
+              userType: doc.data().userType,
+              status: doc.data().status,
+              lastActive: convertEpoch(doc.data().lastActive),
+              fbId: doc.id,
+            });
+            id++;
+           }
         });
         setUsers(tempItem);
       }
@@ -126,4 +129,4 @@ const ManageUser = () => {
   );
 };
 
-export default ManageUser;
+export default ManageUserPage;

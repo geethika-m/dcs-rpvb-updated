@@ -5,7 +5,8 @@ import useForm from "../../customHooks/useForm";
 import {database, auth} from "../../firebase";
 import Form from 'react-bootstrap/Form';
 import * as AiIcons from 'react-icons/ai';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
+import { museumsList } from "../../utils/constant";
 
 /**
  * @function AddUser
@@ -45,6 +46,7 @@ const AddUser = () => {
             database.usersRef.doc(newUser.user.uid).set({
                 uid: newUser.user.uid,
                 email: values.email,
+                museum: values.museum,
                 fullName: values.name,
                 mobileNumber: values.mobileNumber,
                 status: "Active",
@@ -89,6 +91,24 @@ const AddUser = () => {
                         <div><AiIcons.AiOutlineUserAdd size={30} color="black" /></div>
                         Create User
                     </h3>
+                    <Form.Group id="museum">
+                        <Form.Label className="CreateUser-label">Select Museum:</Form.Label><br/>
+                        <Form.Select className="createBooking-ddl-style2"
+                            title={"museum"}
+                            name={"museum"}
+                            onChange={handleChange}
+                            value={values.museum}
+                        >
+                            <option value={" "}>Please select your museum</option>
+                            {museumsList.map((museum) => {
+                                const {label, value} = museum;
+                                return (
+                                    <option value={value} key={value}>{label}</option>
+                                )
+                            })}
+                        </Form.Select>
+                        {errors.museum && ( <p className="validate-error">{errors.museum} </p> )}
+                    </Form.Group>
                     <Form.Group id="fullName" >
                         <Form.Label className="CreateUser-label">Name:</Form.Label><br/>
                         <Form.Control className="CreateUser-input-style"

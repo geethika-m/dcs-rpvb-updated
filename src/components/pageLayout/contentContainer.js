@@ -34,11 +34,11 @@ const ContentContainer = ({children}) => {
                     {children}
                 </div>
             </div>
-            <div className="footer-gridarea">
+           {/* <div className="footer-gridarea">
                 <div className={window.scrollY > 0 ? "footer-scroll font-styling" : "footer-noscroll font-styling"}>
                     <PageFooter />
                 </div>
-            </div>
+    </div>*/}
         </div>
     )
 }

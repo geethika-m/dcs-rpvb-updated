@@ -31,7 +31,7 @@ const TableContainer = ({
   showViewColumn,
   enableCalender,
   showPendingApprovalCount,
-  updateUsersList
+  updateUsersList,
 }) => {
   const navigate = useNavigate();
   const [userType, setUserType] = useState(null);
@@ -54,18 +54,18 @@ const TableContainer = ({
     }
   };
 
-  console.log('data', data);
+  console.log("data", data);
 
   useEffect(() => {
     getCurrentUserInfo();
   }, []);
 
   useEffect(() => {
-    if(data?.length > 0) {
-      filteredDataRef.current  = data;
-      console.log('inside', data, filteredDataRef.current);
+    if (data?.length > 0) {
+      filteredDataRef.current = data;
+      console.log("inside", data, filteredDataRef.current);
     }
-  }, [data])
+  }, [data]);
 
   const tableHooks = (hooks) => {
     if (showViewColumn) {
@@ -88,18 +88,29 @@ const TableContainer = ({
           ),
         },
         {
-          id: 'delete',
-          Header: 'Delete',
-          Cell: ({row}) => <MdIcons.MdDelete  className="table-icon" onClick={(event) => {
-            event.preventDefault();
-            const shouldDelete = window.confirm(`Are you sure you want to delete the booking for name ${row.values.fullName}?`)
-            console.log('values', row.values ,filteredDataRef.current)
-            if(shouldDelete){
-              updateUsersList(filteredDataRef.current.filter(user => user.id !== +row.values.id))
-              database.usersRef.doc(row.values.fbId).delete();
-            }
-          }}/>
-        }
+          id: "delete",
+          Header: "Delete",
+          Cell: ({ row }) => (
+            <MdIcons.MdDelete
+              className="table-icon"
+              onClick={(event) => {
+                event.preventDefault();
+                const shouldDelete = window.confirm(
+                  `Are you sure you want to delete the booking for name ${row.values.fullName}?`
+                );
+                console.log("values", row.values, filteredDataRef.current);
+                if (shouldDelete) {
+                  updateUsersList(
+                    filteredDataRef.current.filter(
+                      (user) => user.id !== +row.values.id
+                    )
+                  );
+                  database.usersRef.doc(row.values.fbId).delete();
+                }
+              }}
+            />
+          ),
+        },
       ]);
     }
   };
@@ -128,7 +139,7 @@ const TableContainer = ({
     state,
     page,
     pageCount,
-    gotoPage,
+    //gotoPage,
     nextPage,
     canNextPage,
     previousPage,
@@ -140,12 +151,16 @@ const TableContainer = ({
   const pendingApprovalCount = data.filter(
     (record) => record.approvalStatus === "Pending"
   ).length;
-  console.log({ showPendingApprovalCount, userType, pendingApprovalCount,data });
-
+  console.log({
+    showPendingApprovalCount,
+    userType,
+    pendingApprovalCount,
+    data,
+  });
 
   return (
     <div>
-      <div className="mb-3 table-info">
+      {/* <div className="mb-3 table-info">
         <div className="event-card booking-card">
           <div className="booking-count">{data.length}</div>
           <div className="title">Bookings</div>
@@ -162,37 +177,47 @@ const TableContainer = ({
               <div className="title">Pending</div>
             </div>
           )}
-      </div>
+      </div> */}
       <div className="table-container">
-        {enableCalender && (
-        <div className="filter-btn-group">
-          <Button
-            className={`filter_icon calender ${
-              activeView == "calender" && "active"
-            }`}
-            onClick={() => {
-              setActiveView("calender");
-            }}
-          >
-            <img src={CalenderIcon} width={25} alt="Calender" />
-          </Button>
-          <Button
-            className={`filter_icon table_icon ${
-              activeView == "table" && "active"
-            }`}
-            onClick={() => {
-              setActiveView("table");
-            }}
-          >
-            <img src={TableIcon} width={25} alt="Table" />
-          </Button>
+        <div className="d-flex justify-content-end">
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+          {enableCalender && (
+            <div className="filter-btn-group">
+              <Button
+                className={`filter_icon calender ${
+                  activeView == "calender" && "active"
+                }`}
+                onClick={() => {
+                  setActiveView("calender");
+                }}
+              >
+                <img src={CalenderIcon} width={25} alt="Calender" />
+              </Button>
+              <Button
+                className={`filter_icon table_icon ${
+                  activeView == "table" && "active"
+                }`}
+                onClick={() => {
+                  setActiveView("table");
+                }}
+              >
+                <img src={TableIcon} width={25} alt="Table" />
+              </Button>
+              <Button
+                className={`filter_icon excel_icon ${
+                  activeView == "table" && "active"
+                }`}
+                onClick={() => {}}
+              >
+                <img src={TableIcon} width={25} alt="Excel" />
+              </Button>
+            </div>
+          )}
         </div>
-        )}
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={globalFilter}
-          setGlobalFilter={setGlobalFilter}
-        />
         {showPendingApprovalCount && userType === "Approver" && (
           <p className="pending-approval-count">
             <strong>Pending Approval Requests:</strong>
@@ -204,8 +229,8 @@ const TableContainer = ({
             <CalenderView data={data} />
           </div>
         ) : (
-          <>
-            <Table responsive striped hover {...getTableProps()}>
+          <div>
+            <Table responsive striped hover {...getTableProps()} width={800}>
               <thead>
                 {headerGroups.map((headerGroup, i) => (
                   <tr {...headerGroup.getHeaderGroupProps()} key={i}>
@@ -257,7 +282,7 @@ const TableContainer = ({
                 pageIndex={pageIndex}
                 pageOptions={pageOptions}
                 pageCount={pageCount}
-                gotoPage={gotoPage}
+                //gotoPage={gotoPage}
                 nextPage={nextPage}
                 previousPage={previousPage}
                 canNextPage={canNextPage}
@@ -266,7 +291,7 @@ const TableContainer = ({
             ) : (
               <p className="text-center">There are no available records.</p>
             )}
-          </>
+          </div>
         )}
       </div>
     </div>

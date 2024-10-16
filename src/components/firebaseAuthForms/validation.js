@@ -42,7 +42,8 @@ export function validateRegister(values) {
      **/
      if (!values.mobileNumber) {
         errors.mobileNumber = "Mobile Number required";
-    } else if (!mobileRegex.test(values.mobileNumber)) {
+    } 
+    else if (!mobileRegex.test(values.mobileNumber)) {
         errors.mobileNumber = "Mobile Number is invalid";
     }
 
@@ -57,6 +58,13 @@ export function validateRegister(values) {
         errors.email = "Email address is invalid";
     }
 
+
+     /**
+     * It checks if the museum field is empty, and if it is, it returns an error message.
+     **/
+     if (!values.museum) {
+        errors.museum = "Please select a museum.";
+    } 
     /**
      * It checks if the department field is empty, and if it is, it returns an error message.
      **/

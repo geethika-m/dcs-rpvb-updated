@@ -116,18 +116,16 @@ console.log('data' , data)
     
 
   return (
-    <div>
-    <FullCalendar
-      plugins={[dayGridPlugin]}
-      
-      weekends={false}
-      events={formattedData}
-      startAccessor="start"
-      endAccessor="end"
-      eventContent={renderEventContent}
-      dateClick={handleDateClick}
-
-    />
+    <div className="calendar-card">
+      <FullCalendar
+        plugins={[dayGridPlugin]}
+        weekends={false}
+        events={formattedData}
+        startAccessor="start"
+        endAccessor="end"
+        eventContent={renderEventContent}
+        dateClick={handleDateClick}
+      />
     </div>
   );
 }

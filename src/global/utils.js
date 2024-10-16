@@ -1,4 +1,4 @@
-
+import crypto from 'crypto-js'
 const REACT_APP_SECURITY_KEY = "Yo+ZufTzlXTqNF1Gxq4qGxCdHk3pHaulF7l13BCD73Y="
 
 /**
@@ -7,7 +7,6 @@ const REACT_APP_SECURITY_KEY = "Yo+ZufTzlXTqNF1Gxq4qGxCdHk3pHaulF7l13BCD73Y="
  * @returns The encrypted data.
  */
 export function encryptData(data) {
-    const crypto = require("crypto-js");
     
     try {
         // the cipher function
@@ -23,7 +22,6 @@ export function encryptData(data) {
  * @returns The decrypted data.
  */
 export function decryptData(data) {
-    const crypto = require("crypto-js");
 
     try {
         if (data === "false") {

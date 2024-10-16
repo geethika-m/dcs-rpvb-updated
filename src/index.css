@@ -45,3 +45,90 @@ h1,h2,h3{
 .table-info .event-card .title {
   font-size: 20px;
 }
+
+
+/* Login Page CSS */
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-container .left {
+  background-color: #000;
+}
+
+
+.login-container .right {
+  flex: 1;
+} 
+
+.login-container .right .logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.login-container .logo-container .logo {
+  width: 287px;;
+  height: 94px;;
+}
+
+
+.login-container .login-container .logo-title {
+  font-weight: bold;
+}
+
+
+
+.login-container .logo-container .subtitle {
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+.login-container .right .login-form{
+  margin-left: 20%;
+  max-width: 300px;
+  margin-right: auto;
+}
+
+.login-container .login-content > div{
+  margin-top: 30px;
+}
+
+.login-container .right .input-label {
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+.login-container .input-field {
+  width: 80%;
+  height: 30px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 8px;
+  border: 1px solid #888;
+}
+
+.login-container .forgot-password {
+  font-size: 16px;
+  padding-bottom: 4px;
+  padding-top: 13px;
+  color: #60513A;
+  float: left;
+  padding-left: 25px;
+  font-weight: bold;
+}
+
+.login-container .login-btn {
+  padding: 12px 35px;
+  background-color: #104C40;
+  color: #fff;
+  margin-top: 30px;
+  border-radius: 5px;
+  font-weight: bold;
+}

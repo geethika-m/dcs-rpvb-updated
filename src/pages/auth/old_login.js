@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import PageFooter from "../../components/pageLayout/footer";
 import LoginForm from "../../components/firebaseAuthForms/loginForm";
 
 /**
@@ -18,7 +19,9 @@ const Login = () => {
             <div className="login-fgtpwd-background sub-container" >
                 <LoginForm />
             </div>
-           
+            <div className="footer-noscroll">
+                <PageFooter />
+            </div>
         </React.Fragment>
     )
 }

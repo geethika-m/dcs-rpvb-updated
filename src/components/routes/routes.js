@@ -26,6 +26,10 @@ import PublicRoute from './publicRoute';
 import AdminRoute from './adminRoute';
 import AuthAction from '../../pages/auth/authAction';
 import MuseumHomePage from '../../pages/bookings/museum_homepage';
+import ManageUserPage from '../../pages/userManagement/manageUserPage';
+import CompletedBookingsPage from '../../pages/bookings/completedBookingsPage';
+import PendingBookingsPage from '../../pages/bookings/pendingBookingsPage';
+
 
 /**
  * @function routes
@@ -48,9 +52,12 @@ const Paths = () => {
                 <Route exact path="/createBooking" element={<CreateBookingApproverForm/>}/>
                 <Route exact path='/myBooking' element={<MyBookings/>}/>
                 <Route exact path="/pendingApproval" element={<PendingBookings/>}/>
+                <Route exact path="/pendingApproval/:name" element={<PendingBookingsPage/>}/>
                 <Route exact path='/completedApproval' element={<CompletedBookings/>}/>
+                <Route exact path='/completedApproval/:name' element={<CompletedBookingsPage/>}/>
                 <Route exact path="/booking/:bkId" element={<ViewBooking/>}/>
                 <Route exact path='/confirmation/:bkId/:action' element={<Confirmation/>}/>
+                <Route exact path=''></Route>
             </Route>
 
             <Route element={<PublicRoute navigate={navigate} />}> 
@@ -61,6 +68,7 @@ const Paths = () => {
 
             <Route element={<AdminRoute navigate={navigate} />}> 
                 <Route exact path="/manageUser" element={<ManageUser />} />
+                <Route exact path="/manageUser/:name" element={<ManageUserPage />} />
                 <Route exact path="/user/:userId" element={<ViewUser />} />
                 <Route exact path="/createUser" element={<Register />} />
             </Route>

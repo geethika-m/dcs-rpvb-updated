@@ -1,28 +1,29 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Helmet from "react-helmet";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ContentContainer from "../../components/pageLayout/contentContainer";
 import { database, auth } from "../../firebase";
 import TableContainer from '../../components/tables/tableContainer';
 import * as XLSX from 'xlsx';
 
 /**
- * @function PendingBookings
+ * @function CompletedBookings
  * 
  * It's a function that returns a component that renders a table of data from a firebase database based 
  * on approval status. 
  * @returns The return is a table with the data from the database.
  */
 
-const PendingBookings = () => {
+const CompletedBookingsPage = () => {
   const [records, setRecords] = useState([]);
-  const [userType, setUserType] = useState('');
+  const [userType, setUserType] = useState('');/*  */
   const navigate = useNavigate();
+  const {name} = useParams();
 
   const columns = useMemo(() => [
     { accessor: 'bkId', Header: 'BkId' },
-    { accessor: 'dateCreated', Header: 'Created On'},
     { accessor: 'requestorName', Header: 'Requestor' },
+    { accessor: 'dateCreated', Header: 'Created On'},
     { accessor: 'eventName', Header: 'Event Name' },
     { accessor: 'programmes', Header: 'Programmes' },
     { accessor: 'nofPax', Header: 'No of Pax' },
@@ -38,22 +39,22 @@ const PendingBookings = () => {
         </span>
       ),
     },
-    { accessor: 'bookStatus', Header: 'Booking Status'},
+    { accessor: 'bookStatus', Header: 'Book Status'},
     { accessor: 'fbId', Header: 'Firebase ID' },
     ], []
   );
+
   const handleExportExcel = () => {
     // Prepare data for Excel export
     const xlsxFormattedData = records.map(item => [
       item.bkId,
-      item.dateCreated,
       item.requestorName,
+      item.dateCreated,
       item.eventName,
       item.programmes,
       item.nofPax,
       item.organisation,
       item.location,
-      item.selectedDate,
       item.timeSlot,
       item.approvalStatus,
       item.bookStatus,
@@ -80,7 +81,6 @@ const PendingBookings = () => {
   }
 
   useEffect(() => {
-
     /* Function to get approver information */
     const getCurrentUserInfo = async () => {
       const currentUser = auth.currentUser;
@@ -94,19 +94,16 @@ const PendingBookings = () => {
         const userType = userData.userType;
       
         setUserType(userType);
-      
-        return {userType};
       } 
     };
 
     getCurrentUserInfo();
-    
     /* 
     Creating a reference to the venue booking collection in Firestore. 
-    Filter by approval status = "Pending".
+    Filter by approval status = "Completed".
     */
     const recordQuery = database.bookingRef
-    .where('approvalStatus', '==', 'Pending');
+    .where('approvalStatus', '!=', 'Pending')
 
     /* Query from database with the reference and store in record state  */
     const unsubscribe = recordQuery.onSnapshot((snapshot) => {
@@ -115,20 +112,27 @@ const PendingBookings = () => {
 
         snapshot.docs.forEach((doc) => {
           console.log('doc', doc.data());
-          tempItem.push({
-            bkId: doc.data().bkId,
-            requestorName: doc.data().requestorName,
-            dateCreated: doc.data().dateCreated,
-            eventName: doc.data().eventName,
-            programmes: doc.data().programmes,
-            nofPax: doc.data().nofPax,
-            organisation: doc.data().organisation,
-            location: doc.data().location,
-            timeSlot: doc.data().timeSlot,
-            approvalStatus: doc.data().approvalStatus,
-            bookStatus: doc.data().bookStatus,
-            fbId: doc.id,
-          });
+
+          if(doc.data().museum === name) {
+
+            tempItem.push({
+              bkId: doc.data().bkId,
+              museum: doc.data().museum,
+              requestorName: doc.data().requestorName,
+              dateCreated: doc.data().dateCreated,
+              eventName: doc.data().eventName,
+              programmes: doc.data().programmes,
+              nofPax: doc.data().nofPax,
+              organisation: doc.data().organisation,
+              location: doc.data().location,
+              selectedDate: doc.data().selectedDate,
+              timeSlot: doc.data().timeSlot,
+              approvalStatus: doc.data().approvalStatus,
+              bookStatus: doc.data().bookStatus,
+              approvedBy: doc.data().approvedBy,
+              fbId: doc.id,
+            });
+          }
         });
         // Sort the records by bkId property in ascending order
         tempItem.sort((a, b) => {
@@ -164,15 +168,15 @@ const PendingBookings = () => {
 
     return (
         <ContentContainer>
-          <Helmet><title>RPVB | PendingBookings</title></Helmet>
+          <Helmet><title>RPVB | CompletedBookings</title></Helmet>
           <div className='form-container'>
             <TableContainer 
             type="booking" 
             columns={columns} 
             data={records} 
             onView={handleView}
-            showViewColumn={true}
-             />
+            showViewColumn={true} 
+            />
           </div>
 
           {userType !== "User" &&
@@ -185,4 +189,4 @@ const PendingBookings = () => {
       )
     }
 
-export default PendingBookings
+export default CompletedBookingsPage

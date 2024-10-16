@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import {database, auth} from "../firebase";
 import { sendEmailVerification, signInWithEmailAndPassword, getAuth, sendPasswordResetEmail, EmailAuthProvider, reauthenticateWithCredential, updatePassword} from "firebase/auth";
 import {encryptData } from "../global/utils";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 
 const AuthContext = React.createContext();
 

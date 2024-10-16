@@ -5,8 +5,6 @@ import { useAuth } from "../../contexts/authContext";
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import * as RiIcons from 'react-icons/ri';
-import LoginImage from '../../images/login_image.png'
-import DCSLogo from '../../images/dcs_logo.png'
 
 /**
  * @function LoginForm
@@ -49,22 +47,18 @@ const LoginForm = () => {
     const { handleChange, handleSubmit, values, errors, loading } = useForm(validateLogin, valueState, loginUser);
 
     return (
-       <div className="login-container">
-        <div className="left">
-            <img src={LoginImage } alt="Login" />
-        </div>
-        <div className="right">
-            <div className="logo-container">
-                <img src={DCSLogo} alt="logo" />
-                <h2 className="logo-title">Welcome Back DCS Staff!</h2>
-                <p className="subtitle">Login with your details here</p>
-            </div>
-            <Form className="login-form">
-                <div className="Login-form-content login-content">
-                    
+        <div className="Login-form-container">
+            <Form className="Login-form">
+                <div className="Login-form-content">
+                    <h3 className="Login-form-title Login-icon">
+                        <div><RiIcons.RiLoginCircleLine size={30} color="black" /></div>
+                        Log in to your account
+                        <p className="Login-form-subtitle">Welcome back! Please enter your details.</p>
+                    </h3>
+
                     <Form.Group id="email" >
-                        <Form.Label className="Login-label input-label">Email:</Form.Label><br/>
-                        <Form.Control className="input-field"
+                        <Form.Label className="Login-label">Email:</Form.Label><br/>
+                        <Form.Control className="login-input-style "
                             name={"email"}
                             type={"email"}
                             value={values.email}
@@ -74,8 +68,8 @@ const LoginForm = () => {
                         {errors.email && ( <p className="validate-error">{errors.email} </p> )} 
                     </Form.Group>
                     <Form.Group id="password">
-                        <Form.Label className="Login-label input-label">Password:</Form.Label><br/>
-                        <Form.Control className="input-field"
+                        <Form.Label className="Login-label">Password:</Form.Label><br/>
+                        <Form.Control className="login-input-style "
                             name={"password"}
                             type={"password"}
                             value={values.password}
@@ -85,8 +79,8 @@ const LoginForm = () => {
                         {errors.password && ( <p className="validate-error">{errors.password}</p> )}
                     </Form.Group>
                     <br/>
-                    <Link className="forgot-password" to="/forgetPassword" exact="true">
-                        Forgot Password?
+                    <Link className="forgetPassword-Link" to="/forgetPassword" exact="true">
+                        Forgotten Password?
                     </Link>
                     <br />
                     <br/>
@@ -96,7 +90,7 @@ const LoginForm = () => {
                     </strong>
                     </div>
                     <button
-                        className={"login-btn"}
+                        className={"login-button"}
                         type={"submit"}
                         disabled={loading}
                         onClick={handleSubmit}
@@ -104,7 +98,6 @@ const LoginForm = () => {
                     </button>                   
                 </div>
             </Form>
-        </div>
         </div>
         )   
     }    
