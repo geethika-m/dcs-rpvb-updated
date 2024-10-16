@@ -10,7 +10,7 @@ import {
   updatePassword,
 } from "firebase/auth";
 import { encryptData } from "../global/utils";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs-react";
 
 const AuthContext = React.createContext();
 

@@ -8,7 +8,7 @@ import useForm from "../../customHooks/useForm";
 import { database, auth } from "../../firebase";
 import Form from "react-bootstrap/Form";
 import * as AiIcons from "react-icons/ai";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs-react";
 import { museumsList } from "../../utils/constant";
 
 /**
