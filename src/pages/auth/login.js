@@ -16,7 +16,7 @@ const Login = () => {
                 <title>RPVB | Login</title>
             </Helmet>
             <div className="login-fgtpwd-background sub-container" >
-                <LoginForm />
+            <LoginForm />
             </div>
            
         </React.Fragment>

@@ -27,6 +27,7 @@ export const AdminMenuItems = [
         subMenus: [
             { name: "Completed Approval", path: "/completedApproval", exact:"true", icons: <AiIcons.AiOutlineFileDone /> },
             { name: "Pending Approval", path: "/pendingApproval", exact:"true", icons: <MdIcons.MdOutlinePendingActions /> },            
+            { name: "Dashboard", path: "/dashboard", exact:"true", icons: <MdIcons.MdDashboard /> },            
         ],
     },
     {

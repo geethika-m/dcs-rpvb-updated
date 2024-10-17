@@ -42,7 +42,7 @@ const AddUser = () => {
   const createUser = () => {
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((newUser) => {
-        const hashPassword = HashData(values.password);
+        // const hashPassword = HashData(values.password);
         sendEmailVerification(newUser.user);
 
         database.usersRef.doc(newUser.user.uid).set({
@@ -63,7 +63,7 @@ const AddUser = () => {
           lock: false,
           lockDate: null,
           loginAttempts: 0,
-          passwordGeneration: [hashPassword],
+          passwordGeneration: [values.password],
         });
 
         setShowMessage(true);

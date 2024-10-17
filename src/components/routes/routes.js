@@ -29,6 +29,7 @@ import MuseumHomePage from '../../pages/bookings/museum_homepage';
 import ManageUserPage from '../../pages/userManagement/manageUserPage';
 import CompletedBookingsPage from '../../pages/bookings/completedBookingsPage';
 import PendingBookingsPage from '../../pages/bookings/pendingBookingsPage';
+import Dashboard from '../../pages/bookings/Dashboard';
 
 
 /**
@@ -57,11 +58,11 @@ const Paths = () => {
                 <Route exact path='/completedApproval/:name' element={<CompletedBookingsPage/>}/>
                 <Route exact path="/booking/:bkId" element={<ViewBooking/>}/>
                 <Route exact path='/confirmation/:bkId/:action' element={<Confirmation/>}/>
-                <Route exact path=''></Route>
+                <Route exact path='/'></Route>
             </Route>
 
             <Route element={<PublicRoute navigate={navigate} />}> 
-                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
                 <Route exact path="/forgetPassword" element={<ForgetPassword />} />
                 <Route exact path='/authAction' element={<AuthAction/>}/>
             </Route>
@@ -71,6 +72,7 @@ const Paths = () => {
                 <Route exact path="/manageUser/:name" element={<ManageUserPage />} />
                 <Route exact path="/user/:userId" element={<ViewUser />} />
                 <Route exact path="/createUser" element={<Register />} />
+                <Route exact path="/dashboard" element={<Dashboard />} />
             </Route>
 
             <Route path='*' element={<NoMatch/>} />
