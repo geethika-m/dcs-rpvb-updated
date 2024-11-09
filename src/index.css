@@ -178,7 +178,7 @@ h1,h2,h3{
 }
 
 .dashboard .middle-container > div {
-  height: 247px;;
+  height: 340px;
 }
 
 .dashboard .middle-container .title {
@@ -190,6 +190,7 @@ h1,h2,h3{
 .dashboard .middle-container .left {
   flex: 8;
   align-items: flex-start;
+  flex-direction: column;
 }
 
 .dashboard .middle-container .right {
