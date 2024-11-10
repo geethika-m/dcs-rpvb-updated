@@ -924,13 +924,13 @@ th.react-table__sort-header.-sort-asc::after {
   justify-content: center;
   align-items: center;
   width: 90vw;
-  height: 130vh;
+  min-height: 130vh;
   background-color: white;
 }
 
 .CreateBooking-form {
   width: 60%;
-  height: 65%;
+  min-height: 65%;
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -950,6 +950,9 @@ th.react-table__sort-header.-sort-asc::after {
 
 .CreateBooking-form-content3 {
   margin-top: 95px;
+  height: 100%;;
+  display: flex;
+  flex-direction: column;
 }
 
 .CreateBooking-form-content4 {
@@ -2044,8 +2047,8 @@ th.react-table__sort-header.-sort-asc::after {
 
 .CreateBooking-form {
   width: 60%;
-  height: 75%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  min-height: 75%;
+  /* box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px; */
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -3130,7 +3133,7 @@ th.react-table__sort-header.-sort-asc::after {
 .CreateBooking-form {
   width: 90%;
   height: 80%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  /*box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;*/
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -4327,7 +4330,7 @@ th.react-table__sort-header.-sort-asc::after {
 .CreateBooking-form {
   width: 90%;
   height: 80%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+ /* box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;*/
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -5500,7 +5503,7 @@ th.react-table__sort-header.-sort-asc::after {
 .CreateBooking-form {
   width: 90%;
   height: 80%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  /* box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px; */
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -6643,7 +6646,7 @@ th.react-table__sort-header.-sort-asc::after {
 .CreateBooking-form {
   width: 99%;
   height: 75%;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  /* box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px; */
   padding-top: 5px;
   padding-bottom: 20px;
   border-radius: 8px;
@@ -6799,11 +6802,12 @@ th.react-table__sort-header.-sort-asc::after {
   background-color: #00A74F;
   font-stretch: ultra-expanded;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   margin-top: 10px;
   margin-left: 12px;
   text-align: center;
   color: white;
+  margin-top: auto;
 }
 
 .uploadFile {

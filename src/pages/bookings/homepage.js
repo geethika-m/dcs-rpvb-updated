@@ -25,7 +25,8 @@ const Homepage = () => {
     { accessor: 'programmes', Header: 'Programmes' },
     { accessor: 'nofPax', Header: 'No of Pax' },
     { accessor: 'organisation', Header: 'Organisation' },
-    { accessor: 'location', Header: 'Location' },
+    { accessor: 'first_location', Header: 'First Location' },
+    { accessor: 'second_location', Header: 'Second Location' },
     {
       accessor: 'selectedDate',
       Header: 'Start Date',

@@ -7,6 +7,7 @@ import { format } from 'date-fns';
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { museumsList } from '../../utils/constant';
 
 /**
  * @function BookingDetails
@@ -219,6 +220,8 @@ Best Regards
             setLoad(true);
         }
     }, [recordData])
+
+    const museum = museumsList.find(museum => museum.value === recordData.museum)?.label;
     
     return (
         <React.Fragment>
@@ -233,7 +236,7 @@ Best Regards
                         <Form.Group id="museum" >
                             <Form.Label className="ViewBooking-label">Museum:</Form.Label><br/>
                             <Form.Control className="ViewBooking-input-style"
-                                 placeholder={recordData.museum}
+                                 placeholder={museum || ''}
                                  type={"text"}
                                  disabled
                                  readOnly

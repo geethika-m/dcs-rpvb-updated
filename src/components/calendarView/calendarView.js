@@ -61,11 +61,11 @@ console.log('data' , data)
     const selectedEndMonth = monthMap[endDateParts[1]];
     const selectedDateISO = `${selectedDateParts[2]}-${selectedMonth}-${selectedDateParts[0]}`;
     const endDateISO = `${endDateParts[2]}-${selectedEndMonth}-${endDateParts[0]}`;
-  
     // Create start and end dates
     const startDate = new Date(`${selectedDateISO}T${convertTo24Hour(startTime)}`.replace(' PM','').replace(' AM',''));
     const endDate = new Date(`${endDateISO}T${convertTo24Hour(endTime)}`.replace(' PM','').replace(' AM',''));
-    
+    console.log('startDate' , startDate)
+
     return {
       title: JSON.stringify(item),
       start: startDate.toISOString(),
@@ -76,12 +76,14 @@ console.log('data' , data)
   });
   
   function convertTo24Hour(time) {
-    const [hour, minute] = time.split(':');
-    let newHour = parseInt(hour);
-    if (time.includes('PM')) {
-      newHour += 12;
+    let [hour, minute] = time.split(':');
+    if (hour === '12') {
+      hour = '00';
     }
-    return `${newHour.toString().padStart(2, '0')}:${minute}`;
+    if (time.includes('PM')) {
+      hour = parseInt(hour, 10) + 12;
+    }
+    return `${hour.toString().padStart(2, '0')}:${minute}`;
   }
 
   const handleDateClick = (arg) => {

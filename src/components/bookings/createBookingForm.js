@@ -13,7 +13,7 @@ import { format, parseISO } from 'date-fns';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import { museumsList } from '../../utils/constant';
+import { museumLocations, museumsList } from '../../utils/constant';
 
 
 /**
@@ -53,6 +53,8 @@ const CreateBookingForm = () => {
     const [selectedDates, setSelectedDates] = useState([]); // State for storing selected dates
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
+    const [firstLocations, setFirstLocations] = useState([]);
+    const [secondLocations, setSecondLocations] = useState([]);
     let combinedTimeSlot = '';
     /* Function to create Customised Booking ID */
     const customisedBkId = async (prefix) => {
@@ -325,6 +327,18 @@ Best Regards
     const { handleChange, handleSubmit, selectedFile, values, errors, loading} = 
     useForm((values) => BookingValidation(values, selectedFile), valueState, handleBookingRequest);  
 
+    const handleMuseumChange = (e) => {
+        setFirstLocations([])
+        setSecondLocations([])
+        const value = e.target.value;
+        const list = museumLocations.find(loc => loc.label === value);
+        const first = list.first_locations;
+        const second = list.second_locations;
+        setFirstLocations(first);
+        setSecondLocations(second);
+        handleChange(e);
+    };
+
     const filterStartTimes = () => {
         if (values.endTime) {
           const selectedEndTimeIndex = timeSlotsList.indexOf(values.endTime);
@@ -360,7 +374,7 @@ Best Regards
                     <Form.Select className="createBooking-ddl-style2"
                         title={"museum"}
                         name={"museum"}
-                        onChange={handleChange}
+                        onChange={handleMuseumChange}
                         value={values.museum}
                     >
                         <option value={" "}>Please select your museum</option>
@@ -468,19 +482,11 @@ Best Regards
                         value={values.first_location}
                     >
                         <option value={" "}>Please select your first location</option>
-                        <option value={"BandStand"}>BandStand</option>
-                        <option value={"Concourse"}>Concourse</option>
-                        <option value={"Confidence"}>Confidence</option>
-                        <option value={"Discovery Hall"}>Discovery Hall</option>
-                        <option value={"Discovery Land"}>Discovery Land</option>
-                        <option value={"Function Room"}>Function Room</option>
-                        <option value={"Interchange"}>Interchange</option>
-                        <option value={"iWerks"}>iWerks</option>
-                        <option value={"Loyalty"}>Loyalty</option>
-                        <option value={"Unity"}>Unity</option>
-                        <option value={"VIP Lounge"}>VIP Lounge</option>
-                        <option value={"XLab1"}>XLab1</option>
-                        <option value={"XLab2"}>XLab2</option>
+                        {firstLocations.map(location => {
+                            return (
+                                <option value={location}>{location}</option>
+                            )
+                        })}
                     </Form.Select>
                     {errors.location && ( <p className="validate-error">{errors.location} </p> )} 
                 </Form.Group> 
@@ -493,19 +499,11 @@ Best Regards
                         value={values.second_location}
                     >
                         <option value={" "}>Please select your second location</option>
-                        <option value={"BandStand"}>BandStand</option>
-                        <option value={"Concourse"}>Concourse</option>
-                        <option value={"Confidence"}>Confidence</option>
-                        <option value={"Discovery Hall"}>Discovery Hall</option>
-                        <option value={"Discovery Land"}>Discovery Land</option>
-                        <option value={"Function Room"}>Function Room</option>
-                        <option value={"Interchange"}>Interchange</option>
-                        <option value={"iWerks"}>iWerks</option>
-                        <option value={"Loyalty"}>Loyalty</option>
-                        <option value={"Unity"}>Unity</option>
-                        <option value={"VIP Lounge"}>VIP Lounge</option>
-                        <option value={"XLab1"}>XLab1</option>
-                        <option value={"XLab2"}>XLab2</option>
+                        {secondLocations.map(location => {
+                            return (
+                                <option value={location}>{location}</option>
+                            )
+                        })}
                     </Form.Select>
                     {errors.location && ( <p className="validate-error">{errors.location} </p> )} 
                 </Form.Group>              
@@ -622,15 +620,7 @@ Best Regards
                     </Form.Group>  
                 )}
                 {errors.customiseSetup && ( <p className="validate-error">{errors.customiseSetup}</p> )} 
-                <br/>
-                <button
-                    title='submitbtn'
-                    className={"CreateBooking-button"}
-                    type={"submit"}
-                    disabled={loading}
-                    onClick={handleSubmit}
-                > Submit
-                </button>                                                                                                                       
+                                                                                                                                   
             </div>
             <div className="CreateBooking-form-content3 CreateUser-child3">      
             <Form.Group>
@@ -647,6 +637,14 @@ Best Regards
                             {values.remarks.length} / 500 characters left
                         </p>
                 </Form.Group>                                                                                                                    
+                        <button
+                                title='submitbtn'
+                                className={"CreateBooking-button"}
+                                type={"submit"}
+                                disabled={loading}
+                                onClick={handleSubmit}
+                            > Submit
+                            </button>   
             </div>
         </Form>
     </div>

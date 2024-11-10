@@ -1,12 +1,97 @@
-export const museumsList = [{
+export const museumsList = [
+  {
     label: "Singapore Discovery Centre",
-    value: "museum_1"
-},
-{
+    value: "museum_1",
+  },
+  {
     label: "Singapore Navy Museum",
-    value: "museum_2"
-},
-{
+    value: "museum_2",
+  },
+  {
     label: "Singapore Air Force Museum",
-    value: "museum_3"
-}]
+    value: "museum_3",
+  },
+];
+
+export const museumLocations = [
+  {
+    label: "museum_1",
+    first_locations: [
+      "BandStand",
+      "Concourse",
+      "Confidence",
+      "Discovery Hall",
+      "Discovery Land",
+      "Function Room",
+      "Interchange",
+      "iWerks",
+      "Loyalty",
+      "Unity",
+      "VIP Lounge",
+      "XLab1",
+      "XLab2",
+    ],
+    second_locations: [
+        "BandStand",
+        "Discovery Hall",
+        "Discovery Land",
+        "Function Room",
+        "Interchange",
+        "iWerks",
+        "Loyalty",
+        "Unity",
+        "VIP Lounge",
+        "XLab1",
+        "XLab2",
+      ],
+  },
+  {
+    label: "museum_2",
+    first_locations: [
+      "BandStand",
+      "Concourse",
+      "Confidence",
+      "Discovery Hall",
+      "Discovery Land",
+      "Function Room",
+      "Loyalty",
+      "Unity",
+      "VIP Lounge",
+      "XLab1",
+      "XLab2",
+    ],
+    second_locations: [
+        "BandStand",
+        "Discovery Hall",
+        "Discovery Land",
+        "Function Room",
+        "Interchange",
+        "Unity",
+        "VIP Lounge",
+        "XLab1",
+        "XLab2",
+      ],
+  },
+  {
+    label: "museum_3",
+    first_locations: [
+      "BandStand",
+      "Discovery Hall",
+      "Discovery Land",
+      "Function Room",
+      "Loyalty",
+      "Unity",
+      "VIP Lounge",
+      "XLab2",
+    ],
+    second_locations: [
+        "BandStand",
+      "Discovery Hall",
+      "Loyalty",
+      "Unity",
+      "VIP Lounge",
+      "XLab1",
+      "XLab2",
+      ]
+  },
+];
