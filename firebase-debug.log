@@ -1,0 +1,106 @@
+[debug] [2024-11-10T06:33:29.464Z] ----------------------------------------------------------------------
+[debug] [2024-11-10T06:33:29.466Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-11-10T06:33:29.466Z] CLI Version:   13.15.2
+[debug] [2024-11-10T06:33:29.466Z] Platform:      win32
+[debug] [2024-11-10T06:33:29.466Z] Node Version:  v18.14.0
+[debug] [2024-11-10T06:33:29.468Z] Time:          Sun Nov 10 2024 14:33:29 GMT+0800 (GMT+08:00)
+[debug] [2024-11-10T06:33:29.468Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-10T06:33:29.534Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-10T06:33:29.534Z] > authorizing via signed-in user (sdcdnt@gmail.com)
+[debug] [2024-11-10T06:33:29.534Z] [iam] checking project rpvb-web for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-10T06:33:29.536Z] > refreshing access token with scopes: []
+[debug] [2024-11-10T06:33:29.537Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-11-10T06:33:29.538Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-10T06:33:50.628Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------976748256866825328948557","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 2404:6800:4003:c0f::5f:443
+[debug] [2024-11-10T06:33:50.629Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-11-10T06:33:50.629Z] > refreshing access token with scopes: []
+[debug] [2024-11-10T06:33:50.629Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-11-10T06:33:50.629Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-10T06:34:11.683Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------397629924385546210244111","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 2404:6800:4003:c0f::5f:443
+[debug] [2024-11-10T06:34:11.684Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-11-10T06:34:16.713Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-11-10T06:34:25.838Z] ----------------------------------------------------------------------
+[debug] [2024-11-10T06:34:25.840Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2024-11-10T06:34:25.840Z] CLI Version:   13.15.2
+[debug] [2024-11-10T06:34:25.840Z] Platform:      win32
+[debug] [2024-11-10T06:34:25.840Z] Node Version:  v18.14.0
+[debug] [2024-11-10T06:34:25.841Z] Time:          Sun Nov 10 2024 14:34:25 GMT+0800 (GMT+08:00)
+[debug] [2024-11-10T06:34:25.841Z] ----------------------------------------------------------------------
+[debug] 
+[info] Already logged in as sdcdnt@gmail.com
+[debug] [2024-11-10T06:34:35.963Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-11-10T06:34:44.341Z] ----------------------------------------------------------------------
+[debug] [2024-11-10T06:34:44.342Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2024-11-10T06:34:44.343Z] CLI Version:   13.15.2
+[debug] [2024-11-10T06:34:44.343Z] Platform:      win32
+[debug] [2024-11-10T06:34:44.343Z] Node Version:  v18.14.0
+[debug] [2024-11-10T06:34:44.344Z] Time:          Sun Nov 10 2024 14:34:44 GMT+0800 (GMT+08:00)
+[debug] [2024-11-10T06:34:44.344Z] ----------------------------------------------------------------------
+[debug] 
+[info] Already logged in as sdcdnt@gmail.com
+[debug] [2024-11-10T06:34:54.462Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-11-10T06:35:38.869Z] ----------------------------------------------------------------------
+[debug] [2024-11-10T06:35:38.871Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2024-11-10T06:35:38.871Z] CLI Version:   13.15.2
+[debug] [2024-11-10T06:35:38.871Z] Platform:      win32
+[debug] [2024-11-10T06:35:38.872Z] Node Version:  v18.14.0
+[debug] [2024-11-10T06:35:38.872Z] Time:          Sun Nov 10 2024 14:35:38 GMT+0800 (GMT+08:00)
+[debug] [2024-11-10T06:35:38.872Z] ----------------------------------------------------------------------
+[debug] 
+[info] Already logged in as sdcdnt@gmail.com
+[debug] [2024-11-10T06:35:48.999Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-11-10T06:36:48.715Z] ----------------------------------------------------------------------
+[debug] [2024-11-10T06:36:48.717Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2024-11-10T06:36:48.717Z] CLI Version:   13.15.2
+[debug] [2024-11-10T06:36:48.717Z] Platform:      win32
+[debug] [2024-11-10T06:36:48.717Z] Node Version:  v18.14.0
+[debug] [2024-11-10T06:36:48.718Z] Time:          Sun Nov 10 2024 14:36:48 GMT+0800 (GMT+08:00)
+[debug] [2024-11-10T06:36:48.718Z] ----------------------------------------------------------------------
+[debug] 
+[info] Already logged in as sdcdnt@gmail.com
+[debug] [2024-11-10T06:36:58.829Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-11-10T06:39:38.548Z] ----------------------------------------------------------------------
+[debug] [2024-11-10T06:39:38.549Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2024-11-10T06:39:38.550Z] CLI Version:   13.15.2
+[debug] [2024-11-10T06:39:38.550Z] Platform:      win32
+[debug] [2024-11-10T06:39:38.550Z] Node Version:  v18.14.0
+[debug] [2024-11-10T06:39:38.558Z] Time:          Sun Nov 10 2024 14:39:38 GMT+0800 (GMT+08:00)
+[debug] [2024-11-10T06:39:38.559Z] ----------------------------------------------------------------------
+[debug] 
+[info] Already logged in as sdcdnt@gmail.com
+[debug] [2024-11-10T06:39:48.699Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\geeth\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.

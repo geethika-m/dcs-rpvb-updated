@@ -27,7 +27,9 @@ const SideMenu = (props) => {
     //  * redirected to the home page.
     //  */
     function signOut() {
-        logout();
+        logout().then(() => {
+         window.location.href="/login"
+        });
     } 
 
     // /**

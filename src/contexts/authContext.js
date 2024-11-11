@@ -197,7 +197,7 @@ export function AuthProvider({ children }) {
    *
    * @returns The auth.signOut() method is being returned.
    */
-  const logout = () => {
+  const logout = async () => {
     if (message !== "") {
       alert(message);
       setMessage("");

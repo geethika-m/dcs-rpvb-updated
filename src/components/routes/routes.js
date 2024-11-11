@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import '../../styling/main.css';
 
 /* List of the following routes */
@@ -30,6 +30,7 @@ import ManageUserPage from '../../pages/userManagement/manageUserPage';
 import CompletedBookingsPage from '../../pages/bookings/completedBookingsPage';
 import PendingBookingsPage from '../../pages/bookings/pendingBookingsPage';
 import Dashboard from '../../pages/bookings/Dashboard';
+import { useAuth } from '../../contexts/authContext';
 
 
 /**
@@ -42,9 +43,12 @@ import Dashboard from '../../pages/bookings/Dashboard';
 
 const Paths = () => {
     const navigate = useNavigate();
+    const { currentUser } = useAuth();
     
     return (
         <Routes>
+                <Route  path='/' element={currentUser ? 
+                <Navigate to="/homepage" /> : <Navigate to="/login" />} />
             <Route element={<PrivateRoute navigate={navigate} />}> 
                 <Route exact path="/homepage" element={<Homepage />} />
                 <Route exact path="/homepage/:name" element={<MuseumHomePage />} />
@@ -58,7 +62,7 @@ const Paths = () => {
                 <Route exact path='/completedApproval/:name' element={<CompletedBookingsPage/>}/>
                 <Route exact path="/booking/:bkId" element={<ViewBooking/>}/>
                 <Route exact path='/confirmation/:bkId/:action' element={<Confirmation/>}/>
-                <Route exact path='/'></Route>
+                <Route exact path="/dashboard" element={<Dashboard />} />
             </Route>
 
             <Route element={<PublicRoute navigate={navigate} />}> 

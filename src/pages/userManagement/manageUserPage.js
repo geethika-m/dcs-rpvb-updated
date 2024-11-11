@@ -7,6 +7,7 @@ import { convertEpoch } from '../../global/epochTime';
 import {database } from "../../firebase";
 import * as XLSX from 'xlsx';
 import { deleteDoc, doc } from 'firebase/firestore';
+import { museumsList } from '../../utils/constant';
 
 /**
  * @function ManageUser
@@ -85,9 +86,10 @@ const ManageUserPage = () => {
 
         snapshot.docs.forEach((doc) => {
           if(doc.data().museum === name) { 
+            const museum = museumsList.find(museum => museum.value === name)?.label;
             tempItem.push({
               id: id,
-              museum: doc.data().museum,
+              museum: museum,
               fullName: doc.data().fullName,
               email: doc.data().email,
               mobileNumber: doc.data().mobileNumber,
