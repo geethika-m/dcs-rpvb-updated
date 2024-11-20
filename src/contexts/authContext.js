@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useCallback } from "react";
 import { database, auth } from "../firebase";
 import {
   sendEmailVerification,
@@ -52,6 +52,18 @@ export function AuthProvider({ children }) {
     });
   }
 
+  
+  const logout = useCallback(async () => {
+    if (message !== "") {
+      alert(message);
+      setMessage("");
+    }
+    // Sign out user with authenticate
+    localStorage.clear();
+    return auth.signOut();
+  }, [message]);
+
+
   useEffect(() => {
     let alertShown = false;
 
@@ -84,7 +96,7 @@ export function AuthProvider({ children }) {
         });
       };
     }
-  }, [sessionTimer, userLoggedIn]);
+  }, [sessionTimer, userLoggedIn, logout]);
 
   /**
    * Function that check if user is in registered user collection "loginData",
@@ -197,16 +209,8 @@ export function AuthProvider({ children }) {
    *
    * @returns The auth.signOut() method is being returned.
    */
-  const logout = async () => {
-    if (message !== "") {
-      alert(message);
-      setMessage("");
-    }
-    // Sign out user with authenticate
-    localStorage.clear();
-    return auth.signOut();
-  };
 
+  
   /**
    * Functions that handles the after successful login.
    * It updates the user's last active time and sets the user's type in session storage.

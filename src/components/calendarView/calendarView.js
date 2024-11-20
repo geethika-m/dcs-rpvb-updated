@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import { useNavigate } from "react-router-dom";
@@ -48,32 +48,36 @@ console.log('data' , data)
     "Nov": "11",
     "Dec": "12"
   };
-  
-  const formattedData = data?.map((item) => {
-    const startTime = item?.timeSlot?.split(' - ')[0];
-    const endTime = item?.timeSlot?.split(' - ')[1];
-    
-    
-    const selectedDateParts = item?.selectedDate?.split('-');
-    const endDateParts = item?.endDate?.split('-');
-    
-    const selectedMonth = monthMap[selectedDateParts[1]];
-    const selectedEndMonth = monthMap[endDateParts[1]];
-    const selectedDateISO = `${selectedDateParts[2]}-${selectedMonth}-${selectedDateParts[0]}`;
-    const endDateISO = `${endDateParts[2]}-${selectedEndMonth}-${endDateParts[0]}`;
-    // Create start and end dates
-    const startDate = new Date(`${selectedDateISO}T${convertTo24Hour(startTime)}`.replace(' PM','').replace(' AM',''));
-    const endDate = new Date(`${endDateISO}T${convertTo24Hour(endTime)}`.replace(' PM','').replace(' AM',''));
-    console.log('startDate' , startDate)
 
-    return {
-      title: JSON.stringify(item),
-      start: startDate.toISOString(),
-      end: endDate.toISOString(),
+  const formattedData = useMemo(() => {
+
+     return data?.map((item) => {
+      const startTime = item?.timeSlot?.split(' - ')[0];
+      const endTime = item?.timeSlot?.split(' - ')[1];
       
-    };
-
-  });
+      
+      const selectedDateParts = item?.selectedDate?.split('-');
+      const endDateParts = item?.endDate?.split('-');
+      
+      const selectedMonth = monthMap[selectedDateParts[1]];
+      const selectedEndMonth = monthMap[endDateParts[1]];
+      const selectedDateISO = `${selectedDateParts[2]}-${selectedMonth}-${selectedDateParts[0]}`;
+      const endDateISO = `${endDateParts[2]}-${selectedEndMonth}-${endDateParts[0]}`;
+      // Create start and end dates
+      const startDate = new Date(`${selectedDateISO}T${convertTo24Hour(startTime)}`.replace(' PM','').replace(' AM',''));
+      const endDate = new Date(`${endDateISO}T${convertTo24Hour(endTime)}`.replace(' PM','').replace(' AM',''));
+      console.log('startDate' , startDate)
+  
+      return {
+        title: JSON.stringify(item),
+        start: startDate.toISOString(),
+        end: endDate.toISOString(),
+        
+      };
+  
+    });
+    
+  }, [data, monthMap])
   
   function convertTo24Hour(time) {
     let [hour, minute] = time.split(':');
@@ -97,18 +101,13 @@ console.log('data' , data)
     const eventData = JSON.parse(eventInfo.event.title);
     return(
       <div className='event-data'>
-        <p><b>BkId</b>: {eventData.bkId}</p>
         <p><b>Museum</b>: {eventData.museum}</p>
-        <p><b>Requestor</b>: {eventData.requestorName}</p>
-        <p><b>Date Created</b>: {eventData.dateCreated}</p>
         <p><b>Event Name</b>: {eventData.eventName}</p>
         <p><b>Programmes</b>: {eventData.programmes}</p>
-        <p><b>No of Pax</b>: {eventData.nofPax}</p>
         <p><b>Organisation</b>: {eventData.organisation}</p>
         <p><b>First Location</b>: {eventData.first_location}</p>
         <p><b>Second Location</b>: {eventData.second_location}</p>
         <p><b>Timeslot</b>: {eventData.timeSlot}</p>
-        <p><b>Approval Status</b>: {eventData.approvalStatus}</p>
         <button onClick={()=>{
           navigate(`/booking/${eventData.fbId}`);
         }}>View Booking</button>
@@ -116,12 +115,12 @@ console.log('data' , data)
     )
   }
     
-
+console.log('rendered')
   return (
     <div className="calendar-card">
       <FullCalendar
         plugins={[dayGridPlugin]}
-        weekends={false}
+        weekends={true}
         events={formattedData}
         startAccessor="start"
         endAccessor="end"

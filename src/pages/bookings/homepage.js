@@ -111,7 +111,6 @@ const Homepage = () => {
     const unsubscribe = recordQuery.orderBy('dateCreated', 'desc').onSnapshot((snapshot) => {
       if (snapshot.docs.length !== 0) {
         const tempItem = [];
-
         snapshot.docs.forEach((doc) => {
           const SelectedDate = doc.data().selectedDate;
           console.log('SelectedDate',SelectedDate)

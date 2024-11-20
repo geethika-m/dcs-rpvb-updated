@@ -50,7 +50,6 @@ const TableContainer = ({
       const userDoc = userDB.docs[0];
       const userData = userDoc.data();
       const userType = userData.userType;
-
       setUserType(userType);
     }
   };

@@ -593,7 +593,7 @@ th, td {
   padding: 5px;
 }
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }
@@ -1708,7 +1708,7 @@ th, td {
   padding: 5px;
 }
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }
@@ -2743,7 +2743,7 @@ li {
 }
 
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }
@@ -2803,7 +2803,7 @@ th, td {
   padding: 1px;
 }
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }
@@ -3924,7 +3924,7 @@ li {
 }
 
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }
@@ -5110,7 +5110,7 @@ li {
 }
 
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }
@@ -6240,7 +6240,7 @@ li {
 }
 
 .table-container {
-  width: 800px;
+  min-width: 1200px;
   overflow-x: scroll;
   overflow: hidden;
 }

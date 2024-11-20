@@ -114,7 +114,8 @@ const CreateBookingForm = () => {
 
         /* Retrieve the data based on location, date selected for the booking */
         const bookingSnapshot = await database.bookingRef
-        .where("location" , "==", values.location)
+        .where("first_location" , "==", values.first_location)
+        .where("second_location" , "==", values.second_location)
         .where("selectedDate", "==", values.selectedDate)
         .get();
 
