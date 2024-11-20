@@ -33,7 +33,6 @@ const EventComponent = ({ event }) => {
 //     return formattedData;
 
 const MyCalendar = ({data}) => {
-console.log('data' , data)
   const monthMap = {
     "Jan": "01",
     "Feb": "02",
@@ -66,7 +65,6 @@ console.log('data' , data)
       // Create start and end dates
       const startDate = new Date(`${selectedDateISO}T${convertTo24Hour(startTime)}`.replace(' PM','').replace(' AM',''));
       const endDate = new Date(`${endDateISO}T${convertTo24Hour(endTime)}`.replace(' PM','').replace(' AM',''));
-      console.log('startDate' , startDate)
   
       return {
         title: JSON.stringify(item),
@@ -115,7 +113,6 @@ console.log('data' , data)
     )
   }
     
-console.log('rendered')
   return (
     <div className="calendar-card">
       <FullCalendar

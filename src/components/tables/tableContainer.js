@@ -54,8 +54,6 @@ const TableContainer = ({
     }
   };
 
-  console.log("data", data);
-
   useEffect(() => {
     getCurrentUserInfo();
   }, []);
@@ -63,7 +61,6 @@ const TableContainer = ({
   useEffect(() => {
     if (data?.length > 0) {
       filteredDataRef.current = data;
-      console.log("inside", data, filteredDataRef.current);
     }
   }, [data]);
 
@@ -98,7 +95,6 @@ const TableContainer = ({
                 const shouldDelete = window.confirm(
                   `Are you sure you want to delete the booking for name ${row.values.fullName}?`
                 );
-                console.log("values", row.values, filteredDataRef.current);
                 if (shouldDelete) {
                   updateUsersList(
                     filteredDataRef.current.filter(

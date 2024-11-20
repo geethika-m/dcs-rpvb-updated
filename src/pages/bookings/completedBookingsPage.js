@@ -111,7 +111,6 @@ const CompletedBookingsPage = () => {
         const tempItem = [];
 
         snapshot.docs.forEach((doc) => {
-          console.log('doc', doc.data());
 
           if(doc.data().museum === name) {
 

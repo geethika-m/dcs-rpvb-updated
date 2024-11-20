@@ -45,7 +45,6 @@ const Dashboard = () => {
   
           snapshot.docs.forEach((doc) => {
             const selectedDate = doc.data().selectedDate;
-            console.log('SelectedDate',selectedDate)
               tempItem.push({
                 bkId: doc.data().bkId,
                 museum: doc.data().museum,

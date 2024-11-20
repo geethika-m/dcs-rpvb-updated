@@ -113,7 +113,6 @@ const Homepage = () => {
         const tempItem = [];
         snapshot.docs.forEach((doc) => {
           const SelectedDate = doc.data().selectedDate;
-          console.log('SelectedDate',SelectedDate)
           const formattedSelectedDate = SelectedDate  && typeof SelectedDate === "string" && !SelectedDate.includes(",") ? format(new Date(SelectedDate), 'dd-MMM-yyyy'): "";
 
           tempItem.push({

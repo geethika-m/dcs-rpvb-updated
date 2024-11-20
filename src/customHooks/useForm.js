@@ -16,7 +16,6 @@ const useForm = (validate, valueState, callback) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [loading, setLoading] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
-   console.log('values', values)
     /**
      * The handleChange function takes an event as an argument, and then sets the state of the values
      * object to the value of the event target.
@@ -51,7 +50,6 @@ const useForm = (validate, valueState, callback) => {
         } else if (name === "customiseSetup" && e.target.files.length > 0) {
             setSelectedFile(e.target.files[0]);
         }  else if(name === 'selectedDate' || name ==='endDate') {
-            console.log('selectedDate', value, format(parseISO(value), "dd-MMM-yyyy"));
             
             setValues({...values, [name]: format(parseISO(value), "dd-MMM-yyyy")});
         }
