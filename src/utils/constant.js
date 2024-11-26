@@ -16,7 +16,7 @@ export const museumsList = [
 export const museumLocations = [
   {
     label: "museum_1",
-    first_locations: [
+    locations: [
       "BandStand",
       "Concourse",
       "Loyalty Classroom",
@@ -34,42 +34,28 @@ export const museumLocations = [
       "XLab1",
       "XLab2",
     ],
-    second_locations: [
-        "BandStand",
-        "Discovery Hall",
-        "Discovery Land",
-        "Function Room",
-        "Interchange",
-        "iWerks",
-        "Loyalty",
-        "Unity",
-        "VIP Lounge",
-        "XLab1",
-        "XLab2",
-      ],
+    startDate: "",
+    endDate: "",
+    startTime: "",
+    endTime: "",
+    setup: "",
   },
   {
     label: "museum_2",
-    first_locations: [
-      "Outdoor Gallery",
-      "Indoor Gallery",
-    ],
-    second_locations: [
-        "Outdoor Gallery",
-        "Indoor Gallery",
-      ],
+    locations: ["Outdoor Gallery", "Indoor Gallery"],
+    startDate: "",
+    endDate: "",
+    startTime: "",
+    endTime: "",
+    setup: "",
   },
   {
     label: "museum_3",
-    first_locations: [
-      "Indoor Gallery",
-      "Level 1 Gallery",
-      "Outdoor Gallery",
-    ],
-    second_locations: [
-      "Indoor Gallery",
-      "Level 1 Gallery",
-      "Outdoor Gallery",
-      ]
+    locations: ["Indoor Gallery", "Level 1 Gallery", "Outdoor Gallery"],
+    startDate: "",
+    endDate: "",
+    startTime: "",
+    endTime: "",
+    setup: "",
   },
 ];

@@ -15,7 +15,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { museumLocations, museumsList } from "../../utils/constant";
 import { v4 as uuidv4 } from "uuid";
-import LocationModal from "./LocationModal";
 
 /**
  * @function CreateBookingForm
@@ -89,7 +88,6 @@ const CreateBookingForm = () => {
   const [selectedMuseum, setSelectedMuseum] = useState("");
   const [locationsCount, setLocationsCount] = useState(0);
   const [locations, setLocations] = useState([]);
-  const [showModal, setShowModal] = useState(false);
 
   let combinedTimeSlot = "";
   /* Function to create Customised Booking ID */
@@ -276,15 +274,19 @@ const CreateBookingForm = () => {
           requestorName: fullName,
           requestorEmail: currentUser.email,
           dateCreated: formattedDate,
+          startDate: values.selectedDate,
+          endDate: values.endDate,
           museum: values.museum,
           eventName: values.eventName,
           programmes: values.programmes,
           nofPax: values.nofPax,
           organisation: values.organisation,
           inventory: values.inventory,
-          locations: values.locations,
-          selectedDate: new Date(), //values.selectedDate,
-          // timeSlot: combinedTimeSlot,
+          first_location: values.first_location,
+          second_location: values.second_location,
+          selectedDate: values.selectedDate,
+          timeSlot: combinedTimeSlot,
+          setup: values.setup,
           customiseSetup: downloadUrl,
           remarks: values.remarks,
           approvalStatus: "Pending",
@@ -303,7 +305,58 @@ const CreateBookingForm = () => {
           navigate("/homepage");
         }, 3000);
 
-        // add email sending code here
+        /* Send Email to requestor that their request was submitted successfully */
+        const customMessage = `Dear ${fullName},
+
+Your venue booking for event "${values.eventName}" has been confirmed. 
+
+Book ID: ${newBKID}
+Event Name: ${values.eventName}
+Programme Name: ${values.programmes}
+No. of Pax: ${values.nofPax}
+Organisation: ${values.organisation}
+Inventory: ${values.inventory}
+Selected Date: ${values.selectedDate}
+Location : ${values.location}
+Time Slot: ${combinedTimeSlot}
+
+No further action required.
+
+If you wish to cancel your booking, please contact EMP Department.
+
+Best Regards
+`;
+        const response = await axios.post(
+          "https://us-central1-rpvb-web.cloudfunctions.net/sendEmail",
+          {
+            recipient: currentUser.email,
+            subject: `Booking Confirmation for ${newBKID}`,
+            message: customMessage,
+          }
+        );
+
+        // Send email to the whole department about the new booking request
+        const customMessage2 = `Dear EMP,
+
+A new venue booking ${newBKID} has been created by ${fullName}. 
+
+Event: ${values.eventName}
+Organisation: ${values.organisation}
+Date of Event: ${values.selectedDate}
+Timeslot: ${combinedTimeSlot}
+
+Please assist in approving this booking.
+
+Best Regards
+`;
+        const response2 = await axios.post(
+          "https://us-central1-rpvb-web.cloudfunctions.net/sendEmail",
+          {
+            recipient: "events_management@defencecollectivesg.com",
+            subject: `New Venue Booking Request ${newBKID} Created`,
+            message: customMessage2,
+          }
+        );
       } catch (error) {
         console.log("occ error", error);
         setShowMessage(true);
@@ -314,28 +367,10 @@ const CreateBookingForm = () => {
     }
   };
 
-  console.log("showModal", showModal);
-
   /* Destructuring object returned by the custom hook `useForm` */
   const { handleChange, handleSubmit, selectedFile, values, errors, loading } =
     useForm(
-      (values) =>
-        BookingValidation(
-          {
-            ...values,
-            locations: locations.map((location) => {
-              return {
-                selectedDate: location.startDate,
-                endDate: location.endDate,
-                startTime: location.startTime,
-                endTime: location.endTime,
-                location: location.locations,
-                setup: location.setup,
-              };
-            }),
-          },
-          selectedFile
-        ),
+      (values) => BookingValidation(values, selectedFile),
       valueState,
       handleBookingRequest
     );
@@ -378,7 +413,6 @@ const CreateBookingForm = () => {
   const handleLocationCountchange = (e) => {
     const count = parseInt(e.target.value, 10);
     setLocationsCount(count);
-    setLocations([]);
     const matchingLocation = museumLocations.find(
       (location) => location.label === selectedMuseum
     );
@@ -386,30 +420,12 @@ const CreateBookingForm = () => {
     setLocations(
       Array.from({ length: count }, () => {
         return {
-          ...matchingLocation,
           id: uuidv4(),
-          locations: "",
+          ...matchingLocation,
         };
       })
     );
-    setShowModal(true);
   };
-
-  const updateLocation = ({ id, key, value }) => {
-    setLocations(
-      locations.map((location) => {
-        if (location.id === id) {
-          return {
-            ...location,
-            [key]: value,
-          };
-        }
-        return location;
-      })
-    );
-  };
-
-  const handleModalToggle = () => setShowModal((prev) => !prev);
 
   return (
     <div className="CreateBooking-form-container">
@@ -570,16 +586,7 @@ const CreateBookingForm = () => {
         </div>
         <div className="CreateBooking-form-content2 CreateBooking-child2">
           <div>
-            <button
-              onClick={() => {
-                if (!selectedMuseum) {
-                  window.alert("Please select Museum first");
-                } else {
-                  setShowLocationInfo(true);
-                }
-              }}
-              className="add-location-button"
-            >
+            <button onClick={() => setShowLocationInfo(true)}>
               Add Location Information
             </button>
             {showLocationInfo && (
@@ -601,21 +608,422 @@ const CreateBookingForm = () => {
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </Form.Select>
+                {errors.location && (
+                  <p className="validate-error">{errors.location} </p>
+                )}
               </Form.Group>
             )}
           </div>
           {locations.length > 0 && locationsCount && (
-            <LocationModal
-              locations={locations}
-              availableStartTimes={availableStartTimes}
-              availableEndTimes={availableEndTimes}
-              setup={values.setup}
-              showModal={showModal}
-              handleModalToggle={handleModalToggle}
-              updateLocation={updateLocation}
-              selectedMuseum={selectedMuseum}
-            />
+            <table>
+              <thead>
+                <tr>
+                  <th>First Location</th>
+                  <th>Second Location</th>
+                  <th>Third Location</th>
+                  <th>Fourth Location</th>
+                  <th>Fifth Location</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  <th>Setup</th>
+                </tr>
+              </thead>
+              <tbody>
+                {locations.map((location) => {
+                  // const selectedLoc = locations.find(loc => loc.label === selectedMuseum);
+                  return (
+                    <tr key={location.id}>
+                      <td>
+                        <Form.Select
+                          className="createBooking-ddl-style2"
+                          title={"first_location"}
+                          name={"first_location"}
+                        >
+                          <option value={" "}>select first location</option>
+                          {location.first_locations.map((location) => {
+                            return <option value={location}>{location}</option>;
+                          })}
+                        </Form.Select>
+                      </td>
+                      <td>
+                        <Form.Select
+                          className="createBooking-ddl-style2"
+                          title={"second_location"}
+                          name={"second_location"}
+                        >
+                          <option value={" "}>select second location</option>
+                          {location.second_locations.map((location) => {
+                            return <option value={location}>{location}</option>;
+                          })}
+                        </Form.Select>
+                      </td>
+                      <td>
+                        <Form.Select
+                          className="createBooking-ddl-style2"
+                          title={"third_location"}
+                          name={"third_location"}
+                        >
+                          <option value={" "}>select third location</option>
+                          {location.third_locations.map((location) => {
+                            return <option value={location}>{location}</option>;
+                          })}
+                        </Form.Select>
+                      </td>
+                      <td>
+                        <Form.Select
+                          className="createBooking-ddl-style2"
+                          title={"fourth_location"}
+                          name={"fourth_location"}
+                        >
+                          <option value={" "}>select fourth location</option>
+                          {location.fourth_locations.map((location) => {
+                            return <option value={location}>{location}</option>;
+                          })}
+                        </Form.Select>
+                      </td>
+                      <td>
+                        <Form.Select
+                          className="createBooking-ddl-style2"
+                          title={"fifth_location"}
+                          name={"fifth_location"}
+                        >
+                          <option value={" "}>select fifth location</option>
+                          {location.fifth_locations.map((location) => {
+                            return <option value={location}>{location}</option>;
+                          })}
+                        </Form.Select>
+                      </td>
+                      <td>
+                        <Form.Group id="selectedDate">
+                          <Form.Label className="CreateUser-label">
+                            Start Date:
+                          </Form.Label>
+                          <br />
+                          <Form.Control
+                            className="createBooking-ddl-style3"
+                            title={"selectedDate"}
+                            name={"selectedDate"}
+                            type={"date"}
+                            required
+                          />
+                          {errors.selectedDate && (
+                            <p className="validate-error">
+                              {errors.selectedDate}
+                            </p>
+                          )}
+                        </Form.Group>
+                      </td>
+                      <td>
+                        <Form.Group id="endDate">
+                          <Form.Label className="CreateUser-label">
+                            End Date:
+                          </Form.Label>
+                          <br />
+                          <Form.Control
+                            className="createBooking-ddl-style3"
+                            title={"endDate"}
+                            name={"endDate"}
+                            type={"date"}
+                            required
+                          />
+                          {errors.endDate && (
+                            <p className="validate-error">{errors.endDate}</p>
+                          )}
+                        </Form.Group>
+                      </td>
+                      <td>
+                        <Form.Group id="startTime">
+                          <Form.Label className="CreateUser-label">
+                            Start Time:
+                          </Form.Label>
+                          <br />
+                          <Form.Select
+                            className="createBooking-ddl-style2"
+                            title={"startTime"}
+                            name={"startTime"}
+                            required
+                          >
+                            <option value={" "}>
+                              Please select a start time
+                            </option>
+                            {availableStartTimes.map((time, index) => (
+                              <option key={index} value={time}>
+                                {time}
+                              </option>
+                            ))}
+                          </Form.Select>
+                          {errors.startTime && (
+                            <p className="validate-error">{errors.startTime}</p>
+                          )}
+                        </Form.Group>
+                      </td>
+                      <td>
+                        <Form.Group id="endTime">
+                          <Form.Label className="CreateUser-label">
+                            End Time:
+                          </Form.Label>
+                          <br />
+                          <Form.Select
+                            className="createBooking-ddl-style2"
+                            title={"endTime"}
+                            name={"endTime"}
+                            value={values.endTime}
+                            onChange={handleChange}
+                            required
+                          >
+                            <option value={" "}>
+                              Please select an end time
+                            </option>
+                            {availableEndTimes.map((time, index) => (
+                              <option key={index} value={time}>
+                                {time}
+                              </option>
+                            ))}
+                          </Form.Select>
+                          {errors.endTime && (
+                            <p className="validate-error">{errors.endTime}</p>
+                          )}
+                        </Form.Group>
+                      </td>
+                      <td>
+                        <Form.Group>
+                          <Form.Label className="CreateUser-label">
+                            Setup:
+                          </Form.Label>
+                          <br />
+                          <Form.Select
+                            className="createBooking-ddl-style2"
+                            title={"setup"}
+                            name={"setup"}
+                          >
+                            <option value={""}>Please select a setup</option>
+                            <option value={"Theatre Style"}>
+                              Theatre Style
+                            </option>
+                            <option value={"Meeting U Shape"}>
+                              Meeting U Shape
+                            </option>
+                            <option value={"Meeting Round Shape"}>
+                              Meeting Round Shape
+                            </option>
+                            <option value={"Other"}>Other</option>
+                          </Form.Select>
+                          {errors.setup && (
+                            <p className="validate-error">{errors.setup}</p>
+                          )}
+                        </Form.Group>
+                        {values.setup === "Other" && (
+                          <Form.Group
+                            controlId="customiseSetup"
+                            className="mb-3"
+                          >
+                            <Form.Label className="CreateUser-label">
+                              Please upload custom layout
+                            </Form.Label>
+                            <br />
+                            <Form.Control
+                              className="uploadFile"
+                              title={"customiseSetup"}
+                              name={"customiseSetup"}
+                              type={"file"}
+                              accept="image/*" // Limit file selection to image files
+                            />
+                          </Form.Group>
+                        )}
+                        {errors.customiseSetup && (
+                          <p className="validate-error">
+                            {errors.customiseSetup}
+                          </p>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           )}
+          <Form.Group id="museum">
+            <Form.Label className="CreateUser-label">
+              First Location:
+            </Form.Label>
+            <br />
+            <Form.Select
+              className="createBooking-ddl-style2"
+              title={"first_location"}
+              name={"first_location"}
+              onChange={handleChange}
+              value={values.first_location}
+            >
+              <option value={" "}>Please select your first location</option>
+              {firstLocations.map((location) => {
+                return <option value={location}>{location}</option>;
+              })}
+            </Form.Select>
+            {errors.location && (
+              <p className="validate-error">{errors.location} </p>
+            )}
+          </Form.Group>
+          <Form.Group id="second_location">
+            <Form.Label className="CreateUser-label">
+              Second Location:
+            </Form.Label>
+            <br />
+            <Form.Select
+              className="createBooking-ddl-style2"
+              title={"second_location"}
+              name={"second_location"}
+              onChange={handleChange}
+              value={values.second_location}
+            >
+              <option value={" "}>Please select your second location</option>
+              {secondLocations.map((location) => {
+                return <option value={location}>{location}</option>;
+              })}
+            </Form.Select>
+            {errors.location && (
+              <p className="validate-error">{errors.location} </p>
+            )}
+          </Form.Group>
+          <Form.Group id="selectedDate">
+            <Form.Label className="CreateUser-label">Start Date:</Form.Label>
+            <br />
+            <Form.Control
+              className="createBooking-ddl-style3"
+              title={"selectedDate"}
+              name={"selectedDate"}
+              type={"date"}
+              value={startDate}
+              onChange={handleChange}
+              required
+            />
+            {/*<DatePicker startDate={startDate} endDate={endDate} selected={startDate}   title={"selectedDate"}
+                         onChange={(selectedDate) => {
+                            const [start, end] = selectedDate;
+                            setStartDate(start);
+                            setEndDate(end);
+                            handleChange({
+                                target: {
+                                    name: 'selectedDate',
+                                    value: selectedDate
+                                }
+                            });
+                        }} selectsRange    />
+                        *'/}
+                    {/*<Form.Control className="createBooking-ddl-style3"
+                        title={"selectedDate"}
+                        name={"selectedDate"}
+                        type={"date"}
+                        value={values.selectedDate}
+                        onChange={handleChange}
+                        required
+                    />*/}
+            {errors.selectedDate && (
+              <p className="validate-error">{errors.selectedDate}</p>
+            )}
+          </Form.Group>
+          <Form.Group id="endDate">
+            <Form.Label className="CreateUser-label">End Date:</Form.Label>
+            <br />
+            <Form.Control
+              className="createBooking-ddl-style3"
+              title={"endDate"}
+              name={"endDate"}
+              type={"date"}
+              value={endDate}
+              onChange={handleChange}
+              required
+            />
+            {errors.endDate && (
+              <p className="validate-error">{errors.endDate}</p>
+            )}
+          </Form.Group>
+          <Form.Group id="startTime">
+            <Form.Label className="CreateUser-label">Start Time:</Form.Label>
+            <br />
+            <Form.Select
+              className="createBooking-ddl-style2"
+              title={"startTime"}
+              name={"startTime"}
+              value={values.startTime}
+              onChange={handleChange}
+              required
+            >
+              <option value={" "}>Please select a start time</option>
+              {availableStartTimes.map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))}
+            </Form.Select>
+            {errors.startTime && (
+              <p className="validate-error">{errors.startTime}</p>
+            )}
+          </Form.Group>
+
+          <Form.Group id="endTime">
+            <Form.Label className="CreateUser-label">End Time:</Form.Label>
+            <br />
+            <Form.Select
+              className="createBooking-ddl-style2"
+              title={"endTime"}
+              name={"endTime"}
+              value={values.endTime}
+              onChange={handleChange}
+              required
+            >
+              <option value={" "}>Please select an end time</option>
+              {availableEndTimes.map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))}
+            </Form.Select>
+            {errors.endTime && (
+              <p className="validate-error">{errors.endTime}</p>
+            )}
+          </Form.Group>
+          <Form.Group>
+            <Form.Label className="CreateUser-label">Setup:</Form.Label>
+            <br />
+            <Form.Select
+              className="createBooking-ddl-style2"
+              title={"setup"}
+              name={"setup"}
+              onChange={handleChange}
+              value={values.setup}
+            >
+              <option value={""}>Please select a setup</option>
+              <option value={"Theatre Style"}>Theatre Style</option>
+              <option value={"Meeting U Shape"}>Meeting U Shape</option>
+              <option value={"Meeting Round Shape"}>Meeting Round Shape</option>
+              <option value={"Other"}>Other</option>
+            </Form.Select>
+            {errors.setup && <p className="validate-error">{errors.setup}</p>}
+          </Form.Group>
+          {values.setup === "Other" && (
+            <Form.Group controlId="customiseSetup" className="mb-3">
+              <Form.Label className="CreateUser-label">
+                Please upload custom layout
+              </Form.Label>
+              <br />
+              <Form.Control
+                className="uploadFile"
+                title={"customiseSetup"}
+                name={"customiseSetup"}
+                type={"file"}
+                accept="image/*" // Limit file selection to image files
+                value={values.customiseSetup}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          )}
+          {errors.customiseSetup && (
+            <p className="validate-error">{errors.customiseSetup}</p>
+          )}
+        </div>
+        <div className="CreateBooking-form-content3 CreateUser-child3">
           <Form.Group>
             <Form.Label className="CreateUser-label">Remarks:</Form.Label>
             <br />
@@ -645,6 +1053,7 @@ const CreateBookingForm = () => {
             Submit
           </button>
         </div>
+        <div></div>
       </Form>
     </div>
   );
