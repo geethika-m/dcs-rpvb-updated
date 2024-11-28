@@ -13,13 +13,9 @@ import { format, parseISO } from "date-fns";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  location_labels,
-  museumLocations,
-  museumsList,
-} from "../../utils/constant";
+import { museumLocations, museumsList } from "../../utils/constant";
 import { v4 as uuidv4 } from "uuid";
-import BookingLocationsModal from "./BookingLocationsModal";
+import LocationModal from "./LocationModal";
 
 /**
  * @function CreateBookingForm
@@ -94,6 +90,7 @@ const CreateBookingForm = () => {
   const [locationsCount, setLocationsCount] = useState(0);
   const [locations, setLocations] = useState([]);
   const [showModal, setShowModal] = useState(false);
+
   let combinedTimeSlot = "";
   /* Function to create Customised Booking ID */
   const customisedBkId = async (prefix) => {
@@ -122,6 +119,7 @@ const CreateBookingForm = () => {
     setup: "",
     formFile: "",
     remarks: "",
+    locs: true,
   };
 
   /* Function to Check Booking Availability */
@@ -250,6 +248,7 @@ const CreateBookingForm = () => {
     const isAvailable = true;
     const newBKID = await customisedBkId("BKID");
     const currentUser = auth.currentUser;
+    console.log("values", values);
     const currentDate = new Date();
     const formattedDate = format(currentDate, "dd-MMM-yyyy");
     // const formattedStartDate = format(parseISO(values.selectedDate), "dd-MMM-yyyy");
@@ -270,47 +269,30 @@ const CreateBookingForm = () => {
       await uploadBytes(customLayoutRef, selectedFile);
       downloadUrl = await getDownloadURL(customLayoutRef);
     }
-
     if (isAvailable) {
       try {
-        let data = {
-          testing: true,
+        database.bookingRef.add({
           bkId: newBKID,
           userId: currentUser.uid,
           requestorName: fullName,
           requestorEmail: currentUser.email,
           dateCreated: formattedDate,
-          //startDate: new Date(), //values.selectedDate,
-          // endDate: values.endDate,
           museum: values.museum,
           eventName: values.eventName,
           programmes: values.programmes,
           nofPax: values.nofPax,
           organisation: values.organisation,
           inventory: values.inventory,
-          // timeSlot: combinedTimeSlot,
+          locations: locations,
+          selectedDate: new Date(), //values.selectedDate,
+          timeSlot: combinedTimeSlot,
           customiseSetup: downloadUrl,
           remarks: values.remarks,
           approvalStatus: "Pending",
           bookStatus: "Booked",
           availableStatus: false,
-          // timeSlot: "11:30 AM - 2:30 PM",
-        };
-
-        locations.forEach((location) => {
-          const { id, label, ...rest } = location;
-          data = {
-            ...data,
-            ...rest,
-            startDate: locations[0].first_location_startDate,
-            endDate: locations[0].first_location_endDate,
-            timeSlot:
-              locations[0].first_location_startTime +
-              " - " +
-              locations[0].first_location_endTime,
-          };
+          locs: true,
         });
-        database.bookingRef.add(data);
 
         /* 
                 Set and delay hiding the message for successful booking 
@@ -323,58 +305,7 @@ const CreateBookingForm = () => {
           navigate("/homepage");
         }, 3000);
 
-        /* Send Email to requestor that their request was submitted successfully */
-        const customMessage = `Dear ${fullName},
-
-Your venue booking for event "${values.eventName}" has been confirmed. 
-
-Book ID: ${newBKID}
-Event Name: ${values.eventName}
-Programme Name: ${values.programmes}
-No. of Pax: ${values.nofPax}
-Organisation: ${values.organisation}
-Inventory: ${values.inventory}
-Selected Date: ${values.selectedDate}
-Location : ${values.location}
-Time Slot: ${combinedTimeSlot}
-
-No further action required.
-
-If you wish to cancel your booking, please contact EMP Department.
-
-Best Regards
-`;
-        const response = await axios.post(
-          "https://us-central1-rpvb-web.cloudfunctions.net/sendEmail",
-          {
-            recipient: currentUser.email,
-            subject: `Booking Confirmation for ${newBKID}`,
-            message: customMessage,
-          }
-        );
-
-        // Send email to the whole department about the new booking request
-        const customMessage2 = `Dear EMP,
-
-A new venue booking ${newBKID} has been created by ${fullName}. 
-
-Event: ${values.eventName}
-Organisation: ${values.organisation}
-Date of Event: ${values.selectedDate}
-Timeslot: ${combinedTimeSlot}
-
-Please assist in approving this booking.
-
-Best Regards
-`;
-        const response2 = await axios.post(
-          "https://us-central1-rpvb-web.cloudfunctions.net/sendEmail",
-          {
-            recipient: "events_management@defencecollectivesg.com",
-            subject: `New Venue Booking Request ${newBKID} Created`,
-            message: customMessage2,
-          }
-        );
+        // add email sending code here
       } catch (error) {
         console.log("occ error", error);
         setShowMessage(true);
@@ -385,11 +316,41 @@ Best Regards
     }
   };
 
+  console.log("showModal", showModal);
+
   /* Destructuring object returned by the custom hook `useForm` */
   const { handleChange, handleSubmit, selectedFile, values, errors, loading } =
     useForm(
-      (values) => BookingValidation(values, selectedFile),
-      valueState,
+      (values) =>
+        BookingValidation(
+          {
+            ...values,
+            locations: locations.map((location) => {
+              return {
+                selectedDate: location.startDate,
+                endDate: location.endDate,
+                startTime: location.startTime,
+                endTime: location.endTime,
+                location: location.locations,
+                setup: location.setup,
+              };
+            }),
+          },
+          selectedFile
+        ),
+      {
+        ...valueState,
+        locations: locations.map((location) => {
+          return {
+            selectedDate: location.startDate,
+            endDate: location.endDate,
+            startTime: location.startTime,
+            endTime: location.endTime,
+            location: location.locations,
+            setup: location.setup,
+          };
+        }),
+      },
       handleBookingRequest
     );
 
@@ -399,10 +360,8 @@ Best Regards
     const value = e.target.value;
     setSelectedMuseum(value);
     const list = museumLocations.find((loc) => loc.label === value);
-    const first = list.first_locations;
-    const second = list.second_locations;
+    const first = list.locations;
     setFirstLocations(first);
-    setSecondLocations(second);
     handleChange(e);
   };
 
@@ -428,6 +387,8 @@ Best Regards
     setAvailableEndTimes(filterEndTimes());
   }, [values.startTime, values.endTime]);
 
+  console.log("locations", locations);
+
   const handleLocationCountchange = (e) => {
     const count = parseInt(e.target.value, 10);
     setLocationsCount(count);
@@ -439,17 +400,14 @@ Best Regards
     setLocations(
       Array.from({ length: count }, () => {
         return {
-          label: matchingLocation.label,
+          ...matchingLocation,
           id: uuidv4(),
-          selectedDate: "2023-11-12",
-          endDate: "2023-11-12",
+          locations: "",
         };
       })
     );
     setShowModal(true);
   };
-
-  const handleModalToggle = () => setShowModal((prev) => !prev);
 
   const updateLocation = ({ id, key, value }) => {
     setLocations(
@@ -465,7 +423,7 @@ Best Regards
     );
   };
 
-  console.log("locations", locations);
+  const handleModalToggle = () => setShowModal((prev) => !prev);
 
   return (
     <div className="CreateBooking-form-container">
@@ -663,15 +621,15 @@ Best Regards
             )}
           </div>
           {locations.length > 0 && locationsCount && (
-            <BookingLocationsModal
-              showModal={showModal}
-              handleModalToggle={handleModalToggle}
+            <LocationModal
               locations={locations}
               availableStartTimes={availableStartTimes}
               availableEndTimes={availableEndTimes}
+              setup={values.setup}
+              showModal={showModal}
+              handleModalToggle={handleModalToggle}
               updateLocation={updateLocation}
               selectedMuseum={selectedMuseum}
-              setup={values.setup}
             />
           )}
           <Form.Group>

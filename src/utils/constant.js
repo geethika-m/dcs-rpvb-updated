@@ -35,41 +35,50 @@ export const museumLocations = [
       "XLab2",
     ],
     second_locations: [
-        "BandStand",
-        "Discovery Hall",
-        "Discovery Land",
-        "Function Room",
-        "Interchange",
-        "iWerks",
-        "Loyalty",
-        "Unity",
-        "VIP Lounge",
-        "XLab1",
-        "XLab2",
-      ],
+      "BandStand",
+      "Discovery Hall",
+      "Discovery Land",
+      "Function Room",
+      "Interchange",
+      "iWerks",
+      "Loyalty",
+      "Unity",
+      "VIP Lounge",
+      "XLab1",
+      "XLab2",
+    ],
   },
   {
     label: "museum_2",
-    first_locations: [
-      "Outdoor Gallery",
-      "Indoor Gallery",
-    ],
-    second_locations: [
-        "Outdoor Gallery",
-        "Indoor Gallery",
-      ],
+    first_locations: ["Outdoor Gallery", "Indoor Gallery"],
+    second_locations: ["Outdoor Gallery", "Indoor Gallery"],
   },
   {
     label: "museum_3",
-    first_locations: [
-      "Indoor Gallery",
-      "Level 1 Gallery",
-      "Outdoor Gallery",
-    ],
-    second_locations: [
-      "Indoor Gallery",
-      "Level 1 Gallery",
-      "Outdoor Gallery",
-      ]
+    first_locations: ["Indoor Gallery", "Level 1 Gallery", "Outdoor Gallery"],
+    second_locations: ["Indoor Gallery", "Level 1 Gallery", "Outdoor Gallery"],
+  },
+];
+
+export const location_labels = [
+  {
+    index: 0,
+    label: "first_location",
+  },
+  {
+    index: 1,
+    label: "second_location",
+  },
+  {
+    index: 2,
+    label: "third_location",
+  },
+  {
+    index: 3,
+    label: "fourth_location",
+  },
+  {
+    index: 4,
+    label: "fifth_location",
   },
 ];

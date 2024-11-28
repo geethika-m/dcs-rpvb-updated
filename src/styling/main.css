@@ -1094,7 +1094,7 @@ th.react-table__sort-header.-sort-asc::after {
   padding-left: 12px;
 }
 
-.CreateBooking-button {
+.CreateBooking-button, .add-location-button {
   width: 80%;
   height: 35px;
   border-radius: 8px;
@@ -1107,6 +1107,11 @@ th.react-table__sort-header.-sort-asc::after {
   margin-left: 12px;
   text-align: center;
   color: white;
+}
+
+.add-location-button {
+  color:#000;
+  background-color: #fff;
 }
 
 .uploadFile {
