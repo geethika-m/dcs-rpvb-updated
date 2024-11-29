@@ -443,7 +443,6 @@ Best Regards
     const matchingLocation = museumLocations.find(
       (location) => location.label === selectedMuseum
     );
-    console.log("matchingLocation", matchingLocation);
     setLocations(
       Array.from({ length: count }, () => {
         return {
@@ -457,7 +456,6 @@ Best Regards
     setShowModal(true);
   };
 
-  console.log("locations", locations);
   const handleModalToggle = () => setShowModal((prev) => !prev);
 
   const updateLocation = ({ id, key, value }) => {
@@ -473,8 +471,6 @@ Best Regards
       })
     );
   };
-
-  console.log("locations", locations);
 
   return (
     <div className="CreateBooking-form-container">

@@ -45,13 +45,6 @@ function BookingLocationsModal({
                 (location) => location[value] === actualValue
               );
               const combined = locationLabel + "_selectedSetup";
-              console.log(
-                "selectedSetup",
-                selectedSetup,
-                locationLabel,
-                combined,
-                `${selectedSetup[combined]}`
-              );
               return (
                 <tr key={location.id}>
                   <td>
@@ -209,7 +202,6 @@ function BookingLocationsModal({
                           type={"file"}
                           accept="image/*" // Limit file selection to image files
                           onChange={(event) => {
-                            console.log("files", event.target.files?.[0]);
                             updateLocation({
                               id: location.id,
                               key: locationLabel + "_customiseSetup",

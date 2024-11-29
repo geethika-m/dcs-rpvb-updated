@@ -248,7 +248,6 @@ const CreateBookingForm = () => {
     const isAvailable = true;
     const newBKID = await customisedBkId("BKID");
     const currentUser = auth.currentUser;
-    console.log("values", values);
     const currentDate = new Date();
     const formattedDate = format(currentDate, "dd-MMM-yyyy");
     // const formattedStartDate = format(parseISO(values.selectedDate), "dd-MMM-yyyy");
@@ -315,8 +314,6 @@ const CreateBookingForm = () => {
       }
     }
   };
-
-  console.log("showModal", showModal);
 
   /* Destructuring object returned by the custom hook `useForm` */
   const { handleChange, handleSubmit, selectedFile, values, errors, loading } =
@@ -387,8 +384,6 @@ const CreateBookingForm = () => {
     setAvailableEndTimes(filterEndTimes());
   }, [values.startTime, values.endTime]);
 
-  console.log("locations", locations);
-
   const handleLocationCountchange = (e) => {
     const count = parseInt(e.target.value, 10);
     setLocationsCount(count);
@@ -396,7 +391,6 @@ const CreateBookingForm = () => {
     const matchingLocation = museumLocations.find(
       (location) => location.label === selectedMuseum
     );
-    console.log("matchingLocation", matchingLocation);
     setLocations(
       Array.from({ length: count }, () => {
         return {

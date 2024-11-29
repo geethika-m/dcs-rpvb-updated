@@ -15,7 +15,6 @@ import { NavLink, useLocation } from "react-router-dom";
 const Header = () => {
   const { pathname } = useLocation();
   //const path = pathname.split('/').pop();
-  console.log("pathname", pathname);
   const sliced = pathname.slice(1);
   const isManageUser = pathname.includes("manageUser");
   const isCompletdApproval = pathname.includes("completedApproval");
@@ -40,23 +39,29 @@ const Header = () => {
               ? `/manageUser/museum_1?src=${sliced}`
               : isCompletdApproval
               ? `/completedApproval/museum_1?src=${sliced}`
-              : isPendingApproval ? `/pendingApproval/museum_1?src=${sliced}`
+              : isPendingApproval
+              ? `/pendingApproval/museum_1?src=${sliced}`
               : `/homepage/museum_1?src=${sliced}`
           }
         >
-          <Button variant="outline-primary" type="button">Singapore Discovery Centre</Button>
+          <Button variant="outline-primary" type="button">
+            Singapore Discovery Centre
+          </Button>
         </a>
         <a
           href={
             isManageUser
               ? `/manageUser/museum_2?src=${sliced}`
               : isCompletdApproval
-              ? `/completedApproval/museum_2?src=${sliced}` 
-              : isPendingApproval ? `/pendingApproval/museum_2?src=${sliced}`
+              ? `/completedApproval/museum_2?src=${sliced}`
+              : isPendingApproval
+              ? `/pendingApproval/museum_2?src=${sliced}`
               : `/homepage/museum_2?src=${sliced}`
           }
         >
-          <Button variant="outline-primary" type="button">Singapore Navy Museum</Button>
+          <Button variant="outline-primary" type="button">
+            Singapore Navy Museum
+          </Button>
         </a>
         <a
           href={
@@ -64,11 +69,14 @@ const Header = () => {
               ? `/manageUser/museum_3?src=${sliced}`
               : isCompletdApproval
               ? `/completedApproval/museum_3?src=${sliced}`
-              : isPendingApproval ? `/pendingApproval/museum_3?src=${sliced}`
+              : isPendingApproval
+              ? `/pendingApproval/museum_3?src=${sliced}`
               : `/homepage/museum_3?src=${sliced}`
           }
         >
-          <Button variant="outline-primary" type="button">Singapore Air Force Museum</Button>
+          <Button variant="outline-primary" type="button">
+            Singapore Air Force Museum
+          </Button>
         </a>
       </div>
     </header>
