@@ -33,6 +33,7 @@ const BookingDetails = (props) => {
   const [showMessage, setShowMessage] = useState(false);
   const [message, setMessage] = useState("");
   const [userType, setUserType] = useState(null);
+
   const [customLayout, setCustomLayout] = useState(recordData.customiseSetup);
   const [nofPax, setNofPax] = useState(recordData.nofPax);
   const [setup, setSetup] = useState(recordData.setup);
@@ -379,15 +380,23 @@ Best Regards
                   First Location Setup:
                 </Form.Label>
                 <br />
-                <Form.Control
-                  className="ViewBooking-input-style"
-                  placeholder={
-                    recordData.first_location_setup || "Not Available"
-                  }
-                  type={"text"}
-                  disabled
-                  readOnly
-                />
+                {recordData.first_location_selectedSetup === "Other" ? (
+                  <div className="ViewBooking-input-style">
+                    <a href={recordData.first_location_customiseSetup} download>
+                      Download Setup
+                    </a>
+                  </div>
+                ) : (
+                  <Form.Control
+                    className="ViewBooking-input-style"
+                    placeholder={
+                      recordData.first_location_selectedSetup || "Not Available"
+                    }
+                    type={"text"}
+                    disabled
+                    readOnly
+                  />
+                )}
               </Form.Group>
               <Form.Group id="location">
                 <Form.Label className="ViewBooking-label">
@@ -554,15 +563,27 @@ Best Regards
                   Second Location Setup:
                 </Form.Label>
                 <br />
-                <Form.Control
-                  className="ViewBooking-input-style"
-                  placeholder={
-                    recordData.second_location_setup || "Not Available"
-                  }
-                  type={"text"}
-                  disabled
-                  readOnly
-                />
+                {recordData.second_location_selectedSetup === "Other" ? (
+                  <div className="ViewBooking-input-style">
+                    <a
+                      href={recordData.second_location_customiseSetup}
+                      download
+                    >
+                      Download Setup
+                    </a>
+                  </div>
+                ) : (
+                  <Form.Control
+                    className="ViewBooking-input-style"
+                    placeholder={
+                      recordData.second_location_selectedSetup ||
+                      "Not Available"
+                    }
+                    type={"text"}
+                    disabled
+                    readOnly
+                  />
+                )}
               </Form.Group>
               <Form.Group id="location">
                 <Form.Label className="ViewBooking-label">
@@ -642,15 +663,23 @@ Best Regards
                   Third Location Setup:
                 </Form.Label>
                 <br />
-                <Form.Control
-                  className="ViewBooking-input-style"
-                  placeholder={
-                    recordData.third_location_setup || "Not Available"
-                  }
-                  type={"text"}
-                  disabled
-                  readOnly
-                />
+                {recordData.third_location_selectedSetup === "Other" ? (
+                  <div className="ViewBooking-input-style">
+                    <a href={recordData.third_location_customiseSetup} download>
+                      Download Setup
+                    </a>
+                  </div>
+                ) : (
+                  <Form.Control
+                    className="ViewBooking-input-style"
+                    placeholder={
+                      recordData.third_location_selectedSetup || "Not Available"
+                    }
+                    type={"text"}
+                    disabled
+                    readOnly
+                  />
+                )}
               </Form.Group>
               <Form.Group id="location">
                 <Form.Label className="ViewBooking-label">
@@ -774,51 +803,26 @@ Best Regards
                   Fourth Location Setup:
                 </Form.Label>
                 <br />
-                {!formState ? (
-                  <Form.Select
-                    className="viewBooking-ddl-style2"
-                    disabled={formState}
-                    defaultValue={recordData.setup || "Not Available"}
-                    type={"text"}
-                    onChange={handleSetupChange}
-                  >
-                    <option value={"Theatre Style"}>Theatre Style</option>
-                    <option value={"Meeting U Shape"}>Meeting U Shape</option>
-                    <option value={"Meeting Round Shape"}>
-                      Meeting Round Shape
-                    </option>
-                    <option value={"Other"}>Other</option>
-                  </Form.Select>
-                ) : recordData.setup === "Other" ? (
+                {recordData.fourth_location_selectedSetup === "Other" ? (
                   <div className="ViewBooking-input-style">
-                    <a href={recordData.customiseSetup} download>
+                    <a
+                      href={recordData.fourth_location_customiseSetup}
+                      download
+                    >
                       Download Setup
                     </a>
                   </div>
                 ) : (
                   <Form.Control
                     className="ViewBooking-input-style"
-                    placeholder={recordData.setup}
+                    placeholder={
+                      recordData.fourth_location_selectedSetup ||
+                      "Not Available"
+                    }
                     type={"text"}
                     disabled
                     readOnly
                   />
-                )}
-                {!formState && setup === "Other" && (
-                  <Form.Group id="customisedSetup">
-                    <Form.Label className="ViewBooking-label">
-                      Please upload custom layout:
-                    </Form.Label>
-                    <br />
-                    <Form.Control
-                      className="uploadFile"
-                      title={"customiseSetup"}
-                      name={"customiseSetup"}
-                      type={"file"}
-                      accept="image/*" // Limit file selection to image files
-                      onChange={handleCustomisedSetupUpload}
-                    />
-                  </Form.Group>
                 )}
               </Form.Group>
               {recordData.bookStatus !== "Cancelled" && (
@@ -929,15 +933,23 @@ Best Regards
                   Fifth Location Setup:
                 </Form.Label>
                 <br />
-                <Form.Control
-                  className="ViewBooking-input-style"
-                  placeholder={
-                    recordData.fifth_location_setup || "Not Available"
-                  }
-                  type={"text"}
-                  disabled
-                  readOnly
-                />
+                {recordData.fifth_location_selectedSetup === "Other" ? (
+                  <div className="ViewBooking-input-style">
+                    <a href={recordData.fifth_location_customiseSetup} download>
+                      Download Setup
+                    </a>
+                  </div>
+                ) : (
+                  <Form.Control
+                    className="ViewBooking-input-style"
+                    placeholder={
+                      recordData.fifth_location_selectedSetup || "Not Available"
+                    }
+                    type={"text"}
+                    disabled
+                    readOnly
+                  />
+                )}
               </Form.Group>
               <Form.Group id="completedDate">
                 <Form.Label className="ViewBooking-label">

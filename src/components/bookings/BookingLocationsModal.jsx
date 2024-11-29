@@ -10,7 +10,6 @@ function BookingLocationsModal({
   locations,
   availableStartTimes,
   availableEndTimes,
-  setup,
   updateLocation,
   selectedMuseum,
 }) {
@@ -209,13 +208,19 @@ function BookingLocationsModal({
                           name={"customiseSetup"}
                           type={"file"}
                           accept="image/*" // Limit file selection to image files
-                          onChange={(event) =>
+                          onChange={(event) => {
+                            console.log("files", event.target.files?.[0]);
                             updateLocation({
                               id: location.id,
                               key: locationLabel + "_customiseSetup",
                               value: event.target.value,
-                            })
-                          }
+                            });
+                            updateLocation({
+                              id: location.id,
+                              key: locationLabel + "_setupFile",
+                              value: event.target.files?.[0],
+                            });
+                          }}
                         />
                       </Form.Group>
                     )}

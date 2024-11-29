@@ -258,19 +258,6 @@ const CreateBookingForm = () => {
 
     let downloadUrl = "";
 
-    /* Upload the image to storage, then generate the download url and add to database */
-    if (!selectedFile) {
-      downloadUrl = "Not Applicable";
-    } else {
-      const fileName = `${selectedFile.name}`;
-      const customLayoutRef = ref(
-        storage,
-        `customlayouts/${newBKID}/${fileName}`
-      );
-      await uploadBytes(customLayoutRef, selectedFile);
-      downloadUrl = await getDownloadURL(customLayoutRef);
-    }
-
     if (isAvailable) {
       try {
         let data = {
@@ -289,7 +276,6 @@ const CreateBookingForm = () => {
           organisation: values.organisation,
           inventory: values.inventory,
           // timeSlot: combinedTimeSlot,
-          customiseSetup: downloadUrl,
           remarks: values.remarks,
           approvalStatus: "Pending",
           bookStatus: "Booked",
@@ -297,11 +283,32 @@ const CreateBookingForm = () => {
           // timeSlot: "11:30 AM - 2:30 PM",
         };
 
-        locations.forEach((location) => {
-          const { id, label, ...rest } = location;
+        // locations.forEach((location) => {
+        /* Upload the image to storage, then generate the download url and add to database */
+        for (let i = 0; i < locations.length; i++) {
+          const locationLabel = location_labels.find(
+            (loc) => loc.index === i
+          )?.label;
+          const value = locations[i][`${locationLabel}_selectedSetup`];
+          const file = locations[i][`${locationLabel}_setupFile`];
+          if (value !== "Other") {
+            downloadUrl = "Not Applicable";
+          } else {
+            const fileName = `${file.name}`;
+            const customLayoutRef = ref(
+              storage,
+              `customlayouts/${newBKID}/${fileName}`
+            );
+            await uploadBytes(customLayoutRef, file);
+            downloadUrl = await getDownloadURL(customLayoutRef);
+          }
+          const fileName = `${locationLabel}_setupFile`;
+          delete locations[i][fileName];
+          const { id, label, ...rest } = locations[i];
           data = {
             ...data,
             ...rest,
+            [`${locationLabel}_customiseSetup`]: downloadUrl,
             startDate: locations[0].first_location_startDate,
             endDate: locations[0].first_location_endDate,
             timeSlot:
@@ -309,7 +316,8 @@ const CreateBookingForm = () => {
               " - " +
               locations[0].first_location_endTime,
           };
-        });
+        }
+        // });
         database.bookingRef.add(data);
 
         /* 
@@ -672,7 +680,6 @@ Best Regards
               availableEndTimes={availableEndTimes}
               updateLocation={updateLocation}
               selectedMuseum={selectedMuseum}
-              setup={values.setup}
             />
           )}
           <Form.Group>
