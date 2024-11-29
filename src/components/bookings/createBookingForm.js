@@ -449,6 +449,7 @@ Best Regards
     setShowModal(true);
   };
 
+  console.log("locations", locations);
   const handleModalToggle = () => setShowModal((prev) => !prev);
 
   const updateLocation = ({ id, key, value }) => {

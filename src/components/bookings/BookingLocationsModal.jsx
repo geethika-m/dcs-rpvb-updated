@@ -40,6 +40,19 @@ function BookingLocationsModal({
               const locationLabel = location_labels.find(
                 (loc) => loc.index === index
               )?.label;
+              const value = `${locationLabel}_selectedSetup`;
+              const actualValue = location[value];
+              const selectedSetup = locations.find(
+                (location) => location[value] === actualValue
+              );
+              const combined = locationLabel + "_selectedSetup";
+              console.log(
+                "selectedSetup",
+                selectedSetup,
+                locationLabel,
+                combined,
+                `${selectedSetup[combined]}`
+              );
               return (
                 <tr key={location.id}>
                   <td>
@@ -155,13 +168,20 @@ function BookingLocationsModal({
                         className="createBooking-ddl-style2"
                         title={"setup"}
                         name={"setup"}
-                        onChange={(e) =>
+                        onChange={(e) => {
+                          const value = e.target.value;
                           updateLocation({
                             id: location.id,
                             key: locationLabel + "_setup",
-                            value: e.target.value,
-                          })
-                        }
+                            value,
+                          });
+
+                          updateLocation({
+                            id: location.id,
+                            key: locationLabel + "_selectedSetup",
+                            value,
+                          });
+                        }}
                       >
                         <option value={""}>Please select a setup</option>
                         <option value={"Theatre Style"}>Theatre Style</option>
@@ -174,7 +194,10 @@ function BookingLocationsModal({
                         <option value={"Other"}>Other</option>
                       </Form.Select>
                     </Form.Group>
-                    {setup === "Other" && (
+                  </td>
+                  <td>
+                    {" "}
+                    {selectedSetup[combined] === "Other" && (
                       <Form.Group controlId="customiseSetup" className="mb-3">
                         <Form.Label className="CreateUser-label">
                           Please upload custom layout
@@ -186,6 +209,13 @@ function BookingLocationsModal({
                           name={"customiseSetup"}
                           type={"file"}
                           accept="image/*" // Limit file selection to image files
+                          onChange={(event) =>
+                            updateLocation({
+                              id: location.id,
+                              key: locationLabel + "_customiseSetup",
+                              value: event.target.value,
+                            })
+                          }
                         />
                       </Form.Group>
                     )}
