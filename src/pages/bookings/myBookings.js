@@ -131,6 +131,7 @@ const MyBookings = () => {
         accessor: "fifth_location_setup",
         Header: "Fifth Location Setup",
       },
+      { accessor: "remarks", Header: "Remarks" },
       //  { accessor: "selectedDate", Header: "Date" },
       // { accessor: "timeSlot", Header: "Timeslot" },
       {
@@ -183,7 +184,16 @@ const MyBookings = () => {
             first_location_startTime:
               doc.data().first_location_startTime || "—",
             first_location_endTime: doc.data().first_location_endTime || "—",
-            first_location_setup: doc.data().first_location_setup || "—",
+            first_location_setup:
+              doc.data().first_location_selectedSetup === "Other" ? (
+                <div className="ViewBooking-input-style">
+                  <a href={doc.data().first_location_customiseSetup} download>
+                    Download Setup
+                  </a>
+                </div>
+              ) : (
+                doc.data().first_location_selectedSetup || "—"
+              ),
             second_location: doc.data().second_location || "—",
             second_location_startDate:
               doc.data().second_location_startDate || "—",
@@ -191,7 +201,16 @@ const MyBookings = () => {
             second_location_startTime:
               doc.data().second_location_startTime || "—",
             second_location_endTime: doc.data().second_location_endTime || "—",
-            second_location_setup: doc.data().second_location_setup || "—",
+            second_location_setup:
+              doc.data().second_location_selectedSetup === "Other" ? (
+                <div className="ViewBooking-input-style">
+                  <a href={doc.data().second_location_customiseSetup} download>
+                    Download Setup
+                  </a>
+                </div>
+              ) : (
+                doc.data().second_location_selectedSetup || "—"
+              ),
             third_location: doc.data().third_location || "—",
             third_location_startDate:
               doc.data().third_location_startDate || "—",
@@ -199,7 +218,16 @@ const MyBookings = () => {
             third_location_startTime:
               doc.data().third_location_startTime || "—",
             third_location_endTime: doc.data().third_location_endTime || "—",
-            third_location_setup: doc.data().third_location_setup || "—",
+            third_location_setup:
+              doc.data().third_location_selectedSetup === "Other" ? (
+                <div className="ViewBooking-input-style">
+                  <a href={doc.data().third_location_customiseSetup} download>
+                    Download Setup
+                  </a>
+                </div>
+              ) : (
+                doc.data().third_location_selectedSetup || "—"
+              ),
             fourth_location: doc.data().fourth_location || "—",
             fourth_location_startDate:
               doc.data().fourth_location_startDate || "—",
@@ -207,7 +235,16 @@ const MyBookings = () => {
             fourth_location_startTime:
               doc.data().fourth_location_startTime || "—",
             fourth_location_endTime: doc.data().fourth_location_endTime || "—",
-            fourth_location_setup: doc.data().fourth_location_setup || "—",
+            fourth_location_setup:
+              doc.data().fourth_location_selectedSetup === "Other" ? (
+                <div className="ViewBooking-input-style">
+                  <a href={doc.data().fourth_location_customiseSetup} download>
+                    Download Setup
+                  </a>
+                </div>
+              ) : (
+                doc.data().fourth_location_selectedSetup || "—"
+              ),
             fifth_location: doc.data().fifth_location || "—",
             fifth_location_startDate:
               doc.data().fifth_location_startDate || "—",
@@ -215,7 +252,18 @@ const MyBookings = () => {
             fifth_location_startTime:
               doc.data().fifth_location_startTime || "—",
             fifth_location_endTime: doc.data().fifth_location_endTime || "—",
-            fifth_location_setup: doc.data().fifth_location_setup || "—",
+            fifth_location_setup:
+              doc.data().fifth_location_selectedSetup === "Other" ? (
+                <div className="ViewBooking-input-style">
+                  <a href={doc.data().fifth_location_customiseSetup} download>
+                    Download Setup
+                  </a>
+                </div>
+              ) : (
+                doc.data().fifth_location_selectedSetup || "—"
+              ),
+
+            remarks: doc.data().remarks || "—",
             // selectedDate: formattedSelectedDate,
             //timeSlot: doc.data().timeSlot,
             approvalStatus: doc.data().approvalStatus,

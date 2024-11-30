@@ -235,6 +235,15 @@ const CreateBookingForm = () => {
     getRequestorInfo();
   }, []);
 
+  const checkForEmptyLocations = () => {
+    const allEntered = validateLocations();
+    if (!allEntered) {
+      alert("No locations added. Please add at-least one.");
+      return false;
+    }
+    return allEntered;
+  };
+
   /* 
     Function to handle Create Booking requests.
     1.) Use checkAvailability function to check for availability,
@@ -246,6 +255,10 @@ const CreateBookingForm = () => {
     2.2) If there are other issues, return error message.
     */
   const handleBookingRequest = async () => {
+    const allEntered = checkForEmptyLocations();
+    if (!allEntered) {
+      return;
+    }
     //const isAvailable = await checkAvailability();
     const isAvailable = true;
     const newBKID = await customisedBkId("BKID");
@@ -443,20 +456,73 @@ Best Regards
     const matchingLocation = museumLocations.find(
       (location) => location.label === selectedMuseum
     );
-    setLocations(
-      Array.from({ length: count }, () => {
-        return {
-          label: matchingLocation.label,
-          id: uuidv4(),
-          selectedDate: "2023-11-12",
-          endDate: "2023-11-12",
-        };
-      })
-    );
-    setShowModal(true);
+    if (count) {
+      setLocations(
+        Array.from({ length: count }, () => {
+          return {
+            label: matchingLocation.label,
+            id: uuidv4(),
+            selectedDate: "2023-11-12",
+            endDate: "2023-11-12",
+          };
+        })
+      );
+      setShowModal(true);
+    }
   };
 
-  const handleModalToggle = () => setShowModal((prev) => !prev);
+  const validateLocations = () => {
+    let allEntered = true;
+    let otherSelected = false;
+    if (locations.length === 0) {
+      alert("No locations added. Please add at-least one.");
+      return false;
+    }
+    locations.forEach((location, index) => {
+      const locationLabel = location_labels.find(
+        (loc) => loc.index === index
+      )?.label;
+      const fields = {
+        [locationLabel]: location[locationLabel],
+        [`${locationLabel}_startDate`]: location[`${locationLabel}_startDate`],
+        [`${locationLabel}_endDate`]: location[`${locationLabel}_endDate`],
+        [`${locationLabel}_startTime`]: location[`${locationLabel}_startTime`],
+        [`${locationLabel}_endTime`]: location[`${locationLabel}_endTime`],
+        [`${locationLabel}_selectedSetup`]:
+          location[`${locationLabel}_selectedSetup`],
+      };
+      const allFilled = Object.keys(fields).every((key) => fields[key]);
+
+      if (
+        location[`${locationLabel}_selectedSetup`] === "Other" &&
+        !location.hasOwnProperty([`${locationLabel}_setupFile`])
+      ) {
+        allEntered = false;
+        otherSelected = true;
+      } else {
+        allEntered = allFilled;
+      }
+    });
+    if (!allEntered && otherSelected) {
+      alert("Please upload custom layout file for setup of other.");
+      return false;
+    } else if (!allEntered) {
+      alert("Please select all the values for each location row.");
+      return false;
+    } else {
+      setShowModal(false);
+      return true;
+    }
+  };
+
+  const handleModalToggle = () => {
+    setShowModal((prev) => !prev);
+    const allEntered = validateLocations();
+    if (!allEntered) {
+      setLocations([]);
+      setLocationsCount(0);
+    }
+  };
 
   const updateLocation = ({ id, key, value }) => {
     setLocations(
@@ -495,7 +561,11 @@ Best Regards
               <option value={" "}>Please select your museum</option>
               {museumsList.map((museum) => {
                 const { label, value } = museum;
-                return <option value={value}>{label}</option>;
+                return (
+                  <option value={value} key={label}>
+                    {label}
+                  </option>
+                );
               })}
             </Form.Select>
             {errors.museum && (
@@ -589,29 +659,6 @@ Best Regards
               <p className="validate-error">{errors.organisation} </p>
             )}
           </Form.Group>
-          <Form.Group id="inventory">
-            <Form.Label className="CreateUser-label">Inventory:</Form.Label>
-            <br />
-            <Form.Select
-              className="createBooking-ddl-inventory"
-              title={"inventory"}
-              name={"inventory"}
-              onChange={handleChange}
-              value={values.inventory}
-              multiple={true}
-            >
-              <option value={" "}>Select the resources needed</option>
-              <option value={"Not Applicable"}>Not Applicable</option>
-              {inventoryList.map((inventory, index) => (
-                <option key={index} value={inventory}>
-                  {inventory}
-                </option>
-              ))}
-            </Form.Select>
-            {errors.inventory && (
-              <p className="validate-error">{errors.inventory} </p>
-            )}
-          </Form.Group>
 
           <div
             className={`message ${
@@ -655,6 +702,7 @@ Best Regards
                   className="createBooking-ddl-style2"
                   title={"locations_count"}
                   name={"locations_count"}
+                  value={locationsCount}
                   onChange={handleLocationCountchange}
                 >
                   <option value="">Select count</option>
@@ -671,6 +719,7 @@ Best Regards
             <BookingLocationsModal
               showModal={showModal}
               handleModalToggle={handleModalToggle}
+              validateLocations={validateLocations}
               locations={locations}
               availableStartTimes={availableStartTimes}
               availableEndTimes={availableEndTimes}

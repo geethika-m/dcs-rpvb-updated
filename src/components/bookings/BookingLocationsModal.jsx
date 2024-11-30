@@ -7,6 +7,7 @@ import { location_labels, museumLocations } from "../../utils/constant";
 function BookingLocationsModal({
   showModal,
   handleModalToggle,
+  validateLocations,
   locations,
   availableStartTimes,
   availableEndTimes,
@@ -60,7 +61,7 @@ function BookingLocationsModal({
                         })
                       }
                     >
-                      <option value={" "}>select location</option>
+                      <option value={""}>select location</option>
                       {matchingLocation.first_locations.map((location) => {
                         return (
                           <option value={location} key={location}>
@@ -121,7 +122,7 @@ function BookingLocationsModal({
                           })
                         }
                       >
-                        <option value={" "}>Please select a start time</option>
+                        <option value={""}>Please select a start time</option>
                         {availableStartTimes.map((time, index) => (
                           <option key={index} value={time}>
                             {time}
@@ -145,7 +146,7 @@ function BookingLocationsModal({
                           })
                         }
                       >
-                        <option value={" "}>Please select an end time</option>
+                        <option value={""}>Please select an end time</option>
                         {availableEndTimes.map((time, index) => (
                           <option key={index} value={time}>
                             {time}
@@ -224,7 +225,7 @@ function BookingLocationsModal({
         </table>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={handleModalToggle}>
+        <Button variant="primary" onClick={validateLocations}>
           Save Changes
         </Button>
       </Modal.Footer>

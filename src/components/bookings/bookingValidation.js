@@ -73,13 +73,13 @@ export function BookingValidation(values, selectedFile) {
    * Checks if the inventory field is empty,
    * and if it is, it returns an error message.
    */
-  if (
+  /*if (
     !values.inventory ||
     values.inventory.length === 0 ||
     values.inventory.includes(" ")
   ) {
     errors.inventory = "Please select at least one item from inventory.";
-  }
+  }*/
 
   /*
    * Checks if the selectedDate field is empty,
