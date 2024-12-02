@@ -44,5 +44,6 @@ To address these issues and increase productivity, this project was proposed and
 3. When using command prompt, ensure to run as an administrator.
 
 ### Developer
-Vanessa Ho Jingmei | [@VanessaHo99](https://github.com/VanessaHo99)
+Vanessa Ho Jingmei | [@VanessaHo99](https://github.com/VanessaHo99) 2023
+Geethika | 2024
 
