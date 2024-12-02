@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Helmet from "react-helmet";
+import { useNavigate } from "react-router-dom";
 import ContentContainer from "../../components/pageLayout/contentContainer";
 import { database, auth } from "../../firebase";
 import TableContainer from "../../components/tables/tableContainer";
@@ -18,25 +19,122 @@ const MuseumHomePage = () => {
   const [records, setRecords] = useState([]);
   const [userType, setUserType] = useState("");
   const { name } = useParams();
+  const navigate = useNavigate();
 
   const columns = useMemo(
     () => [
       { accessor: "bkId", Header: "BkId" },
       { accessor: "requestorName", Header: "Requestor" },
-      { accessor: "dateCreated", Header: "Date Created" },
       { accessor: "eventName", Header: "Event Name" },
       { accessor: "programmes", Header: "Programmes" },
       { accessor: "nofPax", Header: "No of Pax" },
       { accessor: "organisation", Header: "Organisation" },
-      { accessor: "location", Header: "Location" },
+      { accessor: "first_location", Header: "First Location" },
       {
-        accessor: "selectedDate",
-        Header: "Start Date",
-        // Format the data to 'DD-MMM-YYYY"
-        Cell: ({ value }) => format(new Date(value), "dd-MMM-yyyy"),
+        accessor: "first_location_startDate",
+        Header: "First Location Start Date",
       },
-      { accessor: "endDate", Header: "End Date" },
-      { accessor: "timeSlot", Header: "Timeslot" },
+      {
+        accessor: "first_location_endDate",
+        Header: "First Location End Date",
+      },
+      {
+        accessor: "first_location_startTime",
+        Header: "First Location Start Time",
+      },
+      {
+        accessor: "first_location_endTime",
+        Header: "First Location End Time",
+      },
+      {
+        accessor: "first_location_setup",
+        Header: "First Location Setup",
+      },
+      { accessor: "second_location", Header: "Second Location" },
+      {
+        accessor: "second_location_startDate",
+        Header: "Second Location Start Date",
+      },
+      {
+        accessor: "second_location_endDate",
+        Header: "Second Location End Date",
+      },
+      {
+        accessor: "second_location_startTime",
+        Header: "Second Location Start Time",
+      },
+      {
+        accessor: "second_location_endTime",
+        Header: "Second Location End Time",
+      },
+      {
+        accessor: "second_location_setup",
+        Header: "Second Location Setup",
+      },
+      { accessor: "third_location", Header: "Third Location" },
+      {
+        accessor: "third_location_startDate",
+        Header: "Third Location Start Date",
+      },
+      {
+        accessor: "third_location_endDate",
+        Header: "Third Location End Date",
+      },
+      {
+        accessor: "third_location_startTime",
+        Header: "third Location Start Time",
+      },
+      {
+        accessor: "third_location_endTime",
+        Header: "Third Location End Time",
+      },
+      {
+        accessor: "third_location_setup",
+        Header: "Third Location Setup",
+      },
+      { accessor: "fourth_location", Header: "Fourth Location" },
+      {
+        accessor: "fourth_location_startDate",
+        Header: "Fourth Location Start Date",
+      },
+      {
+        accessor: "fourth_location_endDate",
+        Header: "Fourth Location End Date",
+      },
+      {
+        accessor: "fourth_location_startTime",
+        Header: "Fourth Location Start Time",
+      },
+      {
+        accessor: "fourth_location_endTime",
+        Header: "Fourth Location End Time",
+      },
+      {
+        accessor: "fourth_location_setup",
+        Header: "Fourth Location Setup",
+      },
+      { accessor: "fifth_location", Header: "Fifth Location" },
+      {
+        accessor: "fifth_location_startDate",
+        Header: "Fifth Location Start Date",
+      },
+      {
+        accessor: "fifth_location_endDate",
+        Header: "Fifth Location End Date",
+      },
+      {
+        accessor: "fifth_location_startTime",
+        Header: "Fifth Location Start Time",
+      },
+      {
+        accessor: "fifth_location_endTime",
+        Header: "Fifth Location End Time",
+      },
+      {
+        accessor: "fifth_location_setup",
+        Header: "Fifth Location Setup",
+      },
+      { accessor: "remarks", Header: "Remarks" },
       {
         accessor: "approvalStatus",
         Header: "Approval Status",
@@ -127,17 +225,124 @@ const MuseumHomePage = () => {
               tempItem.push({
                 bkId: doc.data().bkId,
                 requestorName: doc.data().requestorName,
-                dateCreated: doc.data().dateCreated,
-                museum: doc.data().museum,
                 eventName: doc.data().eventName,
                 programmes: doc.data().programmes,
                 nofPax: doc.data().nofPax,
                 organisation: doc.data().organisation,
-                first_location: doc.data().first_location,
-                second_location: doc.data().second_location,
-                selectedDate: formattedSelectedDate,
-                endDate: doc.data().endDate,
-                timeSlot: doc.data().timeSlot,
+                first_location: doc.data().first_location || "—",
+                first_location_startDate:
+                  doc.data().first_location_startDate || "—",
+                first_location_endDate:
+                  doc.data().first_location_endDate || "—",
+                first_location_startTime:
+                  doc.data().first_location_startTime || "—",
+                first_location_endTime:
+                  doc.data().first_location_endTime || "—",
+                first_location_setup:
+                  doc.data().first_location_selectedSetup === "Other" ? (
+                    <div className="ViewBooking-input-style">
+                      <a
+                        href={doc.data().first_location_customiseSetup}
+                        download
+                      >
+                        Download Setup
+                      </a>
+                    </div>
+                  ) : (
+                    doc.data().first_location_selectedSetup || "—"
+                  ),
+                second_location: doc.data().second_location || "—",
+                second_location_startDate:
+                  doc.data().second_location_startDate || "—",
+                second_location_endDate:
+                  doc.data().second_location_endDate || "—",
+                second_location_startTime:
+                  doc.data().second_location_startTime || "—",
+                second_location_endTime:
+                  doc.data().second_location_endTime || "—",
+                second_location_setup:
+                  doc.data().second_location_selectedSetup === "Other" ? (
+                    <div className="ViewBooking-input-style">
+                      <a
+                        href={doc.data().second_location_customiseSetup}
+                        download
+                      >
+                        Download Setup
+                      </a>
+                    </div>
+                  ) : (
+                    doc.data().second_location_selectedSetup || "—"
+                  ),
+                third_location: doc.data().third_location || "—",
+                third_location_startDate:
+                  doc.data().third_location_startDate || "—",
+                third_location_endDate:
+                  doc.data().third_location_endDate || "—",
+                third_location_startTime:
+                  doc.data().third_location_startTime || "—",
+                third_location_endTime:
+                  doc.data().third_location_endTime || "—",
+                third_location_setup:
+                  doc.data().third_location_selectedSetup === "Other" ? (
+                    <div className="ViewBooking-input-style">
+                      <a
+                        href={doc.data().third_location_customiseSetup}
+                        download
+                      >
+                        Download Setup
+                      </a>
+                    </div>
+                  ) : (
+                    doc.data().third_location_selectedSetup || "—"
+                  ),
+                fourth_location: doc.data().fourth_location || "—",
+                fourth_location_startDate:
+                  doc.data().fourth_location_startDate || "—",
+                fourth_location_endDate:
+                  doc.data().fourth_location_endDate || "—",
+                fourth_location_startTime:
+                  doc.data().fourth_location_startTime || "—",
+                fourth_location_endTime:
+                  doc.data().fourth_location_endTime || "—",
+                fourth_location_setup:
+                  doc.data().fourth_location_selectedSetup === "Other" ? (
+                    <div className="ViewBooking-input-style">
+                      <a
+                        href={doc.data().fourth_location_customiseSetup}
+                        download
+                      >
+                        Download Setup
+                      </a>
+                    </div>
+                  ) : (
+                    doc.data().fourth_location_selectedSetup || "—"
+                  ),
+                fifth_location: doc.data().fifth_location || "—",
+                fifth_location_startDate:
+                  doc.data().fifth_location_startDate || "—",
+                fifth_location_endDate:
+                  doc.data().fifth_location_endDate || "—",
+                fifth_location_startTime:
+                  doc.data().fifth_location_startTime || "—",
+                fifth_location_endTime:
+                  doc.data().fifth_location_endTime || "—",
+                fifth_location_setup:
+                  doc.data().fifth_location_selectedSetup === "Other" ? (
+                    <div className="ViewBooking-input-style">
+                      <a
+                        href={doc.data().fifth_location_customiseSetup}
+                        download
+                      >
+                        Download Setup
+                      </a>
+                    </div>
+                  ) : (
+                    doc.data().fifth_location_selectedSetup || "—"
+                  ),
+
+                remarks: doc.data().remarks || "—",
+                // selectedDate: formattedSelectedDate,
+                //timeSlot: doc.data().timeSlot,
                 approvalStatus: doc.data().approvalStatus,
                 fbId: doc.id,
               });
@@ -170,6 +375,12 @@ const MuseumHomePage = () => {
     return unsubscribe;
   }, []);
 
+  const handleView = (type, fbId) => {
+    if (type === "booking") {
+      navigate("/booking/" + fbId);
+    }
+  };
+
   return (
     <ContentContainer>
       <Helmet>
@@ -181,8 +392,7 @@ const MuseumHomePage = () => {
           columns={columns}
           data={records}
           showViewColumn={true}
-          showPendingApprovalCount={true}
-          enableCalender={true}
+          onView={handleView}
         />
       </div>
       {userType !== "User" && (

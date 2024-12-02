@@ -32,7 +32,8 @@ const TableContainer = ({
   showViewColumn,
   enableCalender,
   showPendingApprovalCount,
-  updateUsersList,
+  updateUsersList, // it should be a general name...
+  updateRecordsList,
 }) => {
   const navigate = useNavigate();
   const [userType, setUserType] = useState(null);
@@ -65,6 +66,11 @@ const TableContainer = ({
   }, [data]);
 
   const tableHooks = (hooks) => {
+    if (updateRecordsList) {
+      // .log(updateRecordsList);
+    } else {
+      // console.log(updateUsersList);
+    }
     if (showViewColumn) {
       hooks.visibleColumns.push((col) => [
         ...col,
@@ -92,16 +98,35 @@ const TableContainer = ({
               className="table-icon"
               onClick={(event) => {
                 event.preventDefault();
-                const shouldDelete = window.confirm(
-                  `Are you sure you want to delete the booking for name ${row.values.fullName}?`
-                );
-                if (shouldDelete) {
-                  updateUsersList(
-                    filteredDataRef.current.filter(
-                      (user) => user.id !== +row.values.id
-                    )
+                if (row.original.bkId) {
+                  console.log(row);
+                  console.log(filteredDataRef);
+
+                  const shouldDelete = window.confirm(
+                    `Are you sure you want to delete the booking for name ${row.values.eventName}?`
                   );
-                  database.usersRef.doc(row.values.fbId).delete();
+                  if (shouldDelete) {
+                    updateUsersList(
+                      filteredDataRef.current.filter((el) => {
+                        return el.bkId !== +row.values.bkId;
+                      })
+                    );
+                    database.usersRef.doc(row.values.fbId).delete();
+                  }
+                } else {
+                  const shouldDelete = window.confirm(
+                    `Are you sure you want to delete the booking for name ${row.values.fullName}?`
+                  );
+                  if (shouldDelete) {
+                    updateUsersList(
+                      filteredDataRef.current.filter((user) => {
+                        return user.id !== +row.values.id;
+                      })
+                    );
+                    //
+                    database.usersRef.doc(row.values.fbId).delete();
+                    //
+                  }
                 }
               }}
             />
@@ -147,13 +172,6 @@ const TableContainer = ({
   const pendingApprovalCount = data.filter(
     (record) => record.approvalStatus === "Pending"
   ).length;
-  console.log({
-    showPendingApprovalCount,
-    userType,
-    pendingApprovalCount,
-    data,
-  });
-
 
   return (
     <div>
