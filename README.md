@@ -29,7 +29,7 @@ To address these issues and increase productivity, this project was proposed and
   * Step 1: Install all node modules used in the project by running > `npm install`
   * Step 2: Build the project by running > `npm run build`
   * Step 3: Login Firebase CLI by running > `firebase login` and you should be directed to your browser to login, else copy and paste the link to your browser. To confirm you logged in successfully run > `firebase` login again<br/><br/>
-  * Step 4: Upon successful login, check that the file directory looks the same as the image below:
+  * Step 4: Upon successful login, check that the file directory has all the required files:
     (* Take note that the env file will not be included in the file directory and needs to be added manually as mentioned.) <br/>
   * Step 5: If all require files are there, change directory to project folder and deploy the project by running > `firebase deploy -only hosting` on command prompt
   * Once finished, the project is deployed and ready for use! 
