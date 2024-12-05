@@ -28,13 +28,9 @@ To address these issues and increase productivity, this project was proposed and
 4. Install the following and set up before deployment:
   * Step 1: Install all node modules used in the project by running > `npm install`
   * Step 2: Build the project by running > `npm run build`
-  * Step 3: Login Firebase CLI by running > `firebase login` and you should be directed to your browser to login, else copy and paste the link to your browser. To confirm you logged in successfully run > `firebase` login again and you should see the following: <br/><br/>
-<img height="50%" width="50%" alt="image" src="https://github.com/sdc-singapore/dcs-rpvb/assets/73679994/7b56612e-da09-440e-a15b-99f8fcb5d47a"> <br/>
+  * Step 3: Login Firebase CLI by running > `firebase login` and you should be directed to your browser to login, else copy and paste the link to your browser. To confirm you logged in successfully run > `firebase` login again<br/><br/>
   * Step 4: Upon successful login, check that the file directory looks the same as the image below:
     (* Take note that the env file will not be included in the file directory and needs to be added manually as mentioned.) <br/>
-
-<img width="136" alt="image" src="https://github.com/sdc-singapore/dcs-rpvb/assets/73679994/5ade593f-d6e1-4d2b-9f44-015f5bddc447"> <br/>
-
   * Step 5: If all require files are there, change directory to project folder and deploy the project by running > `firebase deploy -only hosting` on command prompt
   * Once finished, the project is deployed and ready for use! 
 
@@ -43,7 +39,7 @@ To address these issues and increase productivity, this project was proposed and
 2. Never upload LOCAL ENV file to GitHub or a Shared Directory (Security Reasons)
 3. When using command prompt, ensure to run as an administrator.
 
-### Developer
+### Developers
 Vanessa Ho Jingmei | [@VanessaHo99](https://github.com/VanessaHo99) 2023 <br>
 Geethika | 2024
 
